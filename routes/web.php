@@ -18,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::get('dashboard','HospitalCont\hospitalController@index');
+Route::get('addnewpatient','HospitalCont\hospitalController@createnewpatient');
+Route::get('allpatientdetails','HospitalCont\hospitalController@allpatientdetails');
+Route::get('onepatientdetails','HospitalCont\hospitalController@onepatientdetails');
+Route::get('femalebeds','HospitalCont\hospitalController@femalebeds');

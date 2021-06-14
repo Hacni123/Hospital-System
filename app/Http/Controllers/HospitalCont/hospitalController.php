@@ -11,4 +11,24 @@ class hospitalController extends Controller
     {
         return view('Hospitals.dashboard');
     }
+
+    public function createnewpatient()
+    {
+        return view('Hospitals.patients.addnewpatient');
+    }
+
+    public function allpatientdetails()
+    {
+        return view('Hospitals.patients.allpatientdetails');
+    }
+
+    public function onepatientdetails()
+    {
+        return view('Hospitals.patients.onepatientdetails');
+    }
+
+    public function femalebeds()
+    {
+        return view('Hospitals.patients.femalebeds');
+    }
 }
