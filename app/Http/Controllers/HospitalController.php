@@ -95,6 +95,12 @@ class HospitalController extends Controller
     public function viewicurequest()
     {
         $patients = Patient::latest()->paginate(5);
+        return view('Hospitals.icubedrequestapprove',compact('patients'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+    public function approveicurequest()
+    {
+        $patients = Patient::latest()->paginate(5);
         return view('Hospitals.icubedrequest',compact('patients'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
