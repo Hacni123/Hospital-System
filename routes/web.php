@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HospitalController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,8 +17,26 @@ use Illuminate\Support\Facades\Route;
  //   return view('welcome');
 //});
 
-Route::get('dashboard','HospitalCont\hospitalController@index');
-Route::get('addnewpatient','HospitalCont\hospitalController@createnewpatient');
-Route::get('allpatientdetails','HospitalCont\hospitalController@allpatientdetails');
-Route::get('onepatientdetails','HospitalCont\hospitalController@onepatientdetails');
-Route::get('femalebeds','HospitalCont\hospitalController@femalebeds');
+//Main route
+Route::get('/', [HospitalController::class, 'index'])->name('dashboard.index');
+Route::get('/dashboard', [HospitalController::class, 'index'])->name('dashboard.index');
+//patient
+Route::get('/addnewpatient', [HospitalController::class, 'createnewpatient']);
+Route::post('/addnewpatient', [HospitalController::class, 'storepatient'])->name('addnewpatient.store');
+Route::get('/allpatients', [HospitalController::class, 'allpatientdetails'])->name('allpatients.allpatientdetails');
+Route::get('/edit/{id}', [HospitalController::class, 'editpatient']);
+Route::post('updatepatient', [HospitalController::class, 'updatepatient'])->name('updatepatient.update');
+Route::delete('delete/{id}', [HospitalController::class, 'destroypatient'])->name('delete.destroy');
+
+//icu beds
+Route::get('/icubeds', [HospitalController::class, 'viewicubeds']);
+Route::get('/icurequest', [HospitalController::class, 'viewicurequest']);
+Route::get('/allicubed', [HospitalController::class, 'allicubed'])->name('allicubed.allicubdetails');
+Route::get('/addicubed', [HospitalController::class, 'addicubed']);
+Route::post('/addicubed', [HospitalController::class, 'addicubedadd'])->name('addicubed.store');
+Route::get('/editicub/{id}', [HospitalController::class, 'editicub']);
+Route::post('updateicub', [HospitalController::class, 'updateicubeds'])->name('updateicub.update');
+Route::delete('deleteicub/{id}', [HospitalController::class, 'destroyicub'])->name('delete.destroyb');
+
+//ambulances
+Route::get('/ambulance', [HospitalController::class, 'viewambulance']);
