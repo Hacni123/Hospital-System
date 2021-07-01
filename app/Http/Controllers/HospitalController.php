@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Patient;
 use App\Models\Hospital;
 use App\Models\Icubed;
+use App\Models\Icubrequest;
 use Illuminate\Support\Facades\DB;
 
 class HospitalController extends Controller
@@ -14,6 +15,8 @@ class HospitalController extends Controller
     {
         return view('Hospitals.index');
     }
+
+    //patient functions
 
     public function createnewpatient()
     {
@@ -82,26 +85,54 @@ class HospitalController extends Controller
     return redirect()->route('allpatients.allpatientdetails')->with('success','Updated Successfully.');
     }
 
+      //ICU beds functions
     public function viewicubeds()
     {
-        return view('Hospitals.icubeds');
-    }
-
-    public function viewambulance()
-    {
-        return view('Hospitals.ambulance');
+        $hospitals = Hospital::find(1);
+        $icubeds = $hospitals->icubeds;
+        return view('Hospitals.icubeds',compact('icubeds'));
+        
     }
 
     public function viewicurequest()
     {
-        $patients = Patient::latest()->paginate(5);
-        return view('Hospitals.icubedrequestapprove',compact('patients'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $query = Icubrequest::latest()
+               ->join('icubedrequests', 'patients.id', '=', 'icubedrequests.patient_id')
+               ->where('patients.hospital_id',  1)
+               ->get();
+        return view('Hospitals.icubedrequest',compact('query'));
     }
 
     public function approveicurequest()
     {
         $patients = Patient::latest()->paginate(5);
         return view('Hospitals.icubedrequest',compact('patients'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+    public function editicubrequest($id)
+    {
+        
+        $row = DB::table('patients')
+                ->where('id', $id)
+                ->first();
+        $patient = [
+            'Info'=>$row
+        ];
+        return view('Hospitals.icubedrequestapprove',$patient,$icubeds);
+    }
+
+    public function confirmicurequest(Request $request)
+    {
+        $request->validate([
+            'status' => 'required',
+        ]);
+
+        $udpating = DB::table('icubeds')
+                     ->where('id', $request->input('bid'))
+                     ->update([
+                          'status'=>$request->input('status')
+                     ]);
+        return redirect()->route('allicubed.allicubdetails')->with('success','Updated Successfully.');
     }
 
     public function allicubed()
@@ -160,4 +191,9 @@ class HospitalController extends Controller
         DB::delete('delete from icubeds where id = ?',[$id]);
         return redirect()->route('allicubed.allicubdetails')->with('success','Updated Successfully.');
         }
+
+        public function viewambulance()
+    {
+        return view('Hospitals.ambulance');
+    }
 }

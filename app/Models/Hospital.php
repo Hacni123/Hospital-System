@@ -8,6 +8,7 @@ use App\Models\Icubed;
 use App\Models\Ambulance;
 use App\Models\Pcrtest;
 use App\Models\Login;
+use App\Models\Patient;
 
 class Hospital extends Model
 {
@@ -42,5 +43,10 @@ class Hospital extends Model
     public function pcrtests()
     {
         return $this->hasMany(Pcrtest::class);
+    }
+
+    public function patientshos()
+    {
+        return $this->hasMany(Patient::class);
     }
 }

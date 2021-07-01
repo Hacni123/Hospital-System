@@ -21,8 +21,10 @@ class CreatePatientsTable extends Migration
             $table->string('pat_id');
             $table->integer('pat_mobile');
             $table->bigInteger('login_id')->unsigned();
+            $table->bigInteger('hospital_id')->unsigned();
             $table->timestamps();
             $table->foreign('login_id')->references('id')->on('login')->onDelete('cascade');
+            $table->foreign('hospital_id')->references('id')->on('hospitals')->onDelete('cascade');
         });
     }
 

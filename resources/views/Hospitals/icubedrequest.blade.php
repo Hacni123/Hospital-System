@@ -35,7 +35,7 @@
                             <div class="card-body">
                             
                                 <table class="table table-striped">
-                                @if(sizeof($patients) > 0)
+                                @if(sizeof($query) > 0)
                                     <thead>
                                         <tr>
                                             <th scope="col">Patient ID</th>
@@ -47,10 +47,10 @@
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
-                                    @foreach ($patients as $patient)
+                                    @foreach ($query as $patient)
                                     <tbody>
                                         <tr>
-                                            <td>{{ ++$i }}</td>
+                                            
                                             <td>{{ $patient->pat_name }}</td>
                                             <td>{{ $patient->pat_email }}</td>
                                             <td>{{ $patient->pat_address }}</td>
@@ -58,7 +58,7 @@
                                             <td>{{ $patient->pat_id }}</td>
                                             <td>
                                             <form action="{{ route('delete.destroy',$patient->id) }}"  method="POST">
-                                               <a class="btn btn-primary" href="edit/{{$patient->id}}">Approve</a>
+                                               <a class="btn btn-primary" href="editicubrequest/{{$patient->id}}">Approve</a>
                                                 @csrf
                                                 @method('DELETE')
                                                <button type="submit" class="btn btn-danger">Delete</button>
@@ -69,10 +69,7 @@
                                     </tbody>
                                     @endforeach
                                 </table>
-                                {{-- Pagination --}}
-                                <div class="d-flex justify-content-center">
-                                  {{$patients->links("pagination::bootstrap-4")}}
-                                </div>
+                               
                             </div>
                         </div>
                     </div>

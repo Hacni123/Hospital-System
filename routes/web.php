@@ -31,6 +31,7 @@ Route::delete('delete/{id}', [HospitalController::class, 'destroypatient'])->nam
 //icu beds
 Route::get('/icubeds', [HospitalController::class, 'viewicubeds']);
 Route::get('/icurequest', [HospitalController::class, 'viewicurequest']);
+Route::get('/editicubrequest/{id}', [HospitalController::class, 'editicubrequest']);
 Route::get('/approveicurequest', [HospitalController::class, 'approveicurequest']);
 Route::get('/allicubed', [HospitalController::class, 'allicubed'])->name('allicubed.allicubdetails');
 Route::get('/addicubed', [HospitalController::class, 'addicubed']);

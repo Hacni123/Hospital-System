@@ -8,6 +8,7 @@ use App\Models\Icubrequest;
 use App\Models\Ambulancerequest;
 use App\Models\Pcrresult;
 use App\Models\Login;
+use App\Models\Hospital;
 
 
 class Patient extends Model
@@ -22,7 +23,8 @@ class Patient extends Model
         'pat_address',
         'pat_id',
         'pat_mobile',
-        'login_id'
+        'login_id',
+        'hospital_id'
     ];
 
     public function loginp()
@@ -43,5 +45,10 @@ class Patient extends Model
     public function pcrtestsresults()
     {
         return $this->hasMany(Pcrresult::class);
+    }
+
+    public function hospitalsicu()
+    {
+        return $this->belongsTo(Hospital::class);
     }
 }

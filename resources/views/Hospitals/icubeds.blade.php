@@ -34,34 +34,29 @@
                                     <strong>ICU Beds</strong>
                                     
                                 </div>
+                                <form action="{{ route('updateicub.update') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                @csrf
                                 <div class="card-body">
                                 <table class="table table-striped">
+                                <tbody>
+                                   @foreach($icubeds->chunk(3) as $icu_beds)
+                                <tr>
+                                   @foreach( $icu_beds as $bed )
+                                <td>
+                                @if($bed->status=="Availabe")
+                                            <th> <button type="submit" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></th>
+                                            
+                                            @else
+                                            <th><button type="button" class="btn btn-danger btn-lg" style="width:200px; height:50;">N/A</button></th>
+                                            @endif
+                                </td>
+                                  @endforeach
+                                  </tr>
+                                  @endforeach
                                     
-                                    <tbody>
-                                        <tr>
-                                            
-                                            <td> <button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                            <td> <button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                            <td><button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                            <td><button type="button" class="btn btn-danger btn-lg" style="width:200px; height:50;">N/A</button></td>
-                                        </tr>
-                                        <tr>
-                                            
-                                            <td> <button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                            <td> <button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                            <td> <button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                            <td><button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                        </tr>
-                                        <tr>
-                                            
-                                            <td><button type="button" class="btn btn-danger btn-lg" style="width:200px; height:50;">N/A</button></td>
-                                            <td> <button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                            <td> <button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                            <td><button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                        </tr>
-                                    </tbody>
                                 </table>
                             </div>
+                            </form>
                                 </div><!-- /# card --> 
                                 
                             </div> <!-- .buttons -->
