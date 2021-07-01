@@ -56,12 +56,11 @@
                                                 </label>
                                             </th>
                                             <th>No</th>
-                                            <th>Ward No</th>
                                             <th>Status</th>
                                             <th>Hospital Id</th>
                                         </tr>
                                     </thead>
-                                    @foreach($showbeds as $beds)
+                                    @foreach($ambulances as $amb)
                                     <tbody>
                                         <tr class="tr-shadow">
                                             <td>
@@ -70,10 +69,9 @@
                                                     <span class="au-checkmark"></span>
                                                 </label>
                                             </td>
-                                            <td>{{ $beds->id }}</td>
-                                            <td>{{ $beds->ward_no }}</td>
-                                            <td>{{ $beds->status }}</td>
-                                            <td>{{ $beds->hospital_id }}</td>
+                                            <td>{{ $amb->id }}</td>
+                                            <td>{{ $amb->status }}</td>
+                                            <td>{{ $amb->hospital_id }}</td>
                                             <td>
                                                 <div class="table-data-feature">
                                                     <button class="item" data-toggle="tooltip" data-placement="top" title="Send">

@@ -46,6 +46,12 @@ Route::get('/ambulance', [HospitalController::class, 'viewambulance']);
 Route::get('/aindex','AdminController@index');
 Route::get('/apatientList','AdminController@show');
 Route::get('/aicubeds','AdminController@allicubeds');
-//Route::get('/apatientList','AdminController@index');
-route::get('/apatientList/{patientid}','AdminController@show');
+Route::get('/ahospitals','AdminController@allhospitals');
+Route::get('/allambulance','AdminController@avaambulance');
+Route::get('/apatientList/{patientid}','AdminController@show');
+Route::get('/bookbeds','AdminController@bookbeds');
+Route::get('/bookamb','AdminController@bookambulance');
+Route::get('/atest','AdminController@test');
+Route::get('/ares','AdminController@testresults');
+
 Route::get('/check','AdminController@check');

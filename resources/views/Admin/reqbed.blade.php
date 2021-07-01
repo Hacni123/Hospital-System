@@ -61,7 +61,7 @@
                                             <th>Hospital Id</th>
                                         </tr>
                                     </thead>
-                                    @foreach($showbeds as $beds)
+                                    @foreach($bookbeds as $bbeds)
                                     <tbody>
                                         <tr class="tr-shadow">
                                             <td>
@@ -70,10 +70,11 @@
                                                     <span class="au-checkmark"></span>
                                                 </label>
                                             </td>
-                                            <td>{{ $beds->id }}</td>
-                                            <td>{{ $beds->ward_no }}</td>
-                                            <td>{{ $beds->status }}</td>
-                                            <td>{{ $beds->hospital_id }}</td>
+                                            <td>{{ $bbeds->id }}</td>
+                                            <td>{{ $bbeds->reason }}</td>
+                                            <td>{{ $bbeds->action }}</td>
+                                            <td>{{ $bbeds->patient_id }}</td>
+                                            <td>{{ $bbeds->icubed_id }}</td>
                                             <td>
                                                 <div class="table-data-feature">
                                                     <button class="item" data-toggle="tooltip" data-placement="top" title="Send">

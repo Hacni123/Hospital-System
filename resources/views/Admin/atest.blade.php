@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                             <div class="table-responsive table-responsive-data2">
-                            <form action="aicubeds" method="POST">
+                            <form action="atest" method="POST">
                                 @csrf
                                 <table class="table table-data2">
                                     <thead>
@@ -56,12 +56,13 @@
                                                 </label>
                                             </th>
                                             <th>No</th>
-                                            <th>Ward No</th>
-                                            <th>Status</th>
-                                            <th>Hospital Id</th>
+                                            <th>PCR Date</th>
+                                            <th>Time</th>
+                                            <th>Patient Id</th>
+                                            <th>Test Id</th>
                                         </tr>
                                     </thead>
-                                    @foreach($showbeds as $beds)
+                                    @foreach($test as $test)
                                     <tbody>
                                         <tr class="tr-shadow">
                                             <td>
@@ -70,10 +71,11 @@
                                                     <span class="au-checkmark"></span>
                                                 </label>
                                             </td>
-                                            <td>{{ $beds->id }}</td>
-                                            <td>{{ $beds->ward_no }}</td>
-                                            <td>{{ $beds->status }}</td>
-                                            <td>{{ $beds->hospital_id }}</td>
+                                            <td>{{ $test->id }}</td>
+                                            <td>{{ $test->date }}</td>
+                                            <td>{{ $test->time }}</td>
+                                            <td>{{ $test->patient_id }}</td>
+                                            <td>{{ $test->pcrtest_id }}</td>
                                             <td>
                                                 <div class="table-data-feature">
                                                     <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
