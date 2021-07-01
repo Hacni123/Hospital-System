@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
  //   return view('welcome');
 //});
 
-Route::get('dashboard','HospitalCont\hospitalController@index');
+Route::get('/','PatientCont\patientController@index');
