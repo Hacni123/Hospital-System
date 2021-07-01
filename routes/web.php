@@ -42,3 +42,11 @@ Route::delete('deleteicub/{id}', [HospitalController::class, 'destroyicub'])->na
 
 //ambulances
 Route::get('/ambulance', [HospitalController::class, 'viewambulance']);
+
+//admin
+Route::get('/aindex','AdminController@index');
+Route::get('/apatientList','AdminController@show');
+Route::get('/aicubeds','AdminController@allicubeds');
+//Route::get('/apatientList','AdminController@index');
+route::get('/apatientList/{patientid}','AdminController@show');
+Route::get('/check','AdminController@check');
