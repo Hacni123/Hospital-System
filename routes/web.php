@@ -13,10 +13,10 @@ use App\Http\Controllers\HospitalController;
 |
 */
 
-//Route::get('/', function () {
- //   return view('welcome');
-//});
-
+/*
+Route::get('/', function () {
+   return view('welcome');
+});
 //Main route
 Route::get('/', [HospitalController::class, 'index'])->name('dashboard.index');
 Route::get('/dashboard', [HospitalController::class, 'index'])->name('dashboard.index');
@@ -50,3 +50,20 @@ Route::get('/aicubeds','AdminController@allicubeds');
 //Route::get('/apatientList','AdminController@index');
 route::get('/apatientList/{patientid}','AdminController@show');
 Route::get('/check','AdminController@check');
+*/
+Route::get('/', function () {
+   return view('Patients.home');
+});
+Route::get('/login', function () {
+   return view('Patients.login');
+});
+Route::get('/register', function () {
+   return view('Patients.register');
+});
+Route::get('/otp', function () {
+   return view('Patients.otp');
+});
+
+Route::post('/register_action','PatientController@store');
+Route::post('/login_check','PatientController@login');
+
