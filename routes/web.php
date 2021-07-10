@@ -30,9 +30,10 @@ Route::delete('delete/{id}', [HospitalController::class, 'destroypatient'])->nam
 
 //icu beds
 Route::get('/icubeds', [HospitalController::class, 'viewicubeds']);
-Route::get('/icurequest', [HospitalController::class, 'viewicurequest']);
+Route::get('/icurequest', [HospitalController::class, 'viewicurequest'])->name('icurequest.allicurequest');
 Route::get('/editicubrequest/{id}', [HospitalController::class, 'editicubrequest']);
-Route::get('/approveicurequest', [HospitalController::class, 'approveicurequest']);
+Route::post('/approveicurequest', [HospitalController::class, 'confirmicurequest'])->name('approveicurequest.update');
+Route::post('/notapproveicurequest', [HospitalController::class, 'rejecticubrequest'])->name('notapproveicurequest.update');
 Route::get('/allicubed', [HospitalController::class, 'allicubed'])->name('allicubed.allicubdetails');
 Route::get('/addicubed', [HospitalController::class, 'addicubed']);
 Route::post('/addicubed', [HospitalController::class, 'addicubedadd'])->name('addicubed.store');
@@ -42,6 +43,12 @@ Route::delete('deleteicub/{id}', [HospitalController::class, 'destroyicub'])->na
 
 //ambulances
 Route::get('/ambulance', [HospitalController::class, 'viewambulance']);
+
+//pcr tests
+Route::get('/pcrrequest', [HospitalController::class, 'viewpcrrequest'])->name('pcrrequest.allpcrrequest');
+Route::get('/editpcrrequest/{id}', [HospitalController::class, 'editpcrrequest']);
+Route::post('/approvepcrrequest', [HospitalController::class, 'updatepcrrequest'])->name('approvepcrrequest.update');
+Route::get('/allpcrrequest', [HospitalController::class, 'viewallpcrrequest'])->name('allpcrrequest.allpcrrequestdetails');
 
 //admin
 Route::get('/aindex','AdminController@index');

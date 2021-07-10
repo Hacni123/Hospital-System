@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Icubrequest;
 use App\Models\Ambulancerequest;
-use App\Models\Pcrresult;
+use App\Models\Pcrtest;
 use App\Models\Login;
 use App\Models\Hospital;
 
@@ -42,9 +42,9 @@ class Patient extends Model
         return $this->hasMany(Ambulancerequest::class);
     }
 
-    public function pcrtestsresults()
+    public function pcrtests()
     {
-        return $this->hasMany(Pcrresult::class);
+        return $this->hasMany(Pcrtest::class);
     }
 
     public function hospitalsicu()
