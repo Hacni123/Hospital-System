@@ -9,6 +9,7 @@ use App\Models\Ambulancerequest;
 use App\Models\Pcrtest;
 use App\Models\Login;
 use App\Models\Hospital;
+use Input;
 
 
 class Patient extends Model
@@ -51,4 +52,5 @@ class Patient extends Model
     {
         return $this->belongsTo(Hospital::class);
     }
+ 
 }
