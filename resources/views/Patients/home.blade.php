@@ -199,7 +199,7 @@ span.psw {
                         <li><a data-scroll href="#doctors">Doctors</a></li>
                         <li><a data-scroll href="#getintouch">Contact</a></li>
                         <li><a href="{{URL::to('/login')}}">Login</a></li>
-                        <li><a href="{{URL::to('/register')}}">Sign Up</a></li>
+                        <li><a href="{{url('pregister')}}">Sign Up</a></li>
                      </ul>
                   </div>
                </nav>

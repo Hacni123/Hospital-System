@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HospitalController;
+use App\Http\Controllers\PatientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,13 +65,15 @@ Route::get('/', function () {
 Route::get('/login', function () {
    return view('Patients.login');
 });
-Route::get('/register', function () {
-   return view('Patients.register');
-});
+//Route::get('/register', function () {
+ //  return view('Patients.register');
+//});
 Route::get('/otp', function () {
    return view('Patients.otp');
 });
 
-Route::post('/register_action','PatientController@store');
+//Route::post('/register_action','PatientController@store');
+Route::get('/pregister', [PatientController::class, 'registration']);
+Route::post('post-registration', [PatientController::class, 'postRegistration'])->name('register.post'); 
 Route::post('/login_check','PatientController@login');
 

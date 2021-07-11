@@ -40,44 +40,62 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form action="{{ action('PatientController@store') }}" method="post">
+                            <form action="{{ route('register.post') }}" method="post">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <div class="form-group">
-                                    <input type="pat_name" name="pat_name" class="form-control form-control-user" id="exampleInputpat_name"
-                                        placeholder="Username">
+                                    <input type="pat_name" name="pat_name" class="form-control form-control-user" id="pat_name"
+                                        placeholder="name">
                                         @if($errors->has('pat_name')) <p>{{$errors->first('pat_name')}}</p>@endif
 
                                 </div>
                                 
                                 <div class="form-group">
-                                    <input type="pat_email" name="pat_email" class="form-control form-control-user" id="exampleInputpat_mail"
+                                    <input type="pat_email" name="pat_email" class="form-control form-control-user" id="pat_email"
                                         placeholder="Email Address">
                                         @if($errors->has('pat_email')) <p>{{$errors->first('pat_email')}}</p>@endif
                                 </div>
                                 <div class="form-group">
-                                    <input type="pat_address" name="pat_address" class="form-control form-control-user" id="exampleInputpat_address"
+                                    <input type="pat_address" name="pat_address" class="form-control form-control-user" id="pat_address"
                                         placeholder="Address">
                                         @if($errors->has('pat_address')) <p>{{$errors->first('pat_address')}}</p>@endif
                                 </div>
                                 <div class="form-group">
-                                    <input type="pat_id" name="pat_id" class="form-control form-control-user" id="exampleInputpat_id"
+                                    <input type="pat_id" name="pat_id" class="form-control form-control-user" id="pat_id"
                                         placeholder="NIC Number">
                                         @if($errors->has('pat_id')) <p>{{$errors->first('pat_id')}}</p>@endif
                                 </div>
                                 <div class="form-group">
-                                    <input type="pat_mobile" name="pat_mobile" class="form-control form-control-user" id="exampleInputpat_mobile"
+                                    <input type="pat_mobile" name="pat_mobile" class="form-control form-control-user" id="pat_mobile"
                                         placeholder="Mobile Number">
                                         @if($errors->has('pat_mobile')) <p>{{$errors->first('pat_mobile')}}</p>@endif
                                 </div>
                                 <div class="form-group">
+                                    <input type="login_username" name="login_username" class="form-control form-control-user" id="login_username"
+                                        placeholder="Username">
+                                        @if($errors->has('login_username')) <p>{{$errors->first('login_username')}}</p>@endif
+
+                                </div>
+                                <div class="form-group">
                                     
                                         <input type="password" name="login_password" class="form-control form-control-user"
-                                            id="exampleInputlogin_password" placeholder="Password">
+                                            id="login_password" placeholder="Password">
                                             @if($errors->has('login_password')) <p>{{$errors->first('login_password')}}</p>@endif
                                             
                            
                                 </div>
-                                <input type="submit" name="Register account" href="{{URL::to('/login')}}" class="btn btn-primary btn-user btn-block" placeholder="Register Account"></input>
+                                <div class="row form-group">
+                                                                <div class="col col-md-3"><label for="text-input" id="hospital_id" name="hospital_id" class=" form-control-label" >Hospital</label></div>
+                                                                <div class="card-body">
+
+                                                                <select name="hospital_id" data-placeholder="Choose a Hospital..." class="standardSelect" tabindex="1">
+                                                                  @foreach($hospitalsicu as $hospital)
+                                                                  <option value="{{$hospital->id}}">{{$hospital->hos_name}}</option>
+                                                                 @endforeach
+                                    
+                                                                   </select>
+                                                                   </div>
+                                                            </div>
+                                <input type="submit" name="Register account" class="btn btn-primary btn-user btn-block" placeholder="Register Account"></input>
                                     
                                 
                                 
