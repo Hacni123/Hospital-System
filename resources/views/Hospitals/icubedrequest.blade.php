@@ -35,32 +35,32 @@
                             <div class="card-body">
                             
                                 <table class="table table-striped">
-                                @if(sizeof($query) > 0)
+                                @if(sizeof($data) > 0)
                                     <thead>
                                         <tr>
-                                            <th scope="col">Patient ID</th>
+                                            <th scope="col">Request ID</th>
                                             <th scope="col">Patient Name</th>
-                                            <th scope="col">Email</th>
+                                            <th scope="col">Reason</th>
                                             <th scope="col">Address</th>
                                             <th scope="col">Contact No</th>
                                             <th scope="col">National ID</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
-                                    @foreach ($query as $patient)
+                                    @foreach ($data as $patient)
                                     <tbody>
                                         <tr>
                                             
+                                            <td>{{ $patient->id }}</td>
                                             <td>{{ $patient->pat_name }}</td>
-                                            <td>{{ $patient->pat_email }}</td>
+                                            <td>{{ $patient->reason }}</td>
                                             <td>{{ $patient->pat_address }}</td>
                                             <td>{{ $patient->pat_mobile }}</td>
                                             <td>{{ $patient->pat_id }}</td>
                                             <td>
-                                            <form action="{{ route('delete.destroy',$patient->id) }}"  method="POST">
+                                            <form action="{{ route('notapproveicurequest.update',$patient->id) }}"  method="POST">
                                                <a class="btn btn-primary" href="editicubrequest/{{$patient->id}}">Approve</a>
                                                 @csrf
-                                                @method('DELETE')
                                                <button type="submit" class="btn btn-danger">Delete</button>
                                            </form>
                                             </td>

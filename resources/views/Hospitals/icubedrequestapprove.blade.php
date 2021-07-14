@@ -20,7 +20,7 @@
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
                             <li><a href="#">Forms</a></li>
-                            <li class="active">Update Patient</li>
+                            <li class="active">Confirm ICU Bed Request</li>
                         </ol>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                                             <div class="col-lg-12">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <strong>Update Patient</strong> Details
+                                                        <strong>Confirm ICU Bed</strong> Requests
                                                     </div>
                                                     @if ($errors->any())
                                                     <div class="alert alert-danger">
@@ -53,31 +53,44 @@
                                                    @endif
                                                    
                                                     <div class="card-body card-block">
-                                                        <form action="{{ route('updatepatient.update') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                                        <form action="{{ route('approveicurequest.update') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                                                         @csrf
-                                                        <input type="hidden" name="pid" value="{{$Info->id}}">
+                                                        <input type="hidden" name="icuid" value="{{$Info->id}}">
                                                             <div class="row form-group">
-                                                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Patient Name</label></div>
-                                                                <div class="col-12 col-md-9"><input type="text" id="pat_name" name="pat_name"  class="form-control" value="{{$Info->pat_name}}"><small class="help-block form-text">Enter Patient Name</small></div>
+                                                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Patient ID</label></div>
+                                                                <div class="col-12 col-md-9"><input type="text" id="pat_name" name="pat_name"  class="form-control" value="{{$Info->patient_id}}" disabled></div>
                                                             </div>
                                                             <div class="row form-group">
-                                                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Patient Address</label></div>
-                                                                <div class="col-12 col-md-9"><input type="text" id="pat_address" name="pat_address"  class="form-control" value="{{$Info->pat_address}}"><small class="help-block form-text" >Enter Patient Address</small></div>
-                                                            </div>
-                                                         <div class="row form-group">
-                                                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Patient National Id</label></div>
-                                                                <div class="col-12 col-md-9"><input type="text" id="pat_id" name="pat_id"  class="form-control" value="{{$Info->pat_id}}"><small class="help-block form-text" >Enter Patient National Id</small></div>
+                                                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Reason</label></div>
+                                                                <div class="col-12 col-md-9"><input type="text" id="pat_address" name="pat_address"  class="form-control" value="{{$Info->reason}}" disabled></div>
                                                             </div>
                                                             <div class="row form-group">
-                                                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Patient Contact No</label></div>
-                                                                <div class="col-12 col-md-9"><input type="number" id="pat_mobile" name="pat_mobile"  class="form-control" value="{{$Info->pat_mobile}}"><small class="help-block form-text">Enter Patient Contact No</small></div>
-                                                            </div>  
-                                                            <div class="row form-group">
-                                                                <div class="col col-md-3"><label for="email-input" class=" form-control-label">Patient Email</label></div>
-                                                                <div class="col-12 col-md-9"><input type="email" id="pat_email" name="pat_email"  class="form-control" value="{{$Info->pat_email}}"><small class="help-block form-text" >Enter Patient Email</small></div>
-                                                            </div>
+                                                                <div class="col col-md-3"><label for="text-input" id="action" name="action" class=" form-control-label" value="{{$Info->action}}">Status</label></div>
+                                                                <div class="card-body">
 
-                                                       
+                                                                  <select name="action" data-placeholder="Choose a action" class="standardSelect" tabindex="1">
+                                                                  <option value="Pending">Pending </option>
+                                                                  <option value="Confirmed">Confirmed</option>
+                                    
+                                                                   </select>
+                                                                   </div>
+                                                            </div>
+                                                            <div class="row form-group">
+                                                                <div class="col col-md-3"><label for="text-input" id="icubed_id" name="icubed_id" class=" form-control-label" >ICU Bed No</label></div>
+                                                                <div class="card-body">
+
+                                                                <select name="icubed_id" data-placeholder="Choose a action" class="standardSelect" tabindex="1">
+                                                                  @foreach($icubeds1 as $icubed)
+                                                                   <option value="{{$icubed->id}}">{{$icubed->id}}</option>
+                                                                 @endForeach
+                                    
+                                                                   </select>
+                                                                   </div>
+                                                            </div>
+                                                           </div>
+                                                            </div>
+                                                           </div>
+                                                           
                                                     </div>
                                                     <div class="card-footer">
                                                         <button type="submit" class="btn btn-primary btn-sm">

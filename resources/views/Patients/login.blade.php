@@ -40,18 +40,33 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <span class="center"><span class="icon"><img src="assets/images/icon-logo.png" alt="#" /></span></span>
+                                        <hr>
                                     </div>
-                                    <form action="login_check" method="post">
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                    <form action="{{ route('login.post') }}" method="post">
+                                        @csrf
+                                        <div calss="results">
+                                            @if(Session::get('fail'))
+                                            <div class="alert alert-danger">
+                                                {{ Session::get('fail') }}
+
+                                            </div>
+                                            @endif
+
+
+                                        </div>
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
                                         <div class="form-group">
-                                            <input type="pat_name" name="pat_name" class="form-control form-control-user" id="exampleInputpat_name" 
-                                                placeholder="Username">
-                                                @if($errors->has('pat_name')) <p>{{$errors->first('pat_name')}}</p>@endif
+                                            <input type="login_username" name="login_username" class="form-control form-control-user" id="exampleInputlogin_username" 
+                                                placeholder="Username" value="{{ old ('login_username')}}">
+                                                <span class="text-danger">@error('login_username') {{ $message }} @enderror</span>
+                                                
                                         </div>
                                         <div class="form-group">
                                             <input type="password" name="login_password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password">
-                                                @if($errors->has('login_password')) <p>{{$errors->first('login_password')}}</p>@endif
+                                                <span class="text-danger">@error('login_password') {{ $message }} @enderror</span>
+                                                
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -61,7 +76,7 @@
                                             </div>
                                         </div>
                                         
-                                        <input type="submit" name="Login" href="{{URL::to('/')}}" class="btn btn-primary btn-user btn-block" placeholder="Register Account"></input>
+                                        <input type="submit" name="Login"  class="btn btn-primary btn-user btn-block" placeholder="Register Account"></input>
                                         
                                     </form>
                                     <hr>

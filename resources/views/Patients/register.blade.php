@@ -39,45 +39,74 @@
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                                <span class="center"><span class="icon"><img src="assets/images/icon-logo.png" alt="#" /></span></span>
+                                        <hr>
                             </div>
-                            <form action="{{ action('PatientController@store') }}" method="post">
+                            <form action="{{ route('register.post') }}" method="post">
+                            @csrf
+                            <div calss="results">
+                                            @if(Session::get('fail'))
+                                            <div class="alert alert-danger">
+                                                {{ Session::get('fail') }}
+
+                                            </div>
+                                            @endif
+
+
+                                        </div>
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <div class="form-group">
-                                    <input type="pat_name" name="pat_name" class="form-control form-control-user" id="exampleInputpat_name"
-                                        placeholder="Username">
-                                        @if($errors->has('pat_name')) <p>{{$errors->first('pat_name')}}</p>@endif
+                                    <input type="pat_name" name="pat_name" class="form-control form-control-user" id="pat_name"
+                                        placeholder="Name" value="{{ old ('pat_name')}}">
+                                        <span class="text-danger">@error('pat_name') {{ $message }} @enderror</span>
 
                                 </div>
                                 
                                 <div class="form-group">
-                                    <input type="pat_email" name="pat_email" class="form-control form-control-user" id="exampleInputpat_mail"
-                                        placeholder="Email Address">
-                                        @if($errors->has('pat_email')) <p>{{$errors->first('pat_email')}}</p>@endif
+                                    <input type="pat_email" name="pat_email" class="form-control form-control-user" id="pat_email"
+                                        placeholder="Email Address" value="{{ old ('pat_email')}}">
+                                        <span class="text-danger">@error('pat_email') {{ $message }} @enderror</span>
                                 </div>
                                 <div class="form-group">
-                                    <input type="pat_address" name="pat_address" class="form-control form-control-user" id="exampleInputpat_address"
-                                        placeholder="Address">
-                                        @if($errors->has('pat_address')) <p>{{$errors->first('pat_address')}}</p>@endif
+                                    <input type="pat_address" name="pat_address" class="form-control form-control-user" id="pat_address"
+                                        placeholder="Address" value="{{ old ('pat_address')}}">
+                                        <span class="text-danger">@error('pat_address') {{ $message }} @enderror</span>
                                 </div>
                                 <div class="form-group">
-                                    <input type="pat_id" name="pat_id" class="form-control form-control-user" id="exampleInputpat_id"
-                                        placeholder="NIC Number">
-                                        @if($errors->has('pat_id')) <p>{{$errors->first('pat_id')}}</p>@endif
+                                    <input type="pat_id" name="pat_id" class="form-control form-control-user" id="pat_id"
+                                        placeholder="NIC Number" value="{{ old ('pat_id')}}">
+                                        <span class="text-danger">@error('pat_id') {{ $message }} @enderror</span>
                                 </div>
                                 <div class="form-group">
-                                    <input type="pat_mobile" name="pat_mobile" class="form-control form-control-user" id="exampleInputpat_mobile"
-                                        placeholder="Mobile Number">
-                                        @if($errors->has('pat_mobile')) <p>{{$errors->first('pat_mobile')}}</p>@endif
+                                    <input type="pat_mobile" name="pat_mobile" class="form-control form-control-user" id="pat_mobile"
+                                        placeholder="Mobile Number" value="{{ old ('pat_mobile')}}">
+                                        <span class="text-danger">@error('pat_mobile') {{ $message }} @enderror</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="login_username" name="login_username" class="form-control form-control-user" id="login_username"
+                                        placeholder="Username" value="{{ old ('login_username')}}">
+                                        <span class="text-danger">@error('login_username') {{ $message }} @enderror</span>
                                 </div>
                                 <div class="form-group">
                                     
                                         <input type="password" name="login_password" class="form-control form-control-user"
-                                            id="exampleInputlogin_password" placeholder="Password">
-                                            @if($errors->has('login_password')) <p>{{$errors->first('login_password')}}</p>@endif
-                                            
+                                            id="login_password" placeholder="Password">
+                                            <span class="text-danger">@error('login_password') {{ $message }} @enderror</span>
                            
                                 </div>
-                                <input type="submit" name="Register account" href="{{URL::to('/login')}}" class="btn btn-primary btn-user btn-block" placeholder="Register Account"></input>
+                                <div class="row form-group">
+                                                                <div class="col col-md-3"><label for="text-input" id="hospital_id" name="hospital_id" class=" form-control-label" >Hospital</label></div>
+                                                                <div class="card-body">
+
+                                                                <select name="hospital_id" data-placeholder="Choose a Hospital..." class="standardSelect" tabindex="1">
+                                                                  @foreach($hospitalsicu as $hospital)
+                                                                  <option value="{{$hospital->id}}">{{$hospital->hos_name}}</option>
+                                                                 @endforeach
+                                    
+                                                                   </select>
+                                                                   </div>
+                                                            </div>
+                                <input type="submit" name="Register account" class="btn btn-primary btn-user btn-block" placeholder="Register Account"></input>
                                     
                                 
                                 

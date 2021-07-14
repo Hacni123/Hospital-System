@@ -64,7 +64,7 @@
                                                                 <div class="col col-md-3"><label for="text-input" id="status" name="status" class=" form-control-label" value="{{$Info->status}}">Status</label></div>
                                                                 <div class="card-body">
 
-                                                                  <select name="status" data-placeholder="Choose a Country..." class="standardSelect" tabindex="1">
+                                                                  <select name="status" data-placeholder="Choose a Option" class="standardSelect" tabindex="1">
                                                                   <option value="Availabe">Availabe</option>
                                                                   <option value="Not Availabe">Not Availabe</option>
                                     

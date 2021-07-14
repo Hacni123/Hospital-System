@@ -11,7 +11,7 @@ class Login extends Model
 {
     use HasFactory;
 
-    protected $table = "hospitals";
+    protected $table = "login";
 
     public $fillable = [
         'login_username',
