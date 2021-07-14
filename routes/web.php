@@ -16,10 +16,9 @@ use App\Http\Controllers\PatientController;
 
 /*
 Route::get('/', function () {
-   return view('welcome');
-});
-//Main route
-Route::get('/', [HospitalController::class, 'index'])->name('dashboard.index');
+   return view('welcome'); 
+});  */
+//Main route for hospital
 Route::get('/dashboard', [HospitalController::class, 'index'])->name('dashboard.index');
 //patient
 Route::get('/addnewpatient', [HospitalController::class, 'createnewpatient']);
@@ -58,7 +57,7 @@ Route::get('/aicubeds','AdminController@allicubeds');
 //Route::get('/apatientList','AdminController@index');
 route::get('/apatientList/{patientid}','AdminController@show');
 Route::get('/check','AdminController@check');
-*/
+
 Route::get('/', function () {
    return view('Patients.home');
 });

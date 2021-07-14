@@ -16,7 +16,7 @@ class CreateAmbulancerequestsTable extends Migration
         Schema::create('ambulancerequests', function (Blueprint $table) {
             $table->id();
             $table->string('reason');
-            $table->string('action');
+            $table->string('action')->default('pending');
             $table->bigInteger('patient_id')->unsigned()->index();
             $table->bigInteger('ambulance_id')->unsigned()->index();
             $table->timestamps();

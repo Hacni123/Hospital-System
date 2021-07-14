@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Hospital;
 use App\Models\Patient;
-use App\Models\Pcrresult;
 
 class Pcrtest extends Model
 {
@@ -34,8 +33,4 @@ class Pcrtest extends Model
         return $this->belongsTo(Patient::class);
     }
 
-    public function pcrresult()
-    {
-        return $this->hasOne(Pcrresult::class);
-    }
 }
