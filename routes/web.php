@@ -75,10 +75,6 @@ Route::get('/otp', function () {
 //Route::post('/register_action','PatientController@store');
 Route::get('/pregister', [PatientController::class, 'registration']);
 Route::post('post-registration', [PatientController::class, 'postRegistration'])->name('register.post'); 
-<<<<<<< HEAD
 Route::post('check','PatientController@check')->name('login.post');
 Route::get('profile','PatientController@profile');
-=======
-Route::post('/login_check','PatientController@login');
->>>>>>> 1bebff9aa97eebb4e4280f759c3760d85a20df71
 
