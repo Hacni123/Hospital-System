@@ -78,7 +78,8 @@ class PatientController extends Controller
        $user = Login::where('login_username','=',$request->login_username)->first();
        if($user){
            if(Hash::check($request->login_password,$user->login_password)){
-               return view('Patients.index')->with($user->login_username);
+               $request->session()->put('LoggedUser',$user->id);
+               return view('Patients.profile');
 
            }else{
                return back()->with('fail','Invalid password');

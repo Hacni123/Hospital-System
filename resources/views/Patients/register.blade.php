@@ -43,7 +43,6 @@
                                         <hr>
                             </div>
                             <form action="{{ route('register.post') }}" method="post">
-<<<<<<< HEAD
                             @csrf
                             <div calss="results">
                                             @if(Session::get('fail'))
@@ -60,42 +59,11 @@
                                     <input type="pat_name" name="pat_name" class="form-control form-control-user" id="pat_name"
                                         placeholder="Name" value="{{ old ('pat_name')}}">
                                         <span class="text-danger">@error('pat_name') {{ $message }} @enderror</span>
-=======
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                <div class="form-group">
-                                    <input type="pat_name" name="pat_name" class="form-control form-control-user" id="pat_name"
-                                        placeholder="name">
-                                        @if($errors->has('pat_name')) <p>{{$errors->first('pat_name')}}</p>@endif
->>>>>>> 1bebff9aa97eebb4e4280f759c3760d85a20df71
 
                                 </div>
                                 
                                 <div class="form-group">
                                     <input type="pat_email" name="pat_email" class="form-control form-control-user" id="pat_email"
-<<<<<<< HEAD
-                                        placeholder="Email Address" value="{{ old ('pat_email')}}">
-                                        <span class="text-danger">@error('pat_email') {{ $message }} @enderror</span>
-                                </div>
-                                <div class="form-group">
-                                    <input type="pat_address" name="pat_address" class="form-control form-control-user" id="pat_address"
-                                        placeholder="Address" value="{{ old ('pat_address')}}">
-                                        <span class="text-danger">@error('pat_address') {{ $message }} @enderror</span>
-                                </div>
-                                <div class="form-group">
-                                    <input type="pat_id" name="pat_id" class="form-control form-control-user" id="pat_id"
-                                        placeholder="NIC Number" value="{{ old ('pat_id')}}">
-                                        <span class="text-danger">@error('pat_id') {{ $message }} @enderror</span>
-                                </div>
-                                <div class="form-group">
-                                    <input type="pat_mobile" name="pat_mobile" class="form-control form-control-user" id="pat_mobile"
-                                        placeholder="Mobile Number" value="{{ old ('pat_mobile')}}">
-                                        <span class="text-danger">@error('pat_mobile') {{ $message }} @enderror</span>
-                                </div>
-                                <div class="form-group">
-                                    <input type="login_username" name="login_username" class="form-control form-control-user" id="login_username"
-                                        placeholder="Username" value="{{ old ('login_username')}}">
-                                        <span class="text-danger">@error('login_username') {{ $message }} @enderror</span>
-=======
                                         placeholder="Email Address">
                                         @if($errors->has('pat_email')) <p>{{$errors->first('pat_email')}}</p>@endif
                                 </div>
@@ -113,7 +81,6 @@
                                     <input type="pat_mobile" name="pat_mobile" class="form-control form-control-user" id="pat_mobile"
                                         placeholder="Mobile Number">
                                         @if($errors->has('pat_mobile')) <p>{{$errors->first('pat_mobile')}}</p>@endif
->>>>>>> 1bebff9aa97eebb4e4280f759c3760d85a20df71
                                 </div>
                                 <div class="form-group">
                                     <input type="login_username" name="login_username" class="form-control form-control-user" id="login_username"
@@ -125,12 +92,7 @@
                                     
                                         <input type="password" name="login_password" class="form-control form-control-user"
                                             id="login_password" placeholder="Password">
-<<<<<<< HEAD
                                             <span class="text-danger">@error('login_password') {{ $message }} @enderror</span>
-=======
-                                            @if($errors->has('login_password')) <p>{{$errors->first('login_password')}}</p>@endif
-                                            
->>>>>>> 1bebff9aa97eebb4e4280f759c3760d85a20df71
                            
                                 </div>
                                 <div class="row form-group">
