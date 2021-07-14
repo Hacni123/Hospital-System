@@ -53,5 +53,7 @@ Route::get('/bookbeds','AdminController@bookbeds');
 Route::get('/bookamb','AdminController@bookambulance');
 Route::get('/atest','AdminController@test');
 Route::get('/ares','AdminController@testresults');
+Route::get('/hosreg','AdminController@hospitalregisterview');
+Route::post('/hosreg','AdminController@hospitalregister');
 
-Route::get('/check','AdminController@check');
+Route::get('/check','AdminController@hosregmail');

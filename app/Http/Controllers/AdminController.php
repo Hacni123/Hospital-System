@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use DB;
+//use Mail;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 use App\Models\Patient;
 use App\Models\Admin;
 
@@ -70,7 +73,29 @@ class AdminController extends Controller
         return view('Admin.aresults');
     }
 
+    public function hospitalregisterview()
+    {
+        return view('Admin.hosreg');
+    }
+
+    public function hospitalregister()
+    {
+        //return view('Admin.hosreg');
+        $data = request(['hosemail','hosuname','password']);
+        //return $data;
+        //\Illuminame\Support\Facades\
+        Mail::to('hasaraismini@gmail.com')
+            ->send(new \App\Mail\hosreg($data));
+
+        return redirect('hosreg')->with('flash'.'Massege sent successfully...');
+    }
+
+    public function hosregmail()
+    {
+        return view('Admin.hosregmail');
+    }
     
+
     public function check()
     {  
     }

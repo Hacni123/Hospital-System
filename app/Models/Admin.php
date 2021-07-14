@@ -18,6 +18,7 @@ class Admin extends Model
         'admin_email',
         'admin_address',
         'login_id'
+        
 
     ];
 
