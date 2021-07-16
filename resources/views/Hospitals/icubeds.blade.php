@@ -34,7 +34,7 @@
                                     <strong>ICU Beds</strong>
                                     
                                 </div>
-                                <form action="{{ route('updateicub.update') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
                                 @csrf
                                 <div class="card-body">
                                 <table class="table table-striped">
@@ -44,10 +44,10 @@
                                    @foreach( $icu_beds as $bed )
                                 <td>
                                 @if($bed->status=="Availabe")
-                                            <th> <button type="submit" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></th>
+                                            <th> <button type="submit" class="btn btn-success btn-lg" style="width:200px; height:50;">Ward: {{$bed->ward_no}}, Bed No: {{$bed->id}}</button></th>
                                             
                                             @else
-                                            <th><button type="button" class="btn btn-danger btn-lg" style="width:200px; height:50;">N/A</button></th>
+                                            <th><button type="button" class="btn btn-danger btn-lg" style="width:200px; height:50;">Ward: {{$bed->ward_no}}, Bed No: {{$bed->id}}</button></th>
                                             @endif
                                 </td>
                                   @endforeach
