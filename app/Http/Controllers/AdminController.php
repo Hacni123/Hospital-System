@@ -48,7 +48,7 @@ class AdminController extends Controller
     
     public function avaambulance()
     {
-        $ambulances = DB::table('ambulances')->get();
+       // $ambulances = DB::table('ambulances')->get();
         return view('Admin.aambulance',compact('ambulances'));
     }
 
