@@ -47,27 +47,32 @@
                                         
                                             <tr>
                                                 <th>Name</th>
-                                                <td></td>
+                                                <td>{{ $LoggedUserInfo->pat_name }}</td>
 
                                             </tr>
                                             <tr>
                                                 <th>Email</th>
-                                                <td></td>
+                                                <td>{{ $LoggedUserInfo->pat_email }}</td>
 
                                             </tr>
                                             <tr>
                                                 <th>Address</th>
-                                                <td></td>
+                                                <td>{{ $LoggedUserInfo->pat_address }}</td>
 
                                             </tr>
                                             <tr>
                                                 <th>NIC Number</th>
-                                                <td></td>
+                                                <td>{{ $LoggedUserInfo->pat_id }}</td>
 
                                             </tr>
                                             <tr>
                                                 <th>Mobile Number</th>
-                                                <td></td>
+                                                <td>{{ $LoggedUserInfo->pat_mobile }}</td>
+
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td><a href="logout">Logout</a></td>
 
                                             </tr>
 

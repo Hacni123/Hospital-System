@@ -37,14 +37,13 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{{url('icurequest')}}"> <i class="menu-icon ti-email"></i>ICU Beds requests </a>
+                        <a href="{{url('icurequest')}}"> <i class="menu-icon ti-email"></i>New ICU Beds requests </a>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Approved Requests</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>All ICU Bed Requests</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Peity Chart</a></li>
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{url('viewapprovedicurequest')}}">Approved Requests</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{url('notviewapprovedicurequest')}}">Not Approved Requests</a></li>
                         </ul>
                     </li>
 
@@ -55,21 +54,35 @@
                             <li><i class="menu-icon fa fa-street-view"></i><a href="{{url('allicubed')}}">All ICU Beds</a></li>
                         </ul>
                     </li>
+
                     <h3 class="menu-title">Ambulances</h3><!-- /.menu-title -->
+
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Available Ambulances</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Available Ambulances</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{url('ambulance')}}">Check Availability</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{url('ambulance')}}">Ambulances</a></li>
+        
                         </ul>
                     </li>
+                    <li>
+                        <a href="{{url('icurequest')}}"> <i class="menu-icon ti-email"></i>New Ambulances requests </a>
+                    </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Ambulances Requests</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>All Ambulances Requests</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{url('viewapprovedicurequest')}}">Approved Requests</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{url('notviewapprovedicurequest')}}">Not Approved Requests</a></li>
                         </ul>
                     </li>
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>All Details</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{url('addambulance')}}">Add New Ambulance</a></li>
+                            <li><i class="menu-icon fa fa-street-view"></i><a href="{{url('allambulance')}}">All Ambulances</a></li>
+                        </ul>
+                    </li>
+
                     <h3 class="menu-title">PCR Tests</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>PCR Requests</a>

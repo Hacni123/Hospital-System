@@ -30,10 +30,6 @@ Route::delete('delete/{id}', [HospitalController::class, 'destroypatient'])->nam
 
 //icu beds
 Route::get('/icubeds', [HospitalController::class, 'viewicubeds']);
-Route::get('/icurequest', [HospitalController::class, 'viewicurequest'])->name('icurequest.allicurequest');
-Route::get('/editicubrequest/{id}', [HospitalController::class, 'editicubrequest']);
-Route::post('/approveicurequest', [HospitalController::class, 'confirmicurequest'])->name('approveicurequest.update');
-Route::post('/notapproveicurequest', [HospitalController::class, 'rejecticubrequest'])->name('notapproveicurequest.update');
 Route::get('/allicubed', [HospitalController::class, 'allicubed'])->name('allicubed.allicubdetails');
 Route::get('/addicubed', [HospitalController::class, 'addicubed']);
 Route::post('/addicubed', [HospitalController::class, 'addicubedadd'])->name('addicubed.store');
@@ -41,8 +37,21 @@ Route::get('/editicub/{id}', [HospitalController::class, 'editicub']);
 Route::post('updateicub', [HospitalController::class, 'updateicubeds'])->name('updateicub.update');
 Route::delete('deleteicub/{id}', [HospitalController::class, 'destroyicub'])->name('delete.destroyb');
 
+Route::get('/icurequest', [HospitalController::class, 'viewicurequest'])->name('icurequest.allicurequest');
+Route::get('/viewapprovedicurequest', [HospitalController::class, 'viewapprovedicurequest']);
+Route::get('/notviewapprovedicurequest', [HospitalController::class, 'notviewapprovedicurequest']);
+Route::get('/editicubrequest/{id}', [HospitalController::class, 'editicubrequest']);
+Route::post('/approveicurequest', [HospitalController::class, 'confirmicurequest'])->name('approveicurequest.update');
+Route::post('/notapproveicurequest', [HospitalController::class, 'rejecticubrequest'])->name('notapproveicurequest.update');
+
 //ambulances
 Route::get('/ambulance', [HospitalController::class, 'viewambulance']);
+Route::get('/allambulance', [HospitalController::class, 'allambulance'])->name('allambulance.allambdetails');
+Route::get('/addambulance', [HospitalController::class, 'addambulance']);
+Route::post('/addambulance', [HospitalController::class, 'addambulancenew'])->name('addambulance.store');
+Route::get('/editambulance/{id}', [HospitalController::class, 'editambulances']);
+Route::post('updateambulance', [HospitalController::class, 'updateambulances'])->name('updateambulance.update');
+Route::delete('deleteambulance/{id}', [HospitalController::class, 'destroyambulance'])->name('deleteambulance.destroyamb');
 
 //pcr tests
 Route::get('/pcrrequest', [HospitalController::class, 'viewpcrrequest'])->name('pcrrequest.allpcrrequest');
