@@ -58,9 +58,10 @@
                                             <td>{{ $patient->pat_mobile }}</td>
                                             <td>{{ $patient->pat_id }}</td>
                                             <td>
-                                            <form action="{{ route('notapproveicurequest.update',$patient->id) }}"  method="POST">
+                                            <form action="{{ route('notapproveicurequest.update') }}"  method="POST">
                                                <a class="btn btn-primary" href="editicubrequest/{{$patient->id}}">Approve</a>
                                                 @csrf
+                                                <input type="hidden" name="bid" value="{{$patient->id}}">
                                                <button type="submit" class="btn btn-danger">Delete</button>
                                            </form>
                                             </td>
@@ -79,7 +80,7 @@
     </div><!-- /#right-panel -->
     <!-- Right Panel -->
     @else
-        <div class="alert alert-alert">Start Adding to the Database.</div>
+        <div class="alert alert-alert">New Icu Bed Requests are not available.</div>
     @endif
 
     @endsection

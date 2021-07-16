@@ -69,8 +69,9 @@
                                                                 <div class="card-body">
 
                                                                   <select name="action" data-placeholder="Choose a action" class="standardSelect" tabindex="1">
-                                                                  <option value="Pending">Pending </option>
-                                                                  <option value="Confirmed">Confirmed</option>
+                                                                  <option value="pending">Pending </option>
+                                                                  <option value="confirmed">Confirmed</option>
+                                                                  <option value="not confirmed">Not Confirmed</option>
                                     
                                                                    </select>
                                                                    </div>
