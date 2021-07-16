@@ -75,7 +75,11 @@ Route::get('/check','AdminController@check');
 
 
 
-Route::get('/', function () {
+
+
+
+
+Route::get('/home', function () {
    return view('Patients.home');
 });
 Route::get('/login', function () {
@@ -94,11 +98,11 @@ Route::post('post-registration', [PatientController::class, 'postRegistration'])
 Route::post('check','PatientController@check')->name('login.post');
 Route::get('profile','PatientController@profile');
 
-Route::get('/','patientController@index');
-Route::get('/icubeds',[patientController::class, 'bookingicubeds']);
-Route::get('/ambulance',[patientController::class, 'bookingambulance']);
-Route::get('/pcrtest',[patientController::class, 'bookingpcrtest']);
-Route::get('/icubedsavail',[patientController::class, 'availicubeds']);
-Route::get('/ambulanceavail',[patientController::class, 'availambulance']);
-Route::get('/pcrtestavail',[patientController::class, 'availpcrtest']);
-Route::get('/doctorsdetails',[patientController::class, 'doctorsdetails']);
+Route::get('/',[PatientController::class, 'index']);
+Route::get('/icubedsP',[PatientController::class, 'bookingicubeds']);
+Route::get('/ambulanceP',[PatientController::class, 'bookingambulance']);
+Route::get('/pcrtestP',[PatientController::class, 'bookingpcrtest']);
+Route::get('/icubedsavail',[PatientController::class, 'availicubeds']);
+Route::get('/ambulanceavail',[PatientController::class, 'availambulance']);
+Route::get('/pcrtestavail',[PatientController::class, 'availpcrtest']);
+Route::get('/doctorsdetails',[PatientController::class, 'doctorsdetails']);

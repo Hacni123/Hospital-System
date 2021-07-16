@@ -194,55 +194,36 @@
   </head>
   <body>
     <div class="testbox">
-      <form action="/index" method="GET">
+      <form action="/">
         <div class="banner">
-          <h1>Ambulance Service Booking</h1>
+          <h1>Ambulance Booking</h1>
         </div>
         <br/>
         <fieldset>
           <legend>Patient Information</legend>
           <div class="item">
-            <label for="fname"> First Name<span>*</span></label>
-            <input id="fname" type="text" name="fname" required/>
+            <label for="fname"> Patient ID<span>*</span></label>
+            <input id="pid" type="text" name="pid" required/>
           </div>
           <div class="item">
-            <label for="lname"> Last Name<span>*</span></label>
-            <input id="lname" type="text" name="lname" required/>
+            <label for="fname"> Patient Name<span>*</span></label>
+            <input id="pname" type="text" name="pname" required/>
           </div>
           <div class="item">
-            <label for="initial">Middle Initial<span>*</span></label>
-            <input id="initial" type="text" name="initial" required/>
+            <label for="lname">Email<span>*</span></label>
+            <input id="email" type="text" name="email" required/>
           </div>
           <div class="item">
-            <label for="phone">Mobile Phone<span>*</span></label>
-            <input id="phone" type="number"   name="phone" required/>
+            <label for="initial">Home Address<span>*</span></label>
+            <input id="address" type="text" name="address" required/>
           </div>
-          <div class="item">
-            <label for="phone">Home<span>*</span></label>
-            <input id="phone" type="number"   name="phone" required/>
-          </div>
-          <div class="item">
-            <label for="bdate">Birth Date <span>*</span></label>
-            <input id="bdate" type="date" name="bdate" required/>
-            <i class="fas fa-calendar-alt"></i>
-          </div>
-          <div class="question">
-            <label>Is this your first visit to our Hospital?</label>
-            <div class="question-answer">
-              <div>
-                <input type="radio" value="none" id="radio_1" name="visit"/>
-                <label for="radio_1" class="radio"><span>Yes</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_2" name="visit"/>
-                <label for="radio_2" class="radio"><span>No</span></label>
-              </div>
-            </div>
+          
           </div>
         </fieldset>
         <br/>
         <fieldset>
           <legend>Appointment Information</legend>
+         
           <div class="item">
             <label for="date">Date<span>*</span></label>
             <input id="date" type="date" name="date" required/>
@@ -257,31 +238,16 @@
               <option value="e">Evening</option>
             </select>
           </div>
-          <div class="question">
-            <label>Distance from the home</label>
-            <div class="question-answer">
-              <div>
-                <input type="radio" value="none" id="radio_3" name="distance"/>
-                <label for="radio_3" class="radio"><span>less than 5km</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_4" name="distance"/>
-                <label for="radio_4" class="radio"><span>less than 15km</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_5" name="distance"/>
-                <label for="radio_5" class="radio"><span>less than 25km</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_6" name="distance"/>
-                <label for="radio_6" class="radio"><span>greater than 50km</span></label>
-              </div>
-            </div>
+
+          <div class="item">
+            <label for="instructions">Please describe the reason for this visit </label>
+            <textarea id="reason" rows="3"></textarea>
           </div>
           <div class="item">
-            <label for="instructions">Please describe the reason for your request </label>
-            <textarea id="instructions" rows="3"></textarea>
+            <label for="instructions">Action</label>
+            <textarea id="action" rows="3"></textarea>
           </div>
+
         </fieldset>
         <div class="btn-block">
           <button type="submit" href="/">Submit</button>

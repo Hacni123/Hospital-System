@@ -18,12 +18,7 @@ use Hash;
 
 class PatientController extends Controller
 {
-
-    //
-    public function index()
-    {
-        return view('Patients.index1');
-    }
+    
     protected $patients, $login; 
     public function patient_login(){
         $this->patients = new Patients();
@@ -105,7 +100,10 @@ class PatientController extends Controller
             return view('Patients.profile',$data);
         
     }
-  
+    public function index()
+    {
+        return view('Patients.index1');
+    }
     public function bookingicubeds()
     {
         return view('Patients.icubeds');
@@ -134,10 +132,6 @@ class PatientController extends Controller
     {
         return view('Patients.doctorsdetails');
     }
-  
-           
-       
-
 
     }
 ?>

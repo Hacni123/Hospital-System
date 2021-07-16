@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Material Dash</title>
+  <title>Life Care</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
@@ -24,19 +24,19 @@
     <!-- partial:partials/_sidebar.html -->
     <aside class="mdc-drawer mdc-drawer--dismissible mdc-drawer--open">
       <div class="mdc-drawer__header">
-        <a href="index.html" class="brand-logo">
-          <img src="../assets/images/logo.svg" alt="logo">
+        <a href="{{url('')}}" class="brand-logo">
+          <img src="../assets/images/icon-logo.png" alt="logo">
         </a>
       </div>
       <div class="mdc-drawer__content">
         <div class="user-info">
-          <p class="name">Life Care</p>
+          <p class="name" style="font-size: 22px">Life Care</p>
           <p class="email">info@Lifecare.com</p>
         </div>
         <div class="mdc-list-group">
           <nav class="mdc-list mdc-drawer-menu">
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="{{url('index')}}">
+              <a class="mdc-drawer-link" href="{{url('')}}">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i>
                 Dashboard
               </a>
@@ -82,17 +82,17 @@
               <div class="mdc-expansion-panel" id="ui-sub-menu">
                 <nav class="mdc-list mdc-drawer-submenu">
                   <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link"  href="{{url('icubeds')}}">
+                    <a class="mdc-drawer-link"  href="{{url('icubedsP')}}">
                      ICU Beds
                     </a>
                   </div>
                   <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link"  href="{{url('ambulance')}}">
+                    <a class="mdc-drawer-link"  href="{{url('ambulanceP')}}">
                      Ambulance Services
                     </a>
                   </div>
                   <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link"  href="{{url('pcrtest')}}">
+                    <a class="mdc-drawer-link"  href="{{url('pcrtestP')}}">
                      PCR Test
                     </a>
                   </div>
@@ -335,11 +335,10 @@
               <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet">
                 <div class="mdc-card info-card info-card--success">
                   <div class="card-inner">
-                    <h5 class="card-title">Borrowed</h5>
-                    <h5 class="font-weight-light pb-2 mb-1 border-bottom">$62,0076.00</h5>
-                    <p class="tx-12 text-muted">48% target reached</p>
+                    <h5 class="card-title">Total confirmed cases</h5>
+                    <h5 class="font-weight-light pb-2 mb-1 border-bottom">282,060</h5>
                     <div class="card-icon-wrapper">
-                      <i class="material-icons">dvr</i>
+                      <i class="fas fa-hospital-alt"></i>
                     </div>
                   </div>
                 </div>
@@ -347,11 +346,10 @@
               <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet">
                 <div class="mdc-card info-card info-card--danger">
                   <div class="card-inner">
-                    <h5 class="card-title">Annual Profit</h5>
-                    <h5 class="font-weight-light pb-2 mb-1 border-bottom">$1,958,104.00</h5>
-                    <p class="tx-12 text-muted">55% target reached</p>
+                    <h5 class="card-title">Active cases</h5>
+                    <h5 class="font-weight-light pb-2 mb-1 border-bottom">23,528</h5>
                     <div class="card-icon-wrapper">
-                      <i class="material-icons">attach_money</i>
+                      <i class="fas fa-hospital-user"></i>
                     </div>
                   </div>
                 </div>
@@ -359,11 +357,10 @@
               <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet">
                 <div class="mdc-card info-card info-card--primary">
                   <div class="card-inner">
-                    <h5 class="card-title">Lead Conversion</h5>
-                    <h5 class="font-weight-light pb-2 mb-1 border-bottom">$234,769.00</h5>
-                    <p class="tx-12 text-muted">87% target reached</p>
+                    <h5 class="card-title">Daily New Cases</h5>
+                    <h5 class="font-weight-light pb-2 mb-1 border-bottom">1,517</h5>
                     <div class="card-icon-wrapper">
-                      <i class="material-icons">trending_up</i>
+                      <i class="far fa-hand-holding-medical"></i>
                     </div>
                   </div>
                 </div>
@@ -371,11 +368,10 @@
               <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet">
                 <div class="mdc-card info-card info-card--info">
                   <div class="card-inner">
-                    <h5 class="card-title">Average Income</h5>
-                    <h5 class="font-weight-light pb-2 mb-1 border-bottom">$1,200.00</h5>
-                    <p class="tx-12 text-muted">87% target reached</p>
+                    <h5 class="card-title">Recovered</h5>
+                    <h5 class="font-weight-light pb-2 mb-1 border-bottom">254,871</h5>
                     <div class="card-icon-wrapper">
-                      <i class="material-icons">credit_card</i>
+                      <i class=""></i>
                     </div>
                   </div>
                 </div>
@@ -383,7 +379,7 @@
               <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
                 <div class="mdc-card">
                   <div class="d-flex justify-content-between">
-                    <h4 class="card-title mb-0">Revenue by location</h4>
+                    <h4 class="card-title mb-0">Active Cases by location</h4>
                     <div>
                         <i class="material-icons refresh-icon">refresh</i>
                         <i class="material-icons options-icon ml-2">more_vert</i>

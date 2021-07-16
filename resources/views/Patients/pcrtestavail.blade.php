@@ -34,7 +34,7 @@
         <div class="mdc-list-group">
           <nav class="mdc-list mdc-drawer-menu">
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="{{url('index')}}">
+              <a class="mdc-drawer-link" href="{{url('')}}">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i>
                 Dashboard
               </a>
@@ -80,17 +80,17 @@
               <div class="mdc-expansion-panel" id="ui-sub-menu">
                 <nav class="mdc-list mdc-drawer-submenu">
                   <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link" href="{{url('icubeds')}}">
+                    <a class="mdc-drawer-link" href="{{url('icubedsP')}}">
                       ICU Beds
                     </a>
                   </div>
                   <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link" href="{{url('ambulance')}}">
+                    <a class="mdc-drawer-link" href="{{url('ambulanceP')}}">
                       Ambulance Services
                     </a>
                   </div>
                   <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link" href="{{url('pcrtest')}}">
+                    <a class="mdc-drawer-link" href="{{url('pcrtestP')}}">
                       PCR Test
                     </a>
                   </div>
