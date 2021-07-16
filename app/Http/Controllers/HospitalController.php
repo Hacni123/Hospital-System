@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Patient;
 use App\Models\Hospital;
 use App\Models\Icubed;
+use App\Models\Pcrtest;
 use App\Models\Icubrequest;
 use Illuminate\Support\Facades\DB;
 
