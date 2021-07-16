@@ -64,6 +64,12 @@
                                     @foreach($showbeds as $beds)
                                     <tbody>
                                         <tr class="tr-shadow">
+                                            <td>
+                                                <label class="au-checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="au-checkmark"></span>
+                                                </label>
+                                            </td>
                                             <td>{{ $beds->id }}</td>
                                             <td>{{ $beds->ward_no }}</td>
                                             <td>{{ $beds->status }}</td>

@@ -1,4 +1,4 @@
-@extends('Admin.main');
+@extends('Admin.main')
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->

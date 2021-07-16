@@ -48,7 +48,8 @@ class PatientController extends Controller
             'login_username' => 'required',
             'login_password' => 'required|min:5|max:8',
         ]);
-           
+          
+        
         $user = Login::create([
             'login_username'=>$request->input('login_username'),
             'login_password'=>Hash::make($request->input('login_password')),
