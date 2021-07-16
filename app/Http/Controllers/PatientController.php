@@ -22,7 +22,7 @@ class PatientController extends Controller
     //
     public function index()
     {
-        return view('Patients.home');
+        return view('Patients.index1');
     }
     protected $patients, $login; 
     public function patient_login(){
@@ -113,7 +113,34 @@ class PatientController extends Controller
         }
     }
   
-
+    public function bookingicubeds()
+    {
+        return view('Patients.icubeds');
+    }
+    public function bookingambulance()
+    {
+        return view('Patients.ambulance');
+    }
+    public function bookingpcrtest()
+    {
+        return view('Patients.pcrtest');
+    }
+    public function availicubeds()
+    {
+        return view('Patients.icubedsavail');
+    }
+    public function availambulance()
+    {
+        return view('Patients.ambulanceavail');
+    }
+    public function availpcrtest()
+    {
+        return view('Patients.pcrtestavail');
+    }
+    public function doctorsdetails()
+    {
+        return view('Patients.doctorsdetails');
+    }
   
            
        

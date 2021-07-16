@@ -77,3 +77,11 @@ Route::post('post-registration', [PatientController::class, 'postRegistration'])
 Route::post('check','PatientController@check')->name('login.post');
 Route::get('profile','PatientController@profile');
 
+Route::get('/','patientController@index');
+Route::get('/icubeds',[patientController::class, 'bookingicubeds']);
+Route::get('/ambulance',[patientController::class, 'bookingambulance']);
+Route::get('/pcrtest',[patientController::class, 'bookingpcrtest']);
+Route::get('/icubedsavail',[patientController::class, 'availicubeds']);
+Route::get('/ambulanceavail',[patientController::class, 'availambulance']);
+Route::get('/pcrtestavail',[patientController::class, 'availpcrtest']);
+Route::get('/doctorsdetails',[patientController::class, 'doctorsdetails']);
