@@ -54,13 +54,13 @@ class AdminController extends Controller
 
     public function bookbeds()
     {
-        $bookbeds = DB::table('icubrequests')->get();
+       // $bookbeds = DB::table('icubrequests')->get();
         return view('Admin.reqbed',compact('bookbeds'));
     }
 
     public function bookambulance()
     {
-        $bookamb = DB::table('ambulancerequests')->get();
+        //$bookamb = DB::table('ambulancerequests')->get();
         return view('Admin.reqamb',compact('bookamb'));
     }
     
