@@ -2,7 +2,11 @@
 
 @section('content')
 
-<div class="breadcrumbs">
+    <div id="right-panel" class="right-panel">
+
+        
+
+        <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
@@ -15,8 +19,8 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Table</a></li>
-                            <li class="active">All ICU Bed Requests</li>
+                            <li><a href="#">Forms</a></li>
+                            <li class="active">Confirm ICU Bed Request</li>
                         </ol>
                     </div>
                 </div>
@@ -25,57 +29,86 @@
 
         <div class="content mt-3">
             <div class="animated fadeIn">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">New ICU Requests</strong>
-                            </div>
-                            
-                            <div class="card-body">
-                            
-                                <table class="table table-striped">
-                                @if(sizeof($patients) > 0)
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Patient ID</th>
-                                            <th scope="col">Patient Name</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Address</th>
-                                            <th scope="col">Contact No</th>
-                                            <th scope="col">National ID</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                    @foreach ($patients as $patient)
-                                    <tbody>
-                                        <tr>
-                                            <td>{{ ++$i }}</td>
-                                            <td>{{ $patient->pat_name }}</td>
-                                            <td>{{ $patient->pat_email }}</td>
-                                            <td>{{ $patient->pat_address }}</td>
-                                            <td>{{ $patient->pat_mobile }}</td>
-                                            <td>{{ $patient->pat_id }}</td>
-                                        </tr>
-                                        
-                                    </tbody>
-                                    @endforeach
-                                </table>
-                                {{-- Pagination --}}
-                                <div class="d-flex justify-content-center">
-                                  {{$patients->links("pagination::bootstrap-4")}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- .animated --> 
-        </div><!-- .content -->
-    </div><!-- /#right-panel -->
-    <!-- Right Panel -->
-    @else
-        <div class="alert alert-alert">Start Adding to the Database.</div>
-    @endif
 
-    @endsection
-    
+
+               
+
+                    <div class="col-lg-12">
+                        
+
+                                            <div class="col-lg-12">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <strong>Confirm ICU Bed</strong> Requests
+                                                    </div>
+                                                    @if ($errors->any())
+                                                    <div class="alert alert-danger">
+                                                    <strong>Error!</strong> 
+                                                    <ul>
+                                                     @foreach ($errors->all() as $error)
+                                                   <li></li>
+                                                    @endforeach
+                                                   </ul>
+                                                      </div>
+                                                   @endif
+                                                   
+                                                    <div class="card-body card-block">
+                                                        <form action="{{ route('approveicurequest.update') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                                        @csrf
+                                                        <input type="hidden" name="icuid" value="{{$Info->id}}">
+                                                            <div class="row form-group">
+                                                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Patient ID</label></div>
+                                                                <div class="col-12 col-md-9"><input type="text" id="pat_name" name="pat_name"  class="form-control" value="{{$Info->patient_id}}" disabled></div>
+                                                            </div>
+                                                            <div class="row form-group">
+                                                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Reason</label></div>
+                                                                <div class="col-12 col-md-9"><input type="text" id="pat_address" name="pat_address"  class="form-control" value="{{$Info->reason}}" disabled></div>
+                                                            </div>
+                                                            <div class="row form-group">
+                                                                <div class="col col-md-3"><label for="text-input" id="action" name="action" class=" form-control-label" value="{{$Info->action}}">Status</label></div>
+                                                                <div class="card-body">
+
+                                                                  <select name="action" data-placeholder="Choose a action" class="standardSelect" tabindex="1">
+                                                                  <option value="Pending">Pending </option>
+                                                                  <option value="Confirmed">Confirmed</option>
+                                    
+                                                                   </select>
+                                                                   </div>
+                                                            </div>
+                                                            <div class="row form-group">
+                                                                <div class="col col-md-3"><label for="text-input" id="icubed_id" name="icubed_id" class=" form-control-label" >ICU Bed No</label></div>
+                                                                <div class="card-body">
+
+                                                                <select name="icubed_id" data-placeholder="Choose a action" class="standardSelect" tabindex="1">
+                                                                  @foreach($icubeds1 as $icubed)
+                                                                   <option value="{{$icubed->id}}">{{$icubed->id}}</option>
+                                                                 @endForeach
+                                    
+                                                                   </select>
+                                                                   </div>
+                                                            </div>
+                                                           </div>
+                                                            </div>
+                                                           </div>
+                                                           
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <button type="submit" class="btn btn-primary btn-sm">
+                                                            <i class="fa fa-dot-circle-o"></i> Update
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+
+                                            <div class="col-lg-6">         
+                                               
+                                        </div><!-- .animated -->
+                                    </div><!-- .content -->
+                                </div><!-- /#right-panel -->
+                                <!-- Right Panel -->
+
+
+                           
+
+
+@endsection

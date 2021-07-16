@@ -11,7 +11,7 @@ class Icubrequest extends Model
 {
     use HasFactory;
 
-    protected $table = "icubedrequests";
+    protected $table = "icubrequests";
 
     public $fillable = [
         'reason',

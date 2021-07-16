@@ -1,1 +1,1 @@
-@extends('layouts.mainhos')
+<@extends('layouts.mainhos')

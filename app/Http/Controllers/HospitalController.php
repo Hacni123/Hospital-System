@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Patient;
 use App\Models\Hospital;
 use App\Models\Icubed;
+use App\Models\Icubrequest;
 use Illuminate\Support\Facades\DB;
 
 class HospitalController extends Controller
@@ -14,6 +15,8 @@ class HospitalController extends Controller
     {
         return view('Hospitals.index');
     }
+
+    //patient functions
 
     public function createnewpatient()
     {
@@ -25,8 +28,6 @@ class HospitalController extends Controller
         $patients = Patient::latest()->paginate(5);
         return view('Hospitals.allp',compact('patients'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
-
-   
 
     public function storepatient(Request $request)
     {
@@ -82,27 +83,74 @@ class HospitalController extends Controller
     return redirect()->route('allpatients.allpatientdetails')->with('success','Updated Successfully.');
     }
 
+      //ICU beds functions
     public function viewicubeds()
     {
-        return view('Hospitals.icubeds');
-    }
-
-    public function viewambulance()
-    {
-        return view('Hospitals.ambulance');
+        $hospitals = Hospital::find(1);
+        $icubeds = $hospitals->icubeds;
+        return view('Hospitals.icubeds',compact('icubeds'));
+        
     }
 
     public function viewicurequest()
     {
-        $patients = Patient::latest()->paginate(5);
-        return view('Hospitals.icubedrequestapprove',compact('patients'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $data = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
+                    ->where('hospitals.id', 1)
+              		->join('icubrequests', 'icubrequests.patient_id', '=', 'patients.id')
+              		->get(['icubrequests.id', 'patients.pat_name', 'icubrequests.reason','patients.pat_address','patients.pat_mobile','patients.pat_id']);
+        return view('Hospitals.icubedrequest',compact('data'));
     }
 
-    public function approveicurequest()
+    //public function approveicurequest()
+    //{
+        //$patients = Patient::latest()->paginate(5);
+        //return view('Hospitals.icubedrequest',compact('patients'))->with('i', (request()->input('page', 1) - 1) * 5);
+   // }
+
+    public function editicubrequest($id)
     {
-        $patients = Patient::latest()->paginate(5);
-        return view('Hospitals.icubedrequest',compact('patients'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $icubeds1 = DB::table('icubeds')
+                    ->where('hospital_id', '=', 1)
+                    ->Where('status', 'Availabe')
+                    ->get();
+        $row = DB::table('icubrequests')
+                ->where('id', $id)
+                ->first();
+        $icubeds = [
+            'Info'=>$row
+        ];
+        return view('Hospitals.icubedrequestapprove',$icubeds,compact('icubeds1'));
     }
+
+    public function confirmicurequest(Request $request)
+    {
+        $request->validate([
+            'action' => 'required',
+            'icubed_id' => 'required',
+        ]);
+
+        $udpating = DB::table('icubrequests')
+                     ->where('id', $request->input('icuid'))
+                     ->update([
+                          'action'=>$request->input('action'),
+                          'icubed_id'=>$request->input('icubed_id')
+                     ]);
+
+        $udpating = DB::table('icubeds')
+                     ->where('id', $request->input('icubed_id'))
+                     ->update(array('status' => 'Not Availabe'));
+            return redirect()->route('icurequest.allicurequest')->with('success','Updated Successfully.');
+    }
+     
+    public function rejecticubrequest($id) {
+        $udpating = DB::table('icubrequests')
+        ->where('id', $id)
+        ->update([
+             'action'=>"rejected"
+        ]);
+        return redirect()->route('allicubed.allicubdetails')->with('success','Updated Successfully.');
+        }
+
 
     public function allicubed()
     {
@@ -160,4 +208,62 @@ class HospitalController extends Controller
         DB::delete('delete from icubeds where id = ?',[$id]);
         return redirect()->route('allicubed.allicubdetails')->with('success','Updated Successfully.');
         }
+
+//pcr tests functions
+
+public function viewallpcrrequest()
+    {
+        $data = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
+                    ->where('hospitals.id', 1)
+              		->join('pcrtests', 'pcrtests.patient_id', '=', 'patients.id')
+                    ->where('pcrtests.status_hos', 'Approved')
+              		->get(['pcrtests.id', 'patients.id', 'patients.pat_name', 'pcrtests.result','patients.pat_address','patients.pat_mobile','pcrtests.date','pcrtests.time','pcrtests.status_pat']);
+        return view('Hospitals.allpcrrequests',compact('data'));
+    }
+
+public function viewpcrrequest()
+    {
+        $data = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
+                    ->where('hospitals.id', 1)
+              		->join('pcrtests', 'pcrtests.patient_id', '=', 'patients.id')
+              		->get(['pcrtests.id', 'patients.id', 'patients.pat_name', 'pcrtests.result','patients.pat_address','patients.pat_mobile','patients.pat_id']);
+        return view('Hospitals.pcrtest',compact('data'));
+    }
+
+    public function editpcrrequest($id)
+    {
+        $row = DB::table('pcrtests')
+                ->where('id', $id)
+                ->first();
+        $icubeds = [
+            'Info'=>$row
+        ];
+        return view('Hospitals.pcrrequestapprove',$icubeds);
+    }
+
+    public function updatepcrrequest(Request $request)
+    {
+        $request->validate([
+            'date' => 'required',
+            'time' => 'required',
+        ]);
+
+        $udpating = DB::table('pcrtests')
+                     ->where('id', $request->input('pcrid'))
+                     ->update([
+                          'date'=>$request->input('date'),
+                          'time'=>$request->input('time')
+                     ]);
+
+        $udpating = DB::table('pcrtests')
+                     ->where('id', $request->input('pcrid'))
+                     ->update(array('status_hos' => 'Approved'));
+        return redirect()->route('pcrrequest.allpcrrequest')->with('success','Updated Successfully.');
+    }
+
+// ambulances functions
+        public function viewambulance()
+    {
+        return view('Hospitals.ambulance');
+    }
 }

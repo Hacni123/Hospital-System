@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple registration form</title>
+    <title></title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <style>
@@ -132,7 +132,7 @@
   </head>
   <body>
     <div class="main-block">
-      <h1>Registration</h1>
+      <h3>Welcome !!!</h3>
       <form action="/">
         <hr>
         <div class="account-type">
@@ -143,7 +143,7 @@
     <p> 
         <label id="icon" for="name"><i class="fas fa-user"></i>  Your User Name</label>
         <br>
-        <label type="text" name="name" id="name"> {{ $dataRecieved['hosuname'] }} </label>
+        <label type="text" name="login_id" id="name"> {{ $dataRecieved['login_username'] }} </label>
     </p>
     
         <br>
@@ -151,11 +151,9 @@
     <p>
         <label id="icon" for="name"><i class="fas fa-unlock-alt"></i>  Your Password </label>
         <br>
-        <label type="password" name="password" id="pasword">{{ $dataRecieved['password'] }} </label>
+        <label type="password" name="password" id="pasword">{{ $dataRecieved['login_password'] }} </label>
     </p>
-        <p> <stong> NAMe : </strong>{{ $dataRecieved['password'] }} </p>
-        <hr>
-    
+      
       </form>
     </div>
   </body>

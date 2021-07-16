@@ -17,10 +17,10 @@ class CreatePcrresultsTable extends Migration
             $table->id();
             $table->date('date');
             $table->time('time');
-            $table->bigInteger('patient_id')->unsigned();
+            $table->string('status_hos');
+            $table->string('status_pat');
             $table->bigInteger('pcrtest_id')->unsigned();
             $table->timestamps();
-            $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->foreign('pcrtest_id')->references('id')->on('pcrtests')->onDelete('cascade');
         });
     }
