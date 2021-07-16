@@ -3,9 +3,6 @@
 @section('content')
 
     <div id="right-panel" class="right-panel">
-
-        
-
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -20,7 +17,7 @@
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
                             <li><a href="#">Forms</a></li>
-                            <li class="active">Confirm ICU Bed Request</li>
+                            <li class="active">Add New Ambulance</li>
                         </ol>
                     </div>
                 </div>
@@ -39,7 +36,7 @@
                                             <div class="col-lg-12">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <strong>Confirm ICU Bed</strong> Requests
+                                                        <strong>Add New</strong> Ambulance
                                                     </div>
                                                     @if ($errors->any())
                                                     <div class="alert alert-danger">
@@ -53,49 +50,41 @@
                                                    @endif
                                                    
                                                     <div class="card-body card-block">
-                                                        <form action="{{ route('approveicurequest.update') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                                        <form action="{{ route('addambulance.store') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                                                         @csrf
-                                                        <input type="hidden" name="icuid" value="{{$Info->id}}">
+            
                                                             <div class="row form-group">
-                                                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Patient ID</label></div>
-                                                                <div class="col-12 col-md-9"><input type="text" id="pat_name" name="pat_name"  class="form-control" value="{{$Info->patient_id}}" disabled></div>
-                                                            </div>
-                                                            <div class="row form-group">
-                                                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Reason</label></div>
-                                                                <div class="col-12 col-md-9"><input type="text" id="pat_address" name="pat_address"  class="form-control" value="{{$Info->reason}}" disabled></div>
-                                                            </div>
-                                                            <div class="row form-group">
-                                                                <div class="col col-md-3"><label for="text-input" id="action" name="action" class=" form-control-label" value="{{$Info->action}}">Status</label></div>
+                                                                <div class="col col-md-3"><label for="text-input" id="status" name="status" class=" form-control-label">Status</label></div>
                                                                 <div class="card-body">
 
-                                                                  <select name="action" data-placeholder="Choose a action" class="standardSelect" tabindex="1">
-                                                                  <option value="pending">Pending </option>
-                                                                  <option value="confirmed">Confirmed</option>
-                                                                  <option value="not confirmed">Not Confirmed</option>
-                                    
-                                                                   </select>
-                                                                   </div>
-                                                            </div>
-                                                            <div class="row form-group">
-                                                                <div class="col col-md-3"><label for="text-input" id="icubed_id" name="icubed_id" class=" form-control-label" >ICU Bed No</label></div>
-                                                                <div class="card-body">
-
-                                                                <select name="icubed_id" data-placeholder="Choose a action" class="standardSelect" tabindex="1">
-                                                                  @foreach($icubeds1 as $icubed)
-                                                                   <option value="{{$icubed->id}}">{{$icubed->id}}</option>
-                                                                 @endForeach
+                                                                  <select name="status" data-placeholder="Choose a Country..." class="standardSelect" tabindex="1">
+                                                                  <option value=""></option>
+                                                                  <option value="Availabe">Availabe</option>
+                                                                  <option value="Not Availabe">Not Availabe</option>
                                     
                                                                    </select>
                                                                    </div>
                                                             </div>
                                                            </div>
+                                                    <div class="row form-group">
+                                                                <div class="col col-md-3"><label for="text-input"  class=" form-control-label">Hospital</label></div>
+                                                                <div class="card-body">
+
+                                                                  <select name="hospital_id" data-placeholder="Choose a Hospital..." class="standardSelect" tabindex="1">
+                                                                  @foreach($hospitals as $hospital)
+                                                                  <option value="{{$hospital->id}}">{{$hospital->hos_name}}</option>
+                                                                 @endforeach
+                                    
+                                                                   </select>
+                                                                   </div>
                                                             </div>
-                                                           </div>
-                                                           
                                                     </div>
                                                     <div class="card-footer">
                                                         <button type="submit" class="btn btn-primary btn-sm">
-                                                            <i class="fa fa-dot-circle-o"></i> Update
+                                                            <i class="fa fa-dot-circle-o"></i> Save
+                                                        </button>
+                                                        <button type="reset" class="btn btn-danger btn-sm">
+                                                            <i class="fa fa-ban"></i> Reset
                                                         </button>
                                                     </div>
                                                 </div>
@@ -107,9 +96,5 @@
                                     </div><!-- .content -->
                                 </div><!-- /#right-panel -->
                                 <!-- Right Panel -->
-
-
-                           
-
 
 @endsection

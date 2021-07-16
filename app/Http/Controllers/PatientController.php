@@ -91,27 +91,19 @@ class PatientController extends Controller
        }
 
     }
-    function profile(Request $request){
-        {
-            $request->validate([
-                'pat_name' => 'required',
-                'pat_email' => 'required',
-                'pat_address' => 'required',
-                'pat_mobile' => 'required',
-                'pat_id' => 'required',
-            ]);
-    
-            $udpating = DB::table('patients')
-                         ->where('id', $request->input('pid'))
-                         ->update([
-                              'pat_name'=>$request->input('pat_name'),
-                              'pat_email'=>$request->input('pat_email'),
-                              'pat_address'=>$request->input('pat_address'),
-                              'pat_mobile'=>$request->input('pat_mobile'),
-                              'pat_id'=>$request->input('pat_id')
-                         ]);
-            return redirect()->route('profile')->with('success','Updated Successfully.');
+    function profile(){
+        if(session()->has('LoggedUser')){
+            $user = Login::where('id','=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo'=>$user
+
+            ];
+
         }
+        
+            
+            return view('Patients.profile',$data);
+        
     }
   
 

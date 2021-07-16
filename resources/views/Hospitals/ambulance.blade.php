@@ -14,7 +14,7 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Ambulance</a></li>
+                            <li><a href="#">Ambulances</a></li>
                         </ol>
                     </div>
                 </div>
@@ -31,37 +31,32 @@
                        
                                 <div class="card">
                                 <div class="card-header">
-                                    <strong>Ambulance Availability</strong>
+                                    <strong>Ambulances</strong>
                                     
                                 </div>
+                                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                @csrf
                                 <div class="card-body">
                                 <table class="table table-striped">
+                                <tbody>
+                                   @foreach($ambulances->chunk(3) as $ambulance)
+                                <tr>
+                                   @foreach( $ambulance as $amb )
+                                <td>
+                                @if($amb->status=="Availabe")
+                                            <th> <button type="submit" class="btn btn-success btn-lg" style="width:200px; height:50;">Ambulance No: {{$amb->id}}</button></th>
+                                            
+                                            @else
+                                            <th><button type="button" class="btn btn-danger btn-lg" style="width:200px; height:50;">Ambulance No: {{$amb->id}}</button></th>
+                                            @endif
+                                </td>
+                                  @endforeach
+                                  </tr>
+                                  @endforeach
                                     
-                                    <tbody>
-                                        <tr>
-                                            
-                                            <td> <button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                            <td> <button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                            <td><button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                            <td><button type="button" class="btn btn-danger btn-lg" style="width:200px; height:50;">N/A</button></td>
-                                        </tr>
-                                        <tr>
-                                            
-                                            <td> <button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                            <td> <button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                            <td> <button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                            <td><button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                        </tr>
-                                        <tr>
-                                            
-                                            <td><button type="button" class="btn btn-danger btn-lg" style="width:200px; height:50;">N/A</button></td>
-                                            <td> <button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                            <td> <button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                            <td><button type="button" class="btn btn-success btn-lg" style="width:200px; height:50;">Available</button></td>
-                                        </tr>
-                                    </tbody>
                                 </table>
                             </div>
+                            </form>
                                 </div><!-- /# card --> 
                                 
                             </div> <!-- .buttons -->

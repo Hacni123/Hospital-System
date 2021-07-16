@@ -15,13 +15,13 @@ class CreatePcrtestsTable extends Migration
     {
         Schema::create('pcrtests', function (Blueprint $table) {
             $table->id();
-            $table->string('result');
+            $table->string('result')->default('not yet');
             $table->bigInteger('hospital_id')->unsigned();
             $table->bigInteger('patient_id')->unsigned();
-            $table->date('date');
-            $table->time('time');
-            $table->string('status_hos');
-            $table->string('status_pat');
+            $table->date('date')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->time('time')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->string('status_hos')->default('pending');
+            $table->string('status_pat')->default('pending');
             $table->timestamps();
             $table->foreign('hospital_id')->references('id')->on('hospitals')->onDelete('cascade');
             $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
