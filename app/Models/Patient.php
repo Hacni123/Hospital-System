@@ -52,5 +52,7 @@ class Patient extends Model
     {
         return $this->belongsTo(Hospital::class);
     }
+
+    
  
 }

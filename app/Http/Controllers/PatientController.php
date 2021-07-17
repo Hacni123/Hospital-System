@@ -106,7 +106,8 @@ class PatientController extends Controller
     }
     public function bookingicubeds()
     {
-        return view('Patients.icubeds');
+        $icubeds = Patient::all();
+        return view('Patients.icubeds',compact('icubeds'));
     }
     public function bookingambulance()
     {

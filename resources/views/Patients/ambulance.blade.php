@@ -217,7 +217,10 @@
             <label for="initial">Home Address<span>*</span></label>
             <input id="address" type="text" name="address" required/>
           </div>
-          
+          <div class="item">
+            <label for="initial">Phone Number<span>*</span></label>
+            <input id="phone" type="number" name="phone" required/>
+          </div>
           </div>
         </fieldset>
         <br/>

@@ -200,25 +200,48 @@
         </div>
         <br/>
         <fieldset>
-          <legend>Patient Information</legend>
-          <div class="item">
-            <label for="fname"> Patient ID<span>*</span></label>
-            <input id="pid" type="text" name="pid" required/>
+          <legend>Patient Information:</legend>
+         @foreach ($icubeds as $icubed )
+         <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Fields</th>
+              <th scope="col">Details</th>   
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="col">Patient Name:</th>&emsp;
+              <th scope="col">{{ $icubed->pat_name }}</th>
+            </tr>
+            <tr>
+              <th scope="col">Patient E-mail:</th>&emsp;
+              <th scope="col">{{ $icubed->pat_email }}</td>
+            </tr>
+            <tr>
+              <th scope="col">Patient Address:</th>&emsp;
+              <th scope="col">{{ $icubed->pat_address }}</th>
+            </tr>
+            <tr>
+              <th scope="col">Patient ID:</th>&emsp;
+              <th scope="col">{{ $icubed->pat_id }}</th>
+            </tr>
+            <tr>
+              <th scope="col">Patient Mobile:</th>&emsp;
+              <th scope="col">{{ $icubed->pat_mobile }}</th>
+            </tr>
+            <tr>
+              <th scope="col">Login ID:</th>&emsp;
+              <th scope="col">{{ $icubed->login_id }}</th>
+            </tr>
+            <tr>
+              <th scope="col">Hospital ID:</th>&emsp;
+              <th scope="col">{{ $icubed->hospital_id}}</th>
+            </tr>
+          </tbody>
+        </table>
           </div>
-          <div class="item">
-            <label for="fname"> Patient Name<span>*</span></label>
-            <input id="pname" type="text" name="pname" required/>
-          </div>
-          <div class="item">
-            <label for="lname">Email<span>*</span></label>
-            <input id="email" type="text" name="email" required/>
-          </div>
-          <div class="item">
-            <label for="initial">Home Address<span>*</span></label>
-            <input id="address" type="text" name="address" required/>
-          </div>
-          
-          </div>
+          @endforeach
         </fieldset>
         <br/>
         <fieldset>
