@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HospitalController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,12 +15,6 @@ use App\Http\Controllers\PatientController;
 |
 */
 
-/*
-Route::get('/', function () {
-   return view('welcome');
-});
-//Main route
-Route::get('/', [HospitalController::class, 'index'])->name('dashboard.index');
 Route::get('/dashboard', [HospitalController::class, 'index'])->name('dashboard.index');
 //patient
 Route::get('/addnewpatient', [HospitalController::class, 'createnewpatient']);
@@ -50,7 +45,7 @@ Route::get('/pcrrequest', [HospitalController::class, 'viewpcrrequest'])->name('
 Route::get('/editpcrrequest/{id}', [HospitalController::class, 'editpcrrequest']);
 Route::post('/approvepcrrequest', [HospitalController::class, 'updatepcrrequest'])->name('approvepcrrequest.update');
 Route::get('/allpcrrequest', [HospitalController::class, 'viewallpcrrequest'])->name('allpcrrequest.allpcrrequestdetails');
-*/
+
 
 
 //admin
@@ -64,6 +59,7 @@ Route::get('/abkbeds','AdminController@bookbeds');
 Route::get('/abkamb','AdminController@bookambulance');
 Route::get('/atest','AdminController@test');
 Route::get('/atestres','AdminController@testresults');
+
 //hospital registration
 //Route::get('/hosreg','AdminController@hospitalregisterview');
 Route::get('/hosreg','AdminController@addhospital');
@@ -74,7 +70,7 @@ Route::get('/check','AdminController@check');
 
 
 
-
+//patient functions
 Route::get('/', function () {
    return view('Patients.home');
 });
@@ -93,4 +89,5 @@ Route::get('/pregister', [PatientController::class, 'registration']);
 Route::post('post-registration', [PatientController::class, 'postRegistration'])->name('register.post'); 
 Route::post('check','PatientController@check')->name('login.post');
 Route::get('profile','PatientController@profile');
+Route::get('logout', 'PatientController@logout');
 

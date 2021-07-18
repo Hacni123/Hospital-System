@@ -125,7 +125,7 @@ class AdminController extends Controller
         ]);
         
             //auth()->login($user);
-        $user->save();
+            return view("Admin.adminindex")->withSuccess('Great! You have Successfully loggedin');
         //return redirect('hosreg');
     
     }

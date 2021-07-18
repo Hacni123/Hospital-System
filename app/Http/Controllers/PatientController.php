@@ -76,11 +76,18 @@ class PatientController extends Controller
             'login_username' => 'required',
             'login_password' => 'required|min:5|max:8',
         ]);
-       $user = Login::where('login_username','=',$request->login_username)->first();
+        $user = Login::where('login_username','=',$request->login_username)->first();
+        $row = DB::table('patients')
+                ->where('login_id','=',$user->id)
+                ->first();
+        $user1 = [
+            'Info'=>$row
+        ];
+    
        if($user){
            if(Hash::check($request->login_password,$user->login_password)){
                $request->session()->put('LoggedUser',$user->id);
-               return view('Patients.profile');
+               return view('Patients.profile',$user1);
 
            }else{
                return back()->with('fail','Invalid password');
@@ -106,7 +113,11 @@ class PatientController extends Controller
         
     }
   
-
+    public function logout(Request $request ) {
+        $request->session()->flush();
+        Auth::logout();
+        return view('Patients.home');
+        }
   
            
        
