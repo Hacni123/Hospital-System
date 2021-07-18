@@ -100,6 +100,7 @@ Route::get('profile','PatientController@profile');
 
 Route::get('/',[PatientController::class, 'index']);
 Route::get('/icubedsP',[PatientController::class, 'bookingicubeds']);
+//Route::get('/icubedsP',[PatientController::class, 'bookingicu']);
 Route::get('/ambulanceP',[PatientController::class, 'bookingambulance']);
 Route::get('/pcrtestP',[PatientController::class, 'bookingpcrtest']);
 Route::get('/icubedsavail',[PatientController::class, 'availicubeds']);

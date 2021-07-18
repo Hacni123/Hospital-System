@@ -252,6 +252,8 @@
             <input id="date" type="date" name="date" required/>
             <i class="fas fa-calendar-alt"></i>
           </div>
+
+
           <div class="item">
             <p>Time</p>
             <select>
@@ -266,6 +268,8 @@
             <label for="instructions">Please describe the reason for this visit </label>
             <textarea id="reason" rows="3"></textarea>
           </div>
+
+          
           <div class="item">
             <label for="instructions">Action</label>
             <textarea id="action" rows="3"></textarea>
