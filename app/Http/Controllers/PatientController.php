@@ -10,6 +10,7 @@ use Redirect;
 use App\Models\Patient;
 use App\Models\Hospital;
 use App\Models\Login;
+use App\Models\SendCode;
 use Auth;
 use DB;
 use Crypt;
@@ -36,6 +37,13 @@ class PatientController extends Controller
         return view('Patients.register',compact('hospitalsicu'));
     }
 
+    public function register(Request $request)
+{
+    $this->validator($request->all())->validate();
+    event(new postRegistration($user = $this->create($request->all())));
+    return $this->postRegistration($request,$user) ?: redirect('/verify?pat_mobile='.$request->pat_mobile);
+}
+
     public function postRegistration(Request $request)
     {  
         $request->validate([
@@ -56,15 +64,21 @@ class PatientController extends Controller
             //'login_password' => Hash::make('login_password')
           ]);
 
-          Patient::create([
+          $usern= Patient::create([
             'login_id' => $user->id,
             'pat_name'=>$request->input('pat_name'),
             'pat_email'=>$request->input('pat_email'),
             'pat_address'=>$request->input('pat_address'),
             'pat_id'=>$request->input('pat_id'),
             'pat_mobile'=>$request->input('pat_mobile'),
+            'active'=>0,
             'hospital_id'=>$request->input('hospital_id')
         ]);
+        if($usern){
+            $usern->code=SendCode::sendCode($usern->pat_mobile);
+            $usern->save();
+        }
+        
 
          
         return view("Patients.home")->withSuccess('Great! You have Successfully loggedin');
@@ -75,11 +89,18 @@ class PatientController extends Controller
             'login_username' => 'required',
             'login_password' => 'required|min:5|max:8',
         ]);
-       $user = Login::where('login_username','=',$request->login_username)->first();
+        $user = Login::where('login_username','=',$request->login_username)->first();
+        $row = DB::table('patients')
+                ->where('login_id','=',$user->id)
+                ->first();
+        $user1 = [
+            'Info'=>$row
+        ];
+    
        if($user){
            if(Hash::check($request->login_password,$user->login_password)){
                $request->session()->put('LoggedUser',$user->id);
-               return view('Patients.profile');
+               return view('Patients.index',$user1);
 
            }else{
                return back()->with('fail','Invalid password');
@@ -99,20 +120,14 @@ class PatientController extends Controller
             ];
 
         }
-        
-            
+
             return view('Patients.profile',$data);
-        
     }
   
-
-  
-           
-       
-
-
+    public function logout(Request $request ) {
+        $request->session()->flush();
+        Auth::logout();
+        return view('Patients.home');
+        }
     }
 ?>
-    
-    
-

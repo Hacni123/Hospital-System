@@ -17,6 +17,131 @@
   <link rel="stylesheet" href="../assets/css/demo/style.css">
   <!-- End layout styles -->
   <link rel="shortcut icon" href="../assets/images/favicon.png" />
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+
+
+  </style>
 </head>
 <body>
 <script src="../assets/js/preloader.js"></script>
@@ -25,13 +150,13 @@
     <aside class="mdc-drawer mdc-drawer--dismissible mdc-drawer--open">
       <div class="mdc-drawer__header">
         <a href="index.html" class="brand-logo">
-          <img src="../assets/images/logo.svg" alt="logo">
+          <img src="assets/images/icon-logo.png" alt="logo">
         </a>
       </div>
       <div class="mdc-drawer__content">
         <div class="user-info">
-          <p class="name">Life Care</p>
-          <p class="email">info@Lifecare.com</p>
+          <p class="name">{{ $Info->pat_name }}</p>
+          <p class="email">{{ $Info->pat_email }}</p>
         </div>
         <div class="mdc-list-group">
           <nav class="mdc-list mdc-drawer-menu">
@@ -39,6 +164,12 @@
               <a class="mdc-drawer-link" href="{{url('index')}}">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i>
                 Dashboard
+              </a>
+            </div>
+            <div class="mdc-list-item mdc-drawer-item">
+              <a class="mdc-drawer-link" href="{{url('index')}}">
+                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i>
+                My Appointments
               </a>
             </div>
             <div class="mdc-list-item mdc-drawer-item">
@@ -163,7 +294,7 @@
                   <span class="figure">
                     <img src="../assets/images/faces/face1.jpg" alt="user" class="user">
                   </span>
-                  <span class="user-name">{{ $user->login_username }}</span>
+                  <span class="user-name">{{ $Info->pat_name }}</span>
                 </span>
               </button>
               <div class="mdc-menu mdc-menu-surface" tabindex="-1">
@@ -173,7 +304,13 @@
                       <i class="mdi mdi-account-edit-outline text-primary"></i>
                     </div>
                     <div class="item-content d-flex align-items-start flex-column justify-content-center">
-                      <h6 class="item-subject font-weight-normal" ><a  href="{{URL::to('/profile')}}">My profile</a></h6>
+                      <h6 class="item-subject font-weight-normal" ><a a onclick="document.getElementById('id01').style.display='block'" style="width:auto;">My profile</a></h6>
+                      
+  
+
+
+
+
                     </div>
                   </li>
                   <li class="mdc-list-item" role="menuitem">
@@ -181,12 +318,81 @@
                       <i class="mdi mdi-settings-outline text-primary"></i>                      
                     </div>
                     <div class="item-content d-flex align-items-start flex-column justify-content-center">
-                      <h6 class="item-subject font-weight-normal">Logout</h6>
+                      <h6 class="item-subject font-weight-normal"><a href="{{ url('logout') }}">Logout</a></h6>
                     </div>
                   </li>
                 </ul>
               </div>
             </div>
+            <div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <span class="center"><span class="icon"><img src="assets/images/icon-logo.png" alt="#" /></span></span>
+                                        <hr>
+    </div>
+
+    <div class="container">
+    <table class="table table-user-information">
+                                        
+                                        <tr>
+                                            <th>Name</th>
+                                            <td>{{ $Info->pat_name }}</td>
+
+                                        </tr>
+                                        <tr>
+                                            <th>Email</th>
+                                            <td>{{ $Info->pat_email }}</td>
+
+                                        </tr>
+                                        <tr>
+                                            <th>Address</th>
+                                            <td>{{ $Info->pat_address }}</td>
+
+                                        </tr>
+                                        <tr>
+                                            <th>NIC Number</th>
+                                            <td>{{ $Info->pat_id }}</td>
+
+                                        </tr>
+                                        <tr>
+                                            <th>Mobile Number</th>
+                                            <td>{{ $Info->pat_mobile }}</td>
+
+                                        </tr>
+                                        <tr>
+                                            
+                                            <td><a href="{{ url('logout') }}">Logout</a></td>
+
+                                        </tr>
+
+
+                                       
+                                    
+                                </table>
+                                
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
             <div class="divider d-none d-md-block"></div>
             <div class="menu-button-container d-none d-md-block">
               <button class="mdc-button mdc-menu-button">

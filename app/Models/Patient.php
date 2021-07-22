@@ -9,6 +9,7 @@ use App\Models\Ambulancerequest;
 use App\Models\Pcrtest;
 use App\Models\Login;
 use App\Models\Hospital;
+use App\Models\SendCode;
 use Input;
 
 
@@ -24,6 +25,8 @@ class Patient extends Model
         'pat_address',
         'pat_id',
         'pat_mobile',
+        'code',
+        'active',
         'login_id',
         'hospital_id'
     ];

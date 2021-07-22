@@ -83,6 +83,8 @@ Route::get('/otp', function () {
 //Route::post('/register_action','PatientController@store');
 Route::get('/pregister', [PatientController::class, 'registration']);
 Route::post('post-registration', [PatientController::class, 'postRegistration'])->name('register.post'); 
+Route::get('/verify','VerifyController@getVerify')->name('getverify');
+Route::post('/verify','VerifyController@postVerify')->name('verify');
 Route::post('check','PatientController@check')->name('login.post');
-Route::get('profile','PatientController@profile');
+//oute::get('check','PatientController@check');
 
