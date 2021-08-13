@@ -14,7 +14,7 @@ use App\Http\Controllers\PatientController;
 |
 */
 
-/*
+
 Route::get('/', function () {
    return view('welcome');
 });
@@ -50,7 +50,7 @@ Route::get('/pcrrequest', [HospitalController::class, 'viewpcrrequest'])->name('
 Route::get('/editpcrrequest/{id}', [HospitalController::class, 'editpcrrequest']);
 Route::post('/approvepcrrequest', [HospitalController::class, 'updatepcrrequest'])->name('approvepcrrequest.update');
 Route::get('/allpcrrequest', [HospitalController::class, 'viewallpcrrequest'])->name('allpcrrequest.allpcrrequestdetails');
-*/
+
 
 
 //admin
@@ -76,8 +76,9 @@ Route::get('/check','AdminController@check');
 
 
 Route::get('/', function () {
-   return view('Patients.home');
+   return view('Patients.home'); 
 });
+
 Route::get('/login', function () {
    return view('Patients.login');
 });
