@@ -64,27 +64,27 @@
                                 
                                 <div class="form-group">
                                     <input type="pat_email" name="pat_email" class="form-control form-control-user" id="pat_email"
-                                        placeholder="Email Address">
+                                        placeholder="Email Address" value="{{ old ('pat_email')}}">
                                         @if($errors->has('pat_email')) <p>{{$errors->first('pat_email')}}</p>@endif
                                 </div>
                                 <div class="form-group">
                                     <input type="pat_address" name="pat_address" class="form-control form-control-user" id="pat_address"
-                                        placeholder="Address">
+                                        placeholder="Address" value="{{ old ('pat_address')}}">
                                         @if($errors->has('pat_address')) <p>{{$errors->first('pat_address')}}</p>@endif
                                 </div>
                                 <div class="form-group">
                                     <input type="pat_id" name="pat_id" class="form-control form-control-user" id="pat_id"
-                                        placeholder="NIC Number">
+                                        placeholder="NIC Number" value="{{ old ('pat_id')}}">
                                         @if($errors->has('pat_id')) <p>{{$errors->first('pat_id')}}</p>@endif
                                 </div>
                                 <div class="form-group">
                                     <input type="pat_mobile" name="pat_mobile" class="form-control form-control-user" id="pat_mobile"
-                                        placeholder="Mobile Number">
+                                        placeholder="Mobile Number" value="{{ old ('pat_mobile')}}">
                                         @if($errors->has('pat_mobile')) <p>{{$errors->first('pat_mobile')}}</p>@endif
                                 </div>
                                 <div class="form-group">
                                     <input type="login_username" name="login_username" class="form-control form-control-user" id="login_username"
-                                        placeholder="Username">
+                                        placeholder="Username" value="{{ old ('login_username')}}">
                                         @if($errors->has('login_username')) <p>{{$errors->first('login_username')}}</p>@endif
 
                                 </div>
