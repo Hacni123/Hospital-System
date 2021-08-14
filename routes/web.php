@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HospitalController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,11 +16,6 @@ use App\Http\Controllers\PatientController;
 */
 
 
-Route::get('/', function () {
-   return view('welcome');
-});
-//Main route
-Route::get('/', [HospitalController::class, 'index'])->name('dashboard.index');
 Route::get('/dashboard', [HospitalController::class, 'index'])->name('dashboard.index');
 //patient
 Route::get('/addnewpatient', [HospitalController::class, 'createnewpatient']);
@@ -88,6 +84,8 @@ Route::get('/logout', [HospitalController::class, 'logout']);
 //get counts
 Route::get('/counticubedr', [HospitalController::class, 'counticubedreq']);
 
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //admin
 Route::get('/aindex','AdminController@index');
 Route::get('/apatientList','AdminController@show');
@@ -103,7 +101,7 @@ Route::get('/atestres','AdminController@testresults');
 //Route::get('/hosreg','AdminController@hospitalregisterview');
 Route::get('/hosreg','AdminController@addhospital');
 Route::post('/hosreg','AdminController@savehospital');
-//Route::post('/hosreg','AdminController@hospitalregister');
+Route::post('/hosreg','AdminController@hospitalregister');
 
 Route::get('/check','AdminController@check');
 
@@ -129,9 +127,5 @@ Route::get('/pregister', [PatientController::class, 'registration']);
 Route::post('post-registration', [PatientController::class, 'postRegistration'])->name('register.post'); 
 Route::post('check','PatientController@check')->name('login.post');
 Route::get('profile','PatientController@profile');
-<<<<<<< Updated upstream
-=======
 Route::get('/hprofile', [PatientController::class, 'profilehospital']);
 Route::get('logout', 'PatientController@logout');
->>>>>>> Stashed changes
-

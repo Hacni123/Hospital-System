@@ -63,50 +63,29 @@ class PatientController extends Controller
                 'login_password'=>Hash::make($request->input('login_password')),
               ]);
 
-              Patient::create([
+              $usern= Patient::create([
                 'login_id' => $user->id,
                 'pat_name'=>$request->input('pat_name'),
                 'pat_email'=>$request->input('pat_email'),
                 'pat_address'=>$request->input('pat_address'),
                 'pat_id'=>$request->input('pat_id'),
                 'pat_mobile'=>$request->input('pat_mobile'),
+                'active'=>0,
                 'hospital_id'=>$request->input('hospital_id')
             ]);
-            return view('Patients.home');
+            if($usern){
+                $usern->code=SendCode::sendCode($usern->pat_mobile);
+                $usern->save();
+            }
+            
+            return view("Patients.home")->withSuccess('Great! You have Successfully loggedin');
           } 
           catch(\Illuminate\Database\QueryException $ex)
           { 
             return back()->with('fail','User name is taken before.');
           }
-        
-<<<<<<< Updated upstream
-        $user = Login::create([
-            'login_username'=>$request->input('login_username'),
-            'login_password'=>Hash::make($request->input('login_password')),
-            
-            //'login_password' => Hash::make('login_password')
-          ]);
 
-          $usern= Patient::create([
-            'login_id' => $user->id,
-            'pat_name'=>$request->input('pat_name'),
-            'pat_email'=>$request->input('pat_email'),
-            'pat_address'=>$request->input('pat_address'),
-            'pat_id'=>$request->input('pat_id'),
-            'pat_mobile'=>$request->input('pat_mobile'),
-            'active'=>0,
-            'hospital_id'=>$request->input('hospital_id')
-        ]);
-        if($usern){
-            $usern->code=SendCode::sendCode($usern->pat_mobile);
-            $usern->save();
-        }
-        
-
-         
-        return view("Patients.home")->withSuccess('Great! You have Successfully loggedin');
-=======
->>>>>>> Stashed changes
+       
     }
     function check(Request $request)
     {
@@ -132,11 +111,6 @@ class PatientController extends Controller
        if($user){
            if(Hash::check($request->login_password,$user->login_password)){
                $request->session()->put('LoggedUser',$user->id);
-<<<<<<< Updated upstream
-
-               return view('Patients.index',$user1);
-               return view('Patients.profile',$user1);
-=======
                if($user->login_username=='csthmb' || $user->login_username=='ranna' )
                {
                 return view('Hospitals.index',$user2);
@@ -147,7 +121,6 @@ class PatientController extends Controller
                 return view('Patients.profile',$user1);
 
                }
->>>>>>> Stashed changes
            }else{
                return back()->with('fail','Invalid password');
            }
@@ -161,18 +134,11 @@ class PatientController extends Controller
         if(session()->has('LoggedUser')){
             $user = Login::where('id','=', session('LoggedUser'))->first();
             $data = [
-<<<<<<< Updated upstream
                 'LoggedUserInfo'=>$use
             ];
 
         }
 
-            return view('Patients.profile',$data);
-=======
-                'LoggedUserInfo'=>$user
-            ];
-
-        }    
             return view('Patients.profile',$data);
     }
   
@@ -189,9 +155,8 @@ class PatientController extends Controller
 
         }    
            
->>>>>>> Stashed changes
     }
-  
+
     public function logout(Request $request ) {
         $request->session()->flush();
         Auth::logout();
