@@ -65,13 +65,13 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{{url('icurequest')}}"> <i class="menu-icon ti-email"></i>New Ambulances requests </a>
+                        <a href="{{url('ambrequest')}}"> <i class="menu-icon ti-email"></i>New Ambulances requests </a>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>All Ambulances Requests</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{url('viewapprovedicurequest')}}">Approved Requests</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{url('notviewapprovedicurequest')}}">Not Approved Requests</a></li>
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="{{url('viewapprovedambrequest')}}">Approved Requests</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{url('notviewapprovedambrequest')}}">Not Approved Requests</a></li>
                         </ul>
                     </li>
 
@@ -88,21 +88,28 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>PCR Requests</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-sign-in"></i><a href="{{url('pcrrequest')}}">New PCR Requests</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{url('viewapprovedpcrrequest')}}">Confirmed PCR Requests By Patient</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{url('viewpendingpcrrequest')}}">Pending PCR Requests</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{url('viewrejectedpcrrequest')}}">Rejected PCR Requests</a></li>
                             <li><i class="menu-icon fa fa-sign-in"></i><a href="{{url('allpcrrequest')}}">All PCR Requests</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
+                            
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>PCR Reports</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{url('pcrresult')}}">PCR Reports</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{url('viewpositiveresult')}}">Positive Reports</a></li>
+                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{url('viewnegativeresult')}}">Negative Reports</a></li>
                         </ul>
                     </li>
                     <h3 class="menu-title">Profile</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Profile Details</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{url('hprofile')}}">Profile Details</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{url('editpassword')}}">Change Password</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

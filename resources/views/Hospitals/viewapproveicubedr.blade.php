@@ -29,7 +29,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">New ICU Requests</strong>
+                                <strong class="card-title"> ICU Requests</strong>
                             </div>
                             
                             <div class="card-body">

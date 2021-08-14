@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Mail;
 use Input;
 use Validator;
 use Redirect;
+use Hash;
 use App\Models\Patient;
 use App\Models\Admin;
 use App\Models\Hospital;
@@ -105,29 +106,29 @@ class AdminController extends Controller
             'login_password' => 'required'
         ]);
         
-        //$hos = new Hospital;
-        $user = Login::create([
-            'login_username'=>$request->input('login_username'),
-            'login_password'=>$request->input('login_password'),
+        try { 
+            $user = Login::firstOrCreate([
+                'login_username'=>$request->input('login_username'),
+                'login_password'=>Hash::make($request->input('login_password')),
+              ]);
+
+              Hospital::create([
+                'login_id' => $user->id,
+                'hos_name'=>$request->input('hos_name'),
+                'hos_email'=>$request->input('hos_email'),
+                'hos_address'=>$request->input('hos_address'),
+                'hos_mobile'=>$request->input('hos_mobile')
+               
+                /*,'password'*/
+            ]);
             
-            //'login_password' => Hash::make('login_password')
-          ]);
-        
-    
-        Hospital::create([
-            'login_id' => $user->id,
-            'hos_name'=>$request->input('hos_name'),
-            'hos_email'=>$request->input('hos_email'),
-            'hos_address'=>$request->input('hos_address'),
-            'hos_mobile'=>$request->input('hos_mobile')
-           
-            /*,'password'*/
-        ]);
-        
-            //auth()->login($user);
             return view("Admin.adminindex")->withSuccess('Great! You have Successfully loggedin');
-        //return redirect('hosreg');
-    
+          } 
+          catch(\Illuminate\Database\QueryException $ex)
+          { 
+            return back()->with('fail','User name is taken before.');
+          }
+        
     }
 
     

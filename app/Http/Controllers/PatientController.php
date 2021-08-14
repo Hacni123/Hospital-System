@@ -57,7 +57,29 @@ class PatientController extends Controller
             'login_password' => 'required|min:5|max:8',
         ]);
           
+        try { 
+            $user = Login::firstOrCreate([
+                'login_username'=>$request->input('login_username'),
+                'login_password'=>Hash::make($request->input('login_password')),
+              ]);
+
+              Patient::create([
+                'login_id' => $user->id,
+                'pat_name'=>$request->input('pat_name'),
+                'pat_email'=>$request->input('pat_email'),
+                'pat_address'=>$request->input('pat_address'),
+                'pat_id'=>$request->input('pat_id'),
+                'pat_mobile'=>$request->input('pat_mobile'),
+                'hospital_id'=>$request->input('hospital_id')
+            ]);
+            return view('Patients.home');
+          } 
+          catch(\Illuminate\Database\QueryException $ex)
+          { 
+            return back()->with('fail','User name is taken before.');
+          }
         
+<<<<<<< Updated upstream
         $user = Login::create([
             'login_username'=>$request->input('login_username'),
             'login_password'=>Hash::make($request->input('login_password')),
@@ -83,6 +105,8 @@ class PatientController extends Controller
 
          
         return view("Patients.home")->withSuccess('Great! You have Successfully loggedin');
+=======
+>>>>>>> Stashed changes
     }
     function check(Request $request)
     {
@@ -97,13 +121,33 @@ class PatientController extends Controller
         $user1 = [
             'Info'=>$row
         ];
+
+        $row = DB::table('hospitals')
+                ->where('login_id','=',$user->id)
+                ->first();
+        $user2 = [
+            'Info'=>$row
+        ];
     
        if($user){
            if(Hash::check($request->login_password,$user->login_password)){
                $request->session()->put('LoggedUser',$user->id);
+<<<<<<< Updated upstream
 
                return view('Patients.index',$user1);
                return view('Patients.profile',$user1);
+=======
+               if($user->login_username=='csthmb' || $user->login_username=='ranna' )
+               {
+                return view('Hospitals.index',$user2);
+                
+               }
+               else
+               {
+                return view('Patients.profile',$user1);
+
+               }
+>>>>>>> Stashed changes
            }else{
                return back()->with('fail','Invalid password');
            }
@@ -117,12 +161,35 @@ class PatientController extends Controller
         if(session()->has('LoggedUser')){
             $user = Login::where('id','=', session('LoggedUser'))->first();
             $data = [
+<<<<<<< Updated upstream
                 'LoggedUserInfo'=>$use
             ];
 
         }
 
             return view('Patients.profile',$data);
+=======
+                'LoggedUserInfo'=>$user
+            ];
+
+        }    
+            return view('Patients.profile',$data);
+    }
+  
+    function profilehospital(){
+        if(session()->has('LoggedUser')){
+            $user = Login::where('id','=', session('LoggedUser'))->first();
+            $row = DB::table('hospitals')
+                ->where('login_id','=',$user->id)
+                ->first();
+        $user2 = [
+            'Info1'=>$row
+        ];
+        return view('Hospitals.profile',$user2);
+
+        }    
+           
+>>>>>>> Stashed changes
     }
   
     public function logout(Request $request ) {

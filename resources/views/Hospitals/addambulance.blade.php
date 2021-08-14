@@ -66,19 +66,7 @@
                                                                    </div>
                                                             </div>
                                                            </div>
-                                                    <div class="row form-group">
-                                                                <div class="col col-md-3"><label for="text-input"  class=" form-control-label">Hospital</label></div>
-                                                                <div class="card-body">
-
-                                                                  <select name="hospital_id" data-placeholder="Choose a Hospital..." class="standardSelect" tabindex="1">
-                                                                  @foreach($hospitals as $hospital)
-                                                                  <option value="{{$hospital->id}}">{{$hospital->hos_name}}</option>
-                                                                 @endforeach
-                                    
-                                                                   </select>
-                                                                   </div>
-                                                            </div>
-                                                    </div>
+                                                    
                                                     <div class="card-footer">
                                                         <button type="submit" class="btn btn-primary btn-sm">
                                                             <i class="fa fa-dot-circle-o"></i> Save

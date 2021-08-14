@@ -69,7 +69,7 @@
                                                                    </div>
                                                             </div>
                                                            </div>
-                                                    <div class="row form-group">
+                                                   <!-- <div class="row form-group">
                                                                 <div class="col col-md-3"><label for="text-input"  class=" form-control-label">Hospital</label></div>
                                                                 <div class="card-body">
 
@@ -81,7 +81,7 @@
                                                                    </select>
                                                                    </div>
                                                             </div>
-                                                    </div>
+                                                    </div>!-->
                                                     <div class="card-footer">
                                                         <button type="submit" class="btn btn-primary btn-sm">
                                                             <i class="fa fa-dot-circle-o"></i> Save

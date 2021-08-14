@@ -47,21 +47,21 @@
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
-                                    @foreach ($data as $patient)
+                                    @foreach ($data as $icubedr)
                                     <tbody>
                                         <tr>
                                             
-                                            <td>{{ $patient->id }}</td>
-                                            <td>{{ $patient->pat_name }}</td>
-                                            <td>{{ $patient->reason }}</td>
-                                            <td>{{ $patient->pat_address }}</td>
-                                            <td>{{ $patient->pat_mobile }}</td>
-                                            <td>{{ $patient->pat_id }}</td>
+                                            <td>{{ $icubedr->id }}</td>
+                                            <td>{{ $icubedr->pat_name }}</td>
+                                            <td>{{ $icubedr->reason }}</td>
+                                            <td>{{ $icubedr->pat_address }}</td>
+                                            <td>{{ $icubedr->pat_mobile }}</td>
+                                            <td>{{ $icubedr->pat_id }}</td>
                                             <td>
                                             <form action="{{ route('notapproveicurequest.update') }}"  method="POST">
-                                               <a class="btn btn-primary" href="editicubrequest/{{$patient->id}}">Approve</a>
+                                               <a class="btn btn-primary" href="editicubrequest/{{$icubedr->id}}">Approve</a>
                                                 @csrf
-                                                <input type="hidden" name="bid" value="{{$patient->id}}">
+                                                <input type="hidden" name="bid" value="{{$icubedr->id}}">
                                                <button type="submit" class="btn btn-danger">Delete</button>
                                            </form>
                                             </td>

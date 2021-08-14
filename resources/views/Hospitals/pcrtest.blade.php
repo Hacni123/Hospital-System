@@ -38,7 +38,7 @@
                                 @if(sizeof($data) > 0)
                                     <thead>
                                         <tr>
-                                            <th scope="col">Patient ID</th>
+                                            <th scope="col">PCR ID</th>
                                             <th scope="col">Patient Name</th>
                                             <th scope="col">Address</th>
                                             <th scope="col">Contact No</th>
@@ -46,19 +46,20 @@
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
-                                    @foreach ($data as $patient)
+                                    @foreach ($data as $pcrr)
                                     <tbody>
                                         <tr>
                                             
-                                            <td>{{ $patient->id }}</td>
-                                            <td>{{ $patient->pat_name }}</td>
-                                            <td>{{ $patient->pat_address }}</td>
-                                            <td>{{ $patient->pat_mobile }}</td>
-                                            <td>{{ $patient->pat_id }}</td>
+                                            <td>{{ $pcrr->id }}</td>
+                                            <td>{{ $pcrr->pat_name }}</td>
+                                            <td>{{ $pcrr->pat_address }}</td>
+                                            <td>{{ $pcrr->pat_mobile }}</td>
+                                            <td>{{ $pcrr->pat_id }}</td>
                                             <td>
-                                            <form action="{{ route('notapproveicurequest.update',$patient->id) }}"  method="POST">
-                                               <a class="btn btn-primary" href="editpcrrequest/{{$patient->id}}">Approve</a>
+                                            <form action="{{ route('notapprovepcrrequest.update',$pcrr->id) }}"  method="POST">
+                                               <a class="btn btn-primary" href="editpcrrequest/{{$pcrr->id}}">Approve</a>
                                                 @csrf
+                                                <input type="hidden" name="bid" value="{{$pcrr->id}}">
                                                <button type="submit" class="btn btn-danger">Delete</button>
                                            </form>
                                             </td>
