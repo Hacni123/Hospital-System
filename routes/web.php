@@ -97,16 +97,45 @@ Route::get('/abkbeds','AdminController@bookbeds');
 Route::get('/abkamb','AdminController@bookambulance');
 Route::get('/atest','AdminController@test');
 Route::get('/atestres','AdminController@testresults');
+
 //hospital registration
-//Route::get('/hosreg','AdminController@hospitalregisterview');
 Route::get('/hosreg','AdminController@addhospital');
 Route::post('/hosreg','AdminController@savehospital');
 Route::post('/hosreg','AdminController@hospitalregister');
 
-Route::get('/check','AdminController@check');
+
+// Admin login registration
+
+Route::get('/alogin', [AdminController::class, 'aindex'])->name('login');
+Route::post('/apost-login', [AdminController::class, 'postLogin'])->name('login.post'); 
+Route::get('/aregistration', [AdminController::class, 'registration'])->name('register');
+Route::post('/apost-registration', [AdminController::class, 'postRegistration'])->name('register.post'); 
+Route::get('/adashboard', [AdminController::class, 'dashboard']); 
+Route::get('/alogout', [AdminController::class, 'logout'])->name('logout');
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------- //
 
 Route::get('/', function () {
    return view('Patients.home'); 

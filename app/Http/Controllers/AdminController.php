@@ -10,11 +10,15 @@ use Illuminate\Support\Facades\Mail;
 use Input;
 use Validator;
 use Redirect;
+use Response;
 use Hash;
+use Auth;
 use App\Models\Patient;
 use App\Models\Admin;
 use App\Models\Hospital;
 use App\Models\Login;
+use Session;
+
 
 class AdminController extends Controller
 {
@@ -155,7 +159,124 @@ class AdminController extends Controller
     }
     
 
-    public function check()
-    {  
+   
+
+
+
+/* ----- */
+
+
+
+
+
+
+    public function aindex()
+    {
+        return view('Admin.login');
+    }  
+      
+    
+    public function registration()
+    {
+        return view('Admin.register');
     }
+      
+    
+    public function postLogin(Request $request)
+    {
+        $request->validate([
+            'login_username' => 'required',
+            'login_password' => 'required',
+        ]);
+   
+        $credentials = $request->only('login_username', 'login_password');
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('Admin.adminindex')
+                        ->withSuccess('You have Successfully loggedin');
+        }
+  
+        return redirect("Admin.login")->withSuccess('Oppes! You have entered invalid credentials');
+    }
+      
+    
+    public function postRegistration(Request $request)
+    {  
+        $request->validate([
+            
+            'admin_name' => 'required',
+            'admin_mobile'=> 'required',
+            'admin_email' => 'required',
+            'admin_address' => 'required',
+            'login_username' => 'required',
+            'login_password' => 'required'
+        ]);
+           
+
+        try { 
+            $user = Login::firstOrCreate([
+                'login_username'=>$request->input('login_username'),
+                'login_password'=>Hash::make($request->input('login_password')),
+              ]);
+
+              Admin::create([
+                'login_id' => $user->id,
+                'admin_name'=>$request->input('admin_name'),
+                'admin_mobile'=>$request->input('admin_mobile'),
+                'admin_email'=>$request->input('admin_email'),
+                'admin_address'=>$request->input('admin_address')
+               
+                
+            ]);
+            
+            return view("Admin.adminindex")->withSuccess('Great! You have Successfully loggedin');
+          } 
+          catch(\Illuminate\Database\QueryException $ex)
+          { 
+            return back()->with('fail','User name is taken before.');
+          }
+
+
+        /* 
+
+        $data = $request->all();
+        $check = $this->create($data);
+         
+        return redirect("dashboard")->withSuccess('Great! You have Successfully loggedin');
+
+        */
+    }
+    
+   
+
+    public function dashboard()
+    {
+        if(Auth::check()){
+            return view('Admin.adminindex');
+        }
+  
+        return redirect("Admin.login")->withSuccess('Opps! You do not have access');
+    }
+    
+   
+    /*
+
+    public function create(array $data)
+    {
+      return User::create([
+        'name' => $data['name'],
+        'email' => $data['email'],
+        'password' => Hash::make($data['password'])
+      ]);
+    }
+
+    */
+    
+   
+    public function logout() {
+        Session::flush();
+        Auth::logout();
+  
+        return Redirect('Admin.login');
+    }
+    
 }
