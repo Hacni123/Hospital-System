@@ -8,9 +8,9 @@
                     <div class="login-content">
                        
                         <div class="login-form">
-                            <form action="{{ route('register.post') }}" method="post">
+                            <form action="{{ route('register.postadmin') }}" method="post">
 
-                            {{ csrf_field() }}
+                            @csrf
 
                                 <div class="form-group">
                                     <label>Your Name</label>
