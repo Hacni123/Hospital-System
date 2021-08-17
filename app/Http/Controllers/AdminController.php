@@ -278,5 +278,73 @@ class AdminController extends Controller
   
         return Redirect('Admin.login');
     }
+
+    public function new()
+    {
+
     
+$data = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
+    ->where('hospitals.id','=', $row->id)
+    ->join('icubrequests', 'icubrequests.patient_id', '=', 'patients.id')
+    ->select(Hospital::raw('count(*) as count'))
+    ->count();
+
+$data1 = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
+    ->where('hospitals.id','=', $row->id)
+      ->join('pcrtests', 'pcrtests.patient_id', '=', 'patients.id')
+      ->select(Hospital::raw('count(*) as count'))
+    ->count();
+   
+$data2 = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
+    ->where('hospitals.id','=', $row->id)
+    ->join('ambulancerequests', 'ambulancerequests.patient_id', '=', 'patients.id')
+    ->select(Hospital::raw('count(*) as count'))
+    ->count();
+
+$data3 = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
+    ->where('hospitals.id','=', $row->id)
+    ->select(Hospital::raw('count(*) as count'))
+    ->count();
+
+$data4 = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
+    ->where('hospitals.id','=', $row->id)
+    ->where('result', 'Positive')
+    ->join('pcrtests', 'pcrtests.patient_id', '=', 'patients.id')
+    ->select(Hospital::raw('count(*) as count'))
+    ->count();
+
+$data5 = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
+    ->where('hospitals.id','=', $row->id)
+    ->where('result', 'Negative')
+    ->join('pcrtests', 'pcrtests.patient_id', '=', 'patients.id')
+    ->select(Hospital::raw('count(*) as count'))
+    ->count();
+
+$data6 = Hospital::join('icubeds', 'icubeds.hospital_id', '=', 'hospitals.id')
+    ->where('hospitals.id','=',$row->id)
+    ->where('status', 'Availabe')
+    ->select(Hospital::raw('count(*) as count'))
+    ->count();
+
+$data7 = Hospital::join('ambulances', 'ambulances.hospital_id', '=', 'hospitals.id')
+    ->where('hospitals.id','=',$row->id)
+    ->where('status', 'Availabe')
+    ->select(Hospital::raw('count(*) as count'))
+    ->count();
+
+$icubeds = Hospital::join('icubeds', 'icubeds.hospital_id', '=', 'hospitals.id')
+    ->where('hospitals.id','=',$row->id)
+    ->get();
+
+$ambulances = Hospital::join('ambulances', 'ambulances.hospital_id', '=', 'hospitals.id')
+    ->where('hospitals.id','=',$row->id)
+    ->get();
+return view('Hospitals.index',compact('data','data1','data2','data3','data4','data5','data6','data7','icubeds','ambulances'));
+    } 
+
+
+    public function check()
+    {
+        return view('Admin.check');
+    } 
 }
