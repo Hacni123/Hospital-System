@@ -235,15 +235,6 @@ class AdminController extends Controller
             return back()->with('fail','User name is taken before.');
           }
 
-
-        /* 
-
-        $data = $request->all();
-        $check = $this->create($data);
-         
-        return redirect("dashboard")->withSuccess('Great! You have Successfully loggedin');
-
-        */
     }
     
    
@@ -258,18 +249,8 @@ class AdminController extends Controller
     }
     
    
-    /*
-
-    public function create(array $data)
-    {
-      return User::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'password' => Hash::make($data['password'])
-      ]);
-    }
-
-    */
+    
+   
     
    
     public function logout() {
@@ -278,6 +259,11 @@ class AdminController extends Controller
   
         return Redirect('Admin.login');
     }
+
+
+
+
+/* -------- */
 
     public function new()
     {

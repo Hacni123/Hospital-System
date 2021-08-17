@@ -105,9 +105,9 @@ Route::post('/hosreg','AdminController@hospitalregister');
 
 // check
 Route::get('/acheck','AdminController@check');
+Route::get('/acheck','AdminController@new');
 
 // Admin login registration
-
 Route::get('/alogin', [AdminController::class, 'aindex'])->name('login');
 Route::post('/apost-login', [AdminController::class, 'postLogin'])->name('login.post'); 
 Route::get('/aregistration', [AdminController::class, 'registration'])->name('register');
@@ -137,7 +137,7 @@ Route::get('/alogout', [AdminController::class, 'logout'])->name('logout');
 
 
 
-// ---------------------------------------------------------------------------------------------------------------------- //
+//-------------------------------------------------------------------------------------------------------------------------- //
 
 Route::get('/', function () {
    return view('Patients.home'); 
