@@ -274,11 +274,8 @@ span.psw {
         <div class="mdc-top-app-bar__row">
           <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
             <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button sidebar-toggler">menu</button>
-<<<<<<< Updated upstream
+
             <span class="mdc-top-app-bar__title">Greetings {{ $Info->pat_name }} </span>
-            
-=======
-            <span class="mdc-top-app-bar__title">Greetings {{ $Info->pat_name }}</span>
             <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon search-text-field d-none d-md-flex">
               <i class="material-icons mdc-text-field__icon">search</i>
               <input class="mdc-text-field__input" id="text-field-hero-input">
@@ -290,7 +287,7 @@ span.psw {
                 <div class="mdc-notched-outline__trailing"></div>
               </div>
             </div>
->>>>>>> Stashed changes
+
           </div>
           <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end mdc-top-app-bar__section-right">
             <div class="menu-button-container menu-profile d-none d-md-block">

@@ -198,12 +198,9 @@ class PatientController extends Controller
         return view('Patients.home');
         }
 
-    function myappointment(){
-
     
-    function myappointment(){
-        return view('Patients.myappointment');
-
+    function myappointment()
+    {
 
         
             if(session()->has('LoggedUser')){
@@ -224,14 +221,14 @@ class PatientController extends Controller
 
 
    
-             return view('Patients.myappointment',compact('icubrequests','ambulancerequests','pcrtests','user'));
+             return view('Patients.myappointment',compact('icubrequests','ambulancerequests','pcrtests'));
             
         }
         else{
             return view('Patients.login');
            }
         
-    }
+    
 
 
     }

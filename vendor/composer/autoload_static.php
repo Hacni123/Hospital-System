@@ -19,7 +19,6 @@ class ComposerStaticInit393fab0de0fad02f682ddc31be1ba2e5
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
-<<<<<<< Updated upstream
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
@@ -27,24 +26,10 @@ class ComposerStaticInit393fab0de0fad02f682ddc31be1ba2e5
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
-=======
-        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
->>>>>>> Stashed changes
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
+        '7e9bd612cc444b3eed788ebbe46263a0' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/autoload.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
-        '7e9bd612cc444b3eed788ebbe46263a0' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/autoload.php',
-        '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
-        'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
-        'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
-        '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        '5c70426340c07411ceee79728a2304a8' => __DIR__ . '/..' . '/vonage/nexmo-bridge/src/autoload.php',
         '07d7f1a47144818725fd8d91a907ac57' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/create_uploaded_file.php',
         'da94ac5d3ca7d2dbab84ce561ce72bfd' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/marshal_headers_from_sapi.php',
         '3d97c8dcdfba8cb85d3b34f116bb248b' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/marshal_method_from_sapi.php',
@@ -61,10 +46,11 @@ class ComposerStaticInit393fab0de0fad02f682ddc31be1ba2e5
         'cc8e14526dc240491e17a838cb78508c' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/normalize_server.legacy.php',
         '786bf90caabc9e09b6ad4cc5ca8f0e30' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/normalize_uploaded_files.legacy.php',
         '751a5a3f463e4be759be31748b61737c' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/parse_cookie_header.legacy.php',
-<<<<<<< Updated upstream
-=======
-        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
->>>>>>> Stashed changes
+        '5c70426340c07411ceee79728a2304a8' => __DIR__ . '/..' . '/vonage/nexmo-bridge/src/autoload.php',
+        '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
+        'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
+        'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
+        '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
@@ -386,8 +372,8 @@ class ComposerStaticInit393fab0de0fad02f682ddc31be1ba2e5
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -597,10 +583,7 @@ class ComposerStaticInit393fab0de0fad02f682ddc31be1ba2e5
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HospitalController' => __DIR__ . '/../..' . '/app/Http/Controllers/HospitalController.php',
         'App\\Http\\Controllers\\PatientController' => __DIR__ . '/../..' . '/app/Http/Controllers/PatientController.php',
-<<<<<<< Updated upstream
         'App\\Http\\Controllers\\VerifyController' => __DIR__ . '/../..' . '/app/Http/Controllers/VerifyController.php',
-=======
->>>>>>> Stashed changes
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -1943,6 +1926,7 @@ class ComposerStaticInit393fab0de0fad02f682ddc31be1ba2e5
         'Illuminate\\Contracts\\Support\\MessageProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Support/MessageProvider.php',
         'Illuminate\\Contracts\\Support\\Renderable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Support/Renderable.php',
         'Illuminate\\Contracts\\Support\\Responsable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Support/Responsable.php',
+        'Illuminate\\Contracts\\Support\\ValidatedData' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Support/ValidatedData.php',
         'Illuminate\\Contracts\\Translation\\HasLocalePreference' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Translation/HasLocalePreference.php',
         'Illuminate\\Contracts\\Translation\\Loader' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Translation/Loader.php',
         'Illuminate\\Contracts\\Translation\\Translator' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Translation/Translator.php',
@@ -2600,6 +2584,7 @@ class ComposerStaticInit393fab0de0fad02f682ddc31be1ba2e5
         'Illuminate\\Support\\Traits\\Macroable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php',
         'Illuminate\\Support\\Traits\\ReflectsClosures' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php',
         'Illuminate\\Support\\Traits\\Tappable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Traits/Tappable.php',
+        'Illuminate\\Support\\ValidatedInput' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/ValidatedInput.php',
         'Illuminate\\Support\\ViewErrorBag' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/ViewErrorBag.php',
         'Illuminate\\Testing\\Assert' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Testing/Assert.php',
         'Illuminate\\Testing\\AssertableJsonString' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Testing/AssertableJsonString.php',
@@ -2632,6 +2617,7 @@ class ComposerStaticInit393fab0de0fad02f682ddc31be1ba2e5
         'Illuminate\\Validation\\Concerns\\FormatsMessages' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Concerns/FormatsMessages.php',
         'Illuminate\\Validation\\Concerns\\ReplacesAttributes' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Concerns/ReplacesAttributes.php',
         'Illuminate\\Validation\\Concerns\\ValidatesAttributes' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Concerns/ValidatesAttributes.php',
+        'Illuminate\\Validation\\ConditionalRules' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/ConditionalRules.php',
         'Illuminate\\Validation\\DatabasePresenceVerifier' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/DatabasePresenceVerifier.php',
         'Illuminate\\Validation\\DatabasePresenceVerifierInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/DatabasePresenceVerifierInterface.php',
         'Illuminate\\Validation\\Factory' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Factory.php',
@@ -2820,45 +2806,6 @@ class ComposerStaticInit393fab0de0fad02f682ddc31be1ba2e5
         'Lcobucci\\JWT\\Validation\\RequiredConstraintsViolated' => __DIR__ . '/..' . '/lcobucci/jwt/src/Validation/RequiredConstraintsViolated.php',
         'Lcobucci\\JWT\\Validation\\Validator' => __DIR__ . '/..' . '/lcobucci/jwt/src/Validation/Validator.php',
         'Lcobucci\\JWT\\Validator' => __DIR__ . '/..' . '/lcobucci/jwt/src/Validator.php',
-<<<<<<< Updated upstream
-=======
-        'League\\CommonMark\\Block\\Element\\AbstractBlock' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/AbstractBlock.php',
-        'League\\CommonMark\\Block\\Element\\AbstractStringContainerBlock' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/AbstractStringContainerBlock.php',
-        'League\\CommonMark\\Block\\Element\\BlockQuote' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/BlockQuote.php',
-        'League\\CommonMark\\Block\\Element\\Document' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/Document.php',
-        'League\\CommonMark\\Block\\Element\\FencedCode' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/FencedCode.php',
-        'League\\CommonMark\\Block\\Element\\Heading' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/Heading.php',
-        'League\\CommonMark\\Block\\Element\\HtmlBlock' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/HtmlBlock.php',
-        'League\\CommonMark\\Block\\Element\\IndentedCode' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/IndentedCode.php',
-        'League\\CommonMark\\Block\\Element\\InlineContainerInterface' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/InlineContainerInterface.php',
-        'League\\CommonMark\\Block\\Element\\ListBlock' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/ListBlock.php',
-        'League\\CommonMark\\Block\\Element\\ListData' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/ListData.php',
-        'League\\CommonMark\\Block\\Element\\ListItem' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/ListItem.php',
-        'League\\CommonMark\\Block\\Element\\Paragraph' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/Paragraph.php',
-        'League\\CommonMark\\Block\\Element\\StringContainerInterface' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/StringContainerInterface.php',
-        'League\\CommonMark\\Block\\Element\\ThematicBreak' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/ThematicBreak.php',
-        'League\\CommonMark\\Block\\Parser\\ATXHeadingParser' => __DIR__ . '/..' . '/league/commonmark/src/Block/Parser/ATXHeadingParser.php',
-        'League\\CommonMark\\Block\\Parser\\BlockParserInterface' => __DIR__ . '/..' . '/league/commonmark/src/Block/Parser/BlockParserInterface.php',
-        'League\\CommonMark\\Block\\Parser\\BlockQuoteParser' => __DIR__ . '/..' . '/league/commonmark/src/Block/Parser/BlockQuoteParser.php',
-        'League\\CommonMark\\Block\\Parser\\FencedCodeParser' => __DIR__ . '/..' . '/league/commonmark/src/Block/Parser/FencedCodeParser.php',
-        'League\\CommonMark\\Block\\Parser\\HtmlBlockParser' => __DIR__ . '/..' . '/league/commonmark/src/Block/Parser/HtmlBlockParser.php',
-        'League\\CommonMark\\Block\\Parser\\IndentedCodeParser' => __DIR__ . '/..' . '/league/commonmark/src/Block/Parser/IndentedCodeParser.php',
-        'League\\CommonMark\\Block\\Parser\\LazyParagraphParser' => __DIR__ . '/..' . '/league/commonmark/src/Block/Parser/LazyParagraphParser.php',
-        'League\\CommonMark\\Block\\Parser\\ListParser' => __DIR__ . '/..' . '/league/commonmark/src/Block/Parser/ListParser.php',
-        'League\\CommonMark\\Block\\Parser\\SetExtHeadingParser' => __DIR__ . '/..' . '/league/commonmark/src/Block/Parser/SetExtHeadingParser.php',
-        'League\\CommonMark\\Block\\Parser\\ThematicBreakParser' => __DIR__ . '/..' . '/league/commonmark/src/Block/Parser/ThematicBreakParser.php',
-        'League\\CommonMark\\Block\\Renderer\\BlockQuoteRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Block/Renderer/BlockQuoteRenderer.php',
-        'League\\CommonMark\\Block\\Renderer\\BlockRendererInterface' => __DIR__ . '/..' . '/league/commonmark/src/Block/Renderer/BlockRendererInterface.php',
-        'League\\CommonMark\\Block\\Renderer\\DocumentRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Block/Renderer/DocumentRenderer.php',
-        'League\\CommonMark\\Block\\Renderer\\FencedCodeRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Block/Renderer/FencedCodeRenderer.php',
-        'League\\CommonMark\\Block\\Renderer\\HeadingRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Block/Renderer/HeadingRenderer.php',
-        'League\\CommonMark\\Block\\Renderer\\HtmlBlockRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Block/Renderer/HtmlBlockRenderer.php',
-        'League\\CommonMark\\Block\\Renderer\\IndentedCodeRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Block/Renderer/IndentedCodeRenderer.php',
-        'League\\CommonMark\\Block\\Renderer\\ListBlockRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Block/Renderer/ListBlockRenderer.php',
-        'League\\CommonMark\\Block\\Renderer\\ListItemRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Block/Renderer/ListItemRenderer.php',
-        'League\\CommonMark\\Block\\Renderer\\ParagraphRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Block/Renderer/ParagraphRenderer.php',
-        'League\\CommonMark\\Block\\Renderer\\ThematicBreakRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Block/Renderer/ThematicBreakRenderer.php',
->>>>>>> Stashed changes
         'League\\CommonMark\\CommonMarkConverter' => __DIR__ . '/..' . '/league/commonmark/src/CommonMarkConverter.php',
         'League\\CommonMark\\Delimiter\\Delimiter' => __DIR__ . '/..' . '/league/commonmark/src/Delimiter/Delimiter.php',
         'League\\CommonMark\\Delimiter\\DelimiterInterface' => __DIR__ . '/..' . '/league/commonmark/src/Delimiter/DelimiterInterface.php',
@@ -3087,9 +3034,7 @@ class ComposerStaticInit393fab0de0fad02f682ddc31be1ba2e5
         'League\\CommonMark\\Parser\\Block\\BlockStartParserInterface' => __DIR__ . '/..' . '/league/commonmark/src/Parser/Block/BlockStartParserInterface.php',
         'League\\CommonMark\\Parser\\Block\\DocumentBlockParser' => __DIR__ . '/..' . '/league/commonmark/src/Parser/Block/DocumentBlockParser.php',
         'League\\CommonMark\\Parser\\Block\\ParagraphParser' => __DIR__ . '/..' . '/league/commonmark/src/Parser/Block/ParagraphParser.php',
-
         'League\\CommonMark\\Parser\\Block\\SkipLinesStartingWithLettersParser' => __DIR__ . '/..' . '/league/commonmark/src/Parser/Block/SkipLinesStartingWithLettersParser.php',
-
         'League\\CommonMark\\Parser\\Cursor' => __DIR__ . '/..' . '/league/commonmark/src/Parser/Cursor.php',
         'League\\CommonMark\\Parser\\CursorState' => __DIR__ . '/..' . '/league/commonmark/src/Parser/CursorState.php',
         'League\\CommonMark\\Parser\\InlineParserContext' => __DIR__ . '/..' . '/league/commonmark/src/Parser/InlineParserContext.php',
@@ -3397,7 +3342,6 @@ class ComposerStaticInit393fab0de0fad02f682ddc31be1ba2e5
         'Monolog\\SignalHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/SignalHandler.php',
         'Monolog\\Test\\TestCase' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Test/TestCase.php',
         'Monolog\\Utils' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Utils.php',
-<<<<<<< Updated upstream
         'Nette\\ArgumentOutOfRangeException' => __DIR__ . '/..' . '/nette/utils/src/exceptions.php',
         'Nette\\DeprecatedException' => __DIR__ . '/..' . '/nette/utils/src/exceptions.php',
         'Nette\\DirectoryNotFoundException' => __DIR__ . '/..' . '/nette/utils/src/exceptions.php',
@@ -3453,8 +3397,6 @@ class ComposerStaticInit393fab0de0fad02f682ddc31be1ba2e5
         'Nette\\Utils\\Strings' => __DIR__ . '/..' . '/nette/utils/src/Utils/Strings.php',
         'Nette\\Utils\\UnknownImageFileException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\Utils\\Validators' => __DIR__ . '/..' . '/nette/utils/src/Utils/Validators.php',
-=======
->>>>>>> Stashed changes
         'Nexmo\\Laravel\\Facade\\Nexmo' => __DIR__ . '/..' . '/nexmo/laravel/src/Facade/Nexmo.php',
         'Nexmo\\Laravel\\NexmoServiceProvider' => __DIR__ . '/..' . '/nexmo/laravel/src/NexmoServiceProvider.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',

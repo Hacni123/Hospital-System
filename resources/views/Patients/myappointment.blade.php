@@ -105,7 +105,7 @@ span.psw {
 
   width: 50%; /* Could be more or less, depending on screen size */
 
-  width: 80%; /* Could be more or less, depending on screen size */
+ 
 
 }
 
@@ -349,7 +349,7 @@ span.psw {
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">ICU Beds</button>
 <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Ambulance Service</button>
 <button onclick="document.getElementById('id03').style.display='block'" style="width:auto;">PCR Tests</button>
->>>>>>> Stashed changes
+
 
 <div id="id01" class="modal">
   
@@ -376,17 +376,6 @@ span.psw {
     @endforeach
 
 
-    <div class="container">
-      <label for="uname"><b>Reason for ICU beds</b></label>
-      <hr>
-      <p>jjjj</p>
-
-      <label for="psw"><b>Status</b></label>
-      <hr>
-      <p>jjjj</p>
-        
-      
-    </div>
 
 
     <div class="container" style="background-color:#f1f1f1">
@@ -430,17 +419,6 @@ window.onclick = function(event) {
     @endforeach
 
 
-    <div class="container">
-      <label for="uname"><b>Reason for Ambulance</b></label>
-      <hr>
-      <p>jjjj</p>
-
-      <label for="psw"><b>Status</b></label>
-      <hr>
-      <p>jjjj</p>
-        
-      
-    </div>
 
 
     <div class="container" style="background-color:#f1f1f1">
@@ -453,7 +431,6 @@ window.onclick = function(event) {
 <script>
 // Get the modal
 var modal = document.getElementById('id02');
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
@@ -490,17 +467,6 @@ window.onclick = function(event) {
     </div>
     @endforeach
 
-    <div class="container">
-      <label for="uname"><b>Result for PCR test</b></label>
-      <hr>
-      <p>jjjj</p>
-
-     
-        
-      
-    </div>
-
-
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
       
@@ -511,7 +477,6 @@ window.onclick = function(event) {
 <script>
 // Get the modal
 var modal = document.getElementById('id03');
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
