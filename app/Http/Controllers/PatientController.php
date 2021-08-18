@@ -11,6 +11,8 @@ use App\Models\Patient;
 use App\Models\Hospital;
 use App\Models\Login;
 use App\Models\SendCode;
+use App\Models\Icubed;
+use App\Models\Icubrequest;
 use Auth;
 use DB;
 use Crypt;
@@ -78,7 +80,7 @@ class PatientController extends Controller
                 $usern->save();
             }
             
-            return view("Patients.home")->withSuccess('Great! You have Successfully loggedin');
+            return view("Patients.verify")->withSuccess('Great! You have Successfully loggedin');
           } 
           catch(\Illuminate\Database\QueryException $ex)
           { 
@@ -118,7 +120,7 @@ class PatientController extends Controller
                }
                else
                {
-                return view('Patients.profile',$user1);
+                return view('Patients.index',$user1);
 
                }
            }else{
@@ -162,6 +164,35 @@ class PatientController extends Controller
         Auth::logout();
         return view('Patients.home');
         }
+    function myappointment(){
+
+        
+            if(session()->has('LoggedUser')){
+                $user = Login::where('id','=', session('LoggedUser'))->first();
+                $icubrequests = Login::join('patients', 'patients.login_id', '=', 'login.id')
+                ->where('login.id','=',$user->id)
+                  ->join('icubrequests', 'icubrequests.patient_id', '=', 'patients.id')
+                  ->get(['icubrequests.reason','icubrequests.action']);
+                  $ambulancerequests = Login::join('patients', 'patients.login_id', '=', 'login.id')
+                  ->where('login.id','=',$user->id)
+                    ->join('ambulancerequests', 'ambulancerequests.patient_id', '=', 'patients.id')
+                    ->get(['ambulancerequests.reason','ambulancerequests.action']);
+                $pcrtests = Login::join('patients', 'patients.login_id', '=', 'login.id')
+                  ->where('login.id','=',$user->id)
+                    ->join('pcrtests', 'pcrtests.patient_id', '=', 'patients.id')
+                    ->get(['pcrtests.result','pcrtests.date','pcrtests.time']);
+                    
+
+
+   
+             return view('Patients.myappointment',compact('icubrequests','ambulancerequests','pcrtests','user'));
+            
+        }
+        else{
+            return view('Patients.login');
+           }
+        
+    }
 
     }
 ?>
