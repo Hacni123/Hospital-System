@@ -133,7 +133,7 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="index.html">Dashboard 1</a>
+                                    <a href="index.html">Patient Detatils</a>
                                 </li>
                                 <li>
                                     <a href="index2.html">Dashboard 2</a>
@@ -390,7 +390,7 @@
                                             </div>
                                             <div class="account-dropdown__footer">
                                                 <a href="#">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                                    <i class="zmdi zmdi-power" href="{{url('Admin.logout')}}"></i>Logout</a>
                                             </div>
                                         </div>
                                     </div>

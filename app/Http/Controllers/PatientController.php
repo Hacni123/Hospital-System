@@ -115,7 +115,8 @@ class PatientController extends Controller
                $request->session()->put('LoggedUser',$user->id);
                if($user->login_username=='csthmb' || $user->login_username=='ranna' )
                {
-                return view('Hospitals.index',$user2);
+               
+                return \Redirect::route('dashboard.index');
                 
                }
                else
