@@ -11,8 +11,10 @@ use App\Models\Patient;
 use App\Models\Hospital;
 use App\Models\Login;
 use App\Models\SendCode;
+use App\Models\Pcrtest;
 use App\Models\Icubed;
 use App\Models\Icubrequest;
+
 use Auth;
 use DB;
 use Crypt;
@@ -80,12 +82,33 @@ class PatientController extends Controller
                 $usern->save();
             }
             
+
             return view("Patients.verify")->withSuccess('Great! You have Successfully loggedin');
           } 
           catch(\Illuminate\Database\QueryException $ex)
           { 
             return back()->with('fail','User name is taken before.');
           }
+
+            //'login_password' => Hash::make('login_password')
+          
+
+          $usern= Patient::create([
+            'login_id' => $user->id,
+            'pat_name'=>$request->input('pat_name'),
+            'pat_email'=>$request->input('pat_email'),
+            'pat_address'=>$request->input('pat_address'),
+            'pat_id'=>$request->input('pat_id'),
+            'pat_mobile'=>$request->input('pat_mobile'),
+            'active'=>0,
+            'hospital_id'=>$request->input('hospital_id')
+        ]);
+        if($usern){
+            $usern->code=SendCode::sendCode($usern->pat_mobile);
+            $usern->save();
+        }
+        
+
 
        
     }
@@ -103,16 +126,19 @@ class PatientController extends Controller
             'Info'=>$row
         ];
 
+
         $row = DB::table('hospitals')
                 ->where('login_id','=',$user->id)
                 ->first();
         $user2 = [
             'Info'=>$row
         ];
+
     
        if($user){
            if(Hash::check($request->login_password,$user->login_password)){
                $request->session()->put('LoggedUser',$user->id);
+
                if($user->login_username=='csthmb' || $user->login_username=='ranna' )
                {
                
@@ -124,6 +150,10 @@ class PatientController extends Controller
                 return view('Patients.index',$user1);
 
                }
+
+               return view('Patients.index',$user1);
+
+
            }else{
                return back()->with('fail','Invalid password');
            }
@@ -145,6 +175,7 @@ class PatientController extends Controller
             return view('Patients.profile',$data);
     }
   
+
     function profilehospital(){
         if(session()->has('LoggedUser')){
             $user = Login::where('id','=', session('LoggedUser'))->first();
@@ -160,12 +191,19 @@ class PatientController extends Controller
            
     }
 
+
     public function logout(Request $request ) {
         $request->session()->flush();
         Auth::logout();
         return view('Patients.home');
         }
+
     function myappointment(){
+
+    
+    function myappointment(){
+        return view('Patients.myappointment');
+
 
         
             if(session()->has('LoggedUser')){
@@ -195,5 +233,10 @@ class PatientController extends Controller
         
     }
 
+
     }
+
+}
+
+
 ?>

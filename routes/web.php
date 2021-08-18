@@ -162,10 +162,18 @@ Route::get('/otpafter', function () {
 //Route::post('/register_action','PatientController@store');
 Route::get('/pregister', [PatientController::class, 'registration']);
 Route::post('post-registration', [PatientController::class, 'postRegistration'])->name('register.post'); 
+Route::get('/verify','VerifyController@getVerify')->name('getverify');
+Route::post('/verify','VerifyController@postVerify')->name('verify');
 Route::post('check','PatientController@check')->name('login.post');
+<<<<<<< Updated upstream
 Route::get('profile','PatientController@profile');
 Route::get('/hprofile', [PatientController::class, 'profilehospital']);
 Route::get('logout', 'PatientController@logout');
 Route::get('/verify','verifyController@getVerify')->name('getverify');
 Route::post('/verify','verifyController@postVerify')->name('verify');
 Route::get('/myappointment', [PatientController::class, 'myappointment']);
+=======
+//oute::get('check','PatientController@check');
+
+Route::get('/myappointment',[PatientController::class, 'myappointment']);
+>>>>>>> Stashed changes

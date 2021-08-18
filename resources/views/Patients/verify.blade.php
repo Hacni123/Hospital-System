@@ -23,6 +23,7 @@
 </head>
 
 <body class="bg-gradient-primary">
+<<<<<<< Updated upstream
 <hr>
 <hr>
 <div class="container">
@@ -75,6 +76,59 @@
         </div>
     </div>
 </div>
+=======
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-6 col-lg-6 col-md-6">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            
+                            <div class="col-lg-12">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Mobile Number Verification</h1>
+                                    </div>
+                                    <div class="card-body">
+                     @if(Session::has('message'))
+                    <div class="alert alert-danger">{{Session::get('message')}}</div>
+                    @endif
+                                    <form action="{{ route('verify') }}" method="post">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                        <div class="form-group">
+                                            <input type="code" name="code" class="form-control form-control-user" id="exampleInputcode" 
+                                                placeholder="Code">
+                                                @if($errors->has('code')) <p>{{$errors->first('code')}}</p>@endif
+                                        </div>
+                                       
+                                       
+                                        
+                                        <input type="submit" name="code" href="{{URL::to('/login')}}" class="btn btn-primary btn-user btn-block" placeholder="OTP"></input>
+                                        
+                                    </form>
+                                
+                                </div>
+                                <div class="card-footer">
+                    <a href="">Resend new code</a>
+                    <input type="hidden" name="phone" value="{{request()->phone}}">
+                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+>>>>>>> Stashed changes
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>

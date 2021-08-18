@@ -1376,12 +1376,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'ed31e6d413a27cf882e49a54672139ce7374dc8f',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -1842,12 +1842,12 @@
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'ed31e6d413a27cf882e49a54672139ce7374dc8f',
     ),
     'laravel/sail' => 
     array (
@@ -1995,6 +1995,15 @@
       ),
       'reference' => '029bdc19fc58cd6ef0aa75c7041d82b9d9dc61bd',
     ),
+    'nexmo/laravel' => 
+    array (
+      'pretty_version' => '2.4.1',
+      'version' => '2.4.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '029bdc19fc58cd6ef0aa75c7041d82b9d9dc61bd',
+    ),
     'nikic/php-parser' => 
     array (
       'pretty_version' => 'v4.12.0',
@@ -2012,6 +2021,13 @@
       array (
       ),
       'reference' => '0c3c393462eada1233513664e2d22bb9f69ca393',
+    ),
+    'ocramius/package-versions' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '1.11.99',
+      ),
     ),
     'ocramius/package-versions' => 
     array (
