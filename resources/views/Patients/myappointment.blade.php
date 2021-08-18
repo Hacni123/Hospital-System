@@ -1,12 +1,11 @@
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< Updated upstream
+
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -25,10 +24,10 @@
   <link rel="shortcut icon" href="../assets/images/favicon.png" />
 <style>
 body {font-family: Arial, Helvetica, sans-serif;align:center;}
-=======
+
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
->>>>>>> Stashed changes
+
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -103,11 +102,11 @@ span.psw {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-<<<<<<< Updated upstream
+
   width: 50%; /* Could be more or less, depending on screen size */
-=======
+
   width: 80%; /* Could be more or less, depending on screen size */
->>>>>>> Stashed changes
+
 }
 
 /* The Close Button (x) */
@@ -155,7 +154,6 @@ span.psw {
 </style>
 </head>
 <body>
-<<<<<<< Updated upstream
 <script src="../assets/js/preloader.js"></script>
   <div class="body-wrapper">
     <!-- partial:partials/_sidebar.html -->
@@ -344,7 +342,7 @@ span.psw {
 
 
 
-=======
+
 
 <h2>Modal Appointments Details</h2>
 
@@ -360,7 +358,7 @@ span.psw {
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="assets/images/icon-logo.png" alt="logo">
     </div>
-<<<<<<< Updated upstream
+
     
     
     @foreach ($icubrequests as $bed)
@@ -376,7 +374,7 @@ span.psw {
       
     </div>
     @endforeach
-=======
+
 
     <div class="container">
       <label for="uname"><b>Reason for ICU beds</b></label>
@@ -389,7 +387,7 @@ span.psw {
         
       
     </div>
->>>>>>> Stashed changes
+
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
@@ -416,7 +414,7 @@ window.onclick = function(event) {
       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="assets/images/icon-logo.png" alt="logo">
     </div>
-<<<<<<< Updated upstream
+
     @foreach ($ambulancerequests as $amb)
     <div class="container">
       <label for="reason"><b>Reason for Ambulance</b></label>
@@ -430,7 +428,7 @@ window.onclick = function(event) {
       
     </div>
     @endforeach
-=======
+
 
     <div class="container">
       <label for="uname"><b>Reason for Ambulance</b></label>
@@ -443,7 +441,7 @@ window.onclick = function(event) {
         
       
     </div>
->>>>>>> Stashed changes
+
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
@@ -471,7 +469,7 @@ window.onclick = function(event) {
       <img src="assets/images/icon-logo.png" alt="logo">
     </div>
 
-<<<<<<< Updated upstream
+
  
    
 @foreach ($pcrtests as $pcr)
@@ -491,7 +489,7 @@ window.onclick = function(event) {
       
     </div>
     @endforeach
-=======
+
     <div class="container">
       <label for="uname"><b>Result for PCR test</b></label>
       <hr>
@@ -501,7 +499,7 @@ window.onclick = function(event) {
         
       
     </div>
->>>>>>> Stashed changes
+
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
