@@ -18,8 +18,17 @@
                                             <h3 class="text-center title-2"><b>Hospital Registration</b></h3>
                                         </div>
                                         <hr>
+<<<<<<< Updated upstream
                                         <form action="{{ url('hosreg') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                                         @csrf
+=======
+                                        <form action="hosreg" method="post" novalidate="novalidate">
+                                        @csrf
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Id</label>
+                                                <input id="cc-pament" name="id" type="text" class="form-control" aria-required="true" aria-invalid="false" value="">
+                                            </div>
+>>>>>>> Stashed changes
                                             <div class="form-group has-success">
                                                 <label for="cc-name" class="control-label mb-1">Hospital Name</label>
                                                 <input id="cc-name" name="hos_name" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card"
