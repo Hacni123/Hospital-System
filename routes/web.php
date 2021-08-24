@@ -105,7 +105,7 @@ Route::post('/hosreg','AdminController@savehospital');
 Route::post('/hosreg','AdminController@hospitalregister');
 
 // check
-
+Route::get('/ahospitals/{id}','AdminController@all');
 
 
 // Admin login registration

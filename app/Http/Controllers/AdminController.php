@@ -74,6 +74,17 @@ class AdminController extends Controller
     {
         $ambulances = DB::table('ambulances')->get();
         return view('Admin.aambulance',compact('ambulances'));
+
+        /*
+        $icubeds = Hospital::join('icubeds', 'icubeds.hospital_id', '=', 'hospitals.id')
+        ->where('hospitals.id','=',->"2")
+        ->get();
+
+    $ambulances = Hospital::join('ambulances', 'ambulances.hospital_id', '=', 'hospitals.id')
+        ->where('hospitals.id','=',->"2")
+        ->get();
+
+        */
     }
 
     public function bookbeds()
@@ -176,18 +187,26 @@ class AdminController extends Controller
     {
         return view('Admin.hosregmail');
     }
-    
 
-   
+    public function all($id)
+    {
+        $data = Hospital::find($id);
+        //return view('Admin.check',compact('data','id'));
 
+        $icubeds = Hospital::join('icubeds', 'icubeds.hospital_id', '=', 'hospitals.id')
+       // ->where('hospitals.id','=',$id->2)
+        ->get();
+
+        $ambulances = Hospital::join('ambulances', 'ambulances.hospital_id', '=', 'hospitals.id')
+        //->where('hospitals.id','=',$id->2)
+        ->get();
+
+        return view('Admin.alldetailsinhos',compact('data','icubeds','ambulances'));
+        
+    }
 
 
 /* ----- */
-
-
- 
-      
-    
     public function registration()
     {
         return view('Admin.register');
@@ -260,10 +279,6 @@ class AdminController extends Controller
            return back()->with('fail','No account found for this username');
        }
     }
-
-    
-    
-   
    
     public function logout() {
         Session::flush();
@@ -271,13 +286,5 @@ class AdminController extends Controller
   
         return redirect()->route('admin.login')->with('success','logout Successfully.');
     }
-
-
-
-
-
-    public function check()
-    {
-        return view('Admin.check');
-    } 
+  
 }
