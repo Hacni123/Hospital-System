@@ -185,39 +185,19 @@ class AdminController extends Controller
 /* ----- */
 
 
-
-
-
-
-    public function aindex()
-    {
-        return view('Admin.login');
-    }  
+ 
       
     
     public function registration()
     {
         return view('Admin.register');
     }
-      
-    
-    public function postLogin(Request $request)
+
+    public function adminlogin()
     {
-        $request->validate([
-            'login_username' => 'required',
-            'login_password' => 'required',
-        ]);
-   
-        $credentials = $request->only('login_username', 'login_password');
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('Admin.adminindex')
-                        ->withSuccess('You have Successfully loggedin');
-        }
-  
-        return redirect("Admin.login")->withSuccess('Oppes! You have entered invalid credentials');
+        return view('Admin.login');
     }
       
-    
     public function postRegistration(Request $request)
     {  
         $request->validate([
@@ -256,16 +236,32 @@ class AdminController extends Controller
 
     }
     
-   
-
-    public function dashboard()
+    public function postLogin(Request $request)
     {
-        if(Auth::check()){
-            return view('Admin.adminindex');
-        }
-  
-        return redirect("Admin.login")->withSuccess('Opps! You do not have access');
+        $request->validate([
+            'login_username' => 'required',
+            'login_password' => 'required|min:5|max:8',
+        ]);
+        $user = Login::where('login_username','=',$request->login_username)->first();
+
+    
+       if($user){
+           if(Hash::check($request->login_password,$user->login_password)){
+               $request->session()->put('LoggedUser',$user->id);
+
+               return view('Admin.adminindex');
+
+
+           }else{
+               return back()->with('fail','Invalid password');
+           }
+
+       }else{
+           return back()->with('fail','No account found for this username');
+       }
     }
+
+    
     
    
    
@@ -273,7 +269,7 @@ class AdminController extends Controller
         Session::flush();
         Auth::logout();
   
-        return Redirect('Admin.login');
+        return redirect()->route('admin.login')->with('success','logout Successfully.');
     }
 
 

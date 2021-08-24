@@ -12,9 +12,8 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="{{ route('login.post') }}" method="post">
-
-                            {{ csrf_field() }}
+                            <form action="{{ route('adminlogin.post') }}" method="post">
+                            @csrf
 
                                 <div class="form-group">
                                     <label> User Name </label>

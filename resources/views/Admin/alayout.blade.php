@@ -284,8 +284,8 @@
                                                
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-power" href="{{url('Admin.logout')}}"></i>Logout</a>
+                                                <a href="{{ url('alogout') }}">
+                                                    <i class="zmdi zmdi-power" ></i>Logout</a>
                                             </div>
                                         </div>
                                     </div>
