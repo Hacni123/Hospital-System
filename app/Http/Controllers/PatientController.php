@@ -14,6 +14,8 @@ use App\Models\SendCode;
 use App\Models\Pcrtest;
 use App\Models\Icubed;
 use App\Models\Icubrequest;
+use App\Models\Ambulance;
+use App\Models\Ambulancerequest;
 
 use Auth;
 use DB;
@@ -231,6 +233,145 @@ class PatientController extends Controller
     
 
 
+    }
+
+    public function index1()
+    {
+        return view('Patients.index1');
+    }
+    public function bookingicubeds()
+    {
+        if(session()->has('LoggedUser')){
+            $user = Login::where('id','=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo'=>$user
+
+            ];
+
+        }
+        $icubedid=Icubed::all();
+        $patid=Patient::all();
+        $icubeds = Patient::with('hospitalsicu')->get();
+        return view('Patients.icubeds',compact('icubeds','icubedid','patid'));
+    }
+
+    public function bookingicu(Request $request)
+    {
+        if(session()->has('LoggedUser')){
+            $user = Login::where('id','=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo'=>$user
+
+            ];
+
+        }
+        $input =$request->all();
+        Icubrequest::create($input);
+        return redirect()->route('/.index')->with('success','Request send Successfully.');
+    }
+
+    public function bookingambulance()
+    {
+        if(session()->has('LoggedUser')){
+            $user = Login::where('id','=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo'=>$user
+
+            ];
+
+        }
+        $ambid=Ambulance::all();
+        $ambs = Patient::with('hospitalsamb')->get();
+        return view('Patients.ambulance',compact('ambs','ambid'));
+    }
+    public function bookingamb(Request $request)
+    {
+        if(session()->has('LoggedUser')){
+            $user = Login::where('id','=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo'=>$user
+
+            ];
+
+        }
+        $input =$request->all();
+        Ambulancerequest::create($input);
+        return redirect()->route('/.index')->with('success','Request send Successfully.');
+    }
+    public function bookingpcrtest()
+    {
+        if(session()->has('LoggedUser')){
+            $user = Login::where('id','=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo'=>$user
+
+            ];
+
+        }
+        $id=Pcrtest::all();
+        $pcr = Patient::with('hospitalspcr')->get();
+        return view('Patients.pcrtest',compact('pcr','id'));
+    }
+    public function bookingpcr(Request $request)
+    {
+        if(session()->has('LoggedUser')){
+            $user = Login::where('id','=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo'=>$user
+
+            ];
+
+        }
+        $input =$request->all();
+        Pcrtest::create($input);
+        return redirect()->route('/.index')->with('success','Request send Successfully.');
+    }
+    public function bookingpcrtestcon()
+    {
+        if(session()->has('LoggedUser')){
+            $user = Login::where('id','=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo'=>$user
+
+            ];
+
+        }
+        $id=Pcrtest::all();
+        $pcr = Patient::with('hospitalspcr')->get();
+        return view('Patients.pcrtestavail',compact('pcr','id'));
+    }
+    public function bookingpcrcon(Request $request)
+    {
+        if(session()->has('LoggedUser')){
+            $user = Login::where('id','=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo'=>$user
+
+            ];
+
+        }
+        $input =$request->all();
+        Pcrtest::create($input);
+        return redirect()->route('/.index')->with('success','Request send Successfully.');
+    }
+    public function availicubeds()
+    {
+        $availicu = Icubed::all();
+        return view('Patients.icubedsavail',compact('availicu'));
+    }
+    public function availambulance()
+    {
+        $availamb=Ambulance::all();
+        return view('Patients.ambulanceavail',compact('availamb'));
+    }
+    
+    public function doctorsdetails()
+    {
+        return view('Patients.doctorsdetails');
+    }
+    public function contact()
+    {
+        return view('Patients.contact');
     }
 
 }

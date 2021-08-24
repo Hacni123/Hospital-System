@@ -45,13 +45,13 @@ tr:nth-child(even) {
     <!-- partial:../../partials/_sidebar.html -->
     <aside class="mdc-drawer mdc-drawer--dismissible mdc-drawer--open">
       <div class="mdc-drawer__header">
-        <a href="../../index.html" class="brand-logo">
-          <img src="../../../assets/images/logo.svg" alt="logo">
+        <a href="{{url('')}}" class="brand-logo">
+          <img src="../assets/images/icon-logo.png" alt="logo">
         </a>
       </div>
       <div class="mdc-drawer__content">
         <div class="user-info">
-          <p class="name">Life Care</p>
+          <p class="name" style="font-size: 22px">Life Care</p>
           <p class="email">info@Lifecare.com</p>
         </div>
         <div class="mdc-list-group">
@@ -65,7 +65,7 @@ tr:nth-child(even) {
             <div class="mdc-list-item mdc-drawer-item">
               <a class="mdc-drawer-link" href="../../pages/forms/basic-forms.html">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">track_changes</i>
-                Forms
+                Booking Details
               </a>
             </div>
             <div class="mdc-list-item mdc-drawer-item">
@@ -86,11 +86,7 @@ tr:nth-child(even) {
                      Ambulance Services
                     </a>
                   </div>
-                  <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link" href="{{url('pcrtestavail')}}">
-                      PCR Test
-                    </a>
-                  </div>
+                 
                  </nav>
               </div>
             </div>
@@ -117,6 +113,11 @@ tr:nth-child(even) {
                       PCR Test
                     </a>
                   </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link"  href="{{url('pcrtestP')}}">
+                     PCR Test Details
+                    </a>
+                  </div>
                 </nav>
               </div>
             </div>
@@ -127,9 +128,9 @@ tr:nth-child(even) {
               </a>
             </div>           
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="https://www.bootstrapdash.com/demo/material-admin-free/jquery/documentation/documentation.html" target="_blank">
+              <a class="mdc-drawer-link" href="{{ url('contact') }}">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">description</i>
-                Contact Us
+               Contact Us
               </a>
             </div>
           </nav>
@@ -362,14 +363,14 @@ tr:nth-child(even) {
                       <th>ICU Bed ID</th> 
                         <th >Ward No</th>
                         <th >Status</th>
-                        <th >Hospital ID</th>
+                   
                     </tr>
                     @foreach ($availicu as $icu)
                     <tr>
                       <th>{{ $icu->id }}</th>
                       <td>{{ $icu->ward_no }}</td>
                       <td>{{ $icu->status }}</td>
-                      <td>{{ $icu->hospital_id }}</td>
+                     
                     </tr>
                     @endforeach
                     

@@ -15,6 +15,193 @@
   <link rel="stylesheet" href="../../../assets/css/demo/style.css">
   <!-- End layout styles -->
   <link rel="shortcut icon" href="../../../assets/images/favicon.png" />
+  <style>
+    html, body {
+    min-height: 100%;
+    }
+    body, div, form, input, select, textarea, label, p { 
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 14px;
+    color: #666;
+    line-height: 22px;
+    }
+    h1 {
+    position: absolute;
+    margin: 0;
+    font-size: 38px;
+    color: #fff;
+    z-index: 2;
+    line-height: 83px;
+    }
+    textarea {
+    width: calc(100% - 12px);
+    padding: 5px;
+    }
+    .testbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    padding: 20px;
+    }
+    form {
+    width: 100%;
+    padding: 20px;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 0 8px  #669999; 
+    }
+    .banner {
+    position: relative;
+    height: 300px;
+    background-image: url("/uploads/media/default/0001/02/174b2e72df50743dfaa0a3bf9d2e59d8b42c91e1.jpeg");  
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    }
+    .banner::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.2); 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    }
+    input, select, textarea {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    }
+    input {
+    width: calc(100% - 10px);
+    padding: 5px;
+    }
+    input[type="date"] {
+    padding: 4px 5px;
+    }
+    textarea {
+    width: calc(100% - 12px);
+    padding: 5px;
+    }
+    .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+    color:  #669999;
+    }
+    .item input:hover, .item select:hover, .item textarea:hover {
+    border: 1px solid transparent;
+    box-shadow: 0 0 3px 0  #669999;
+    color: #669999;
+    }
+    .item {
+    position: relative;
+    margin: 10px 0;
+    }
+    .item span {
+    color: red;
+    }
+    input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+    }
+    .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    font-size: 20px;
+    color:  #a3c2c2;
+    }
+    .item i {
+    right: 1%;
+    top: 30px;
+    z-index: 1;
+    }
+    [type="date"]::-webkit-calendar-picker-indicator {
+    right: 1%;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+    }
+    input[type=radio], input[type=checkbox]  {
+    display: none;
+    }
+    label.radio {
+    position: relative;
+    display: inline-block;
+    margin: 5px 20px 15px 0;
+    cursor: pointer;
+    }
+    .question span {
+    margin-left: 30px;
+    }
+    .question-answer label {
+    display: block;
+    }
+    label.radio:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    }
+    input[type=radio]:checked + label:before, label.radio:hover:before {
+    border: 2px solid  #669999;
+    }
+    label.radio:after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    width: 8px;
+    height: 4px;
+    border: 3px solid  #669999;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    opacity: 0;
+    }
+    input[type=radio]:checked + label:after {
+    opacity: 1;
+    }
+    .flax {
+    display:flex;
+    justify-content:space-around;
+    }
+    .btn-block {
+    margin-top: 10px;
+    text-align: center;
+    }
+    button {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px; 
+    background:  #669999;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    }
+    button:hover {
+    background:  #a3c2c2;
+    }
+    @media (min-width: 568px) {
+    .name-item, .city-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    }
+    .name-item input, .name-item div {
+    width: calc(50% - 20px);
+    }
+    .name-item div input {
+    width:97%;}
+    .name-item div label {
+    display:block;
+    padding-bottom:5px;
+    }
+    }
+  </style>
 </head>
 <body>
 <script src="../assets/js/preloader.js"></script>
@@ -22,13 +209,13 @@
     <!-- partial:../../partials/_sidebar.html -->
     <aside class="mdc-drawer mdc-drawer--dismissible mdc-drawer--open">
       <div class="mdc-drawer__header">
-        <a href="../../index.html" class="brand-logo">
-          <img src="../../../assets/images/logo.svg" alt="logo">
+        <a href="{{url('')}}" class="brand-logo">
+          <img src="../assets/images/icon-logo.png" alt="logo">
         </a>
       </div>
       <div class="mdc-drawer__content">
         <div class="user-info">
-          <p class="name">Life Care</p>
+          <p class="name" style="font-size: 22px">Life Care</p>
           <p class="email">info@Lifecare.com</p>
         </div>
         <div class="mdc-list-group">
@@ -42,7 +229,7 @@
             <div class="mdc-list-item mdc-drawer-item">
               <a class="mdc-drawer-link" href="../../pages/forms/basic-forms.html">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">track_changes</i>
-                Forms
+                My Appointments
               </a>
             </div>
             <div class="mdc-list-item mdc-drawer-item">
@@ -63,11 +250,7 @@
                      Ambulance Services
                     </a>
                   </div>
-                  <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link" href="{{url('pcrtestavail')}}">
-                      PCR Test
-                    </a>
-                  </div>
+                
                  </nav>
               </div>
             </div>
@@ -94,6 +277,11 @@
                       PCR Test
                     </a>
                   </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="{{url('pcrtestavailP')}}">
+                      PCR Test Details
+                    </a>
+                  </div>
                 </nav>
               </div>
             </div>
@@ -104,9 +292,9 @@
               </a>
             </div>
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="https://www.bootstrapdash.com/demo/material-admin-free/jquery/documentation/documentation.html" target="_blank">
+              <a class="mdc-drawer-link" href="{{ url('contact') }}">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">description</i>
-                Contact Us
+               Contact Us
               </a>
             </div>
           </nav>
@@ -327,266 +515,74 @@
         </div>
       </header>
       <!-- partial -->
-      <div class="page-wrapper mdc-toolbar-fixed-adjust">
-        <main class="content-wrapper">
-          <div class="mdc-layout-grid">
-            <div class="mdc-layout-grid__inner">
-              <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-8-tablet">
-                <div class="mdc-card">
-                  <h6 class="card-title">Text Buttons</h6>
-                  <div class="template-demo">
-                    <button class="mdc-button">
-                      Baseline
-                    </button>
-                    <button class="mdc-button mdc-button--dense">
-                      Dense
-                    </button>
-                    <button class="mdc-button">
-                      <i class="material-icons mdc-button__icon">favorite</i>
-                      Icon
-                    </button>
-                    <a href="#" class="mdc-button">
-                      Link
-                    </a>
-                    <button class="mdc-button text-button--secondary">
-                      Secondary
-                    </button>
-                    <button class="mdc-button text-button--success">
-                      Success
-                    </button>
-                    <button class="mdc-button text-button--info">
-                      Info
-                    </button>
-                    <button class="mdc-button text-button--warning">
-                      Warning
-                    </button>
-                    <button class="mdc-button text-button--light">
-                      Light
-                    </button>
-                    <button class="mdc-button text-button--dark">
-                      Dark
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-12-tablet">
-                <div class="mdc-card">
-                  <h6 class="card-title">Raised Button</h6>
-                  <div class="template-demo">
-                    <button class="mdc-button mdc-button--raised">
-                      Baseline
-                    </button>
-                    <button class="mdc-button mdc-button--raised mdc-button--dense">
-                      Dense
-                    </button>
-                    <button class="mdc-button mdc-button--raised">
-                      <i class="material-icons mdc-button__icon">favorite</i>
-                      Icon
-                    </button>
-                    <a href="javascript:void(0)" class="mdc-button mdc-button--raised">
-                      Link
-                    </a>
-                    <button class="mdc-button mdc-button--raised filled-button--secondary">
-                      Secondary
-                    </button>
-                    <button class="mdc-button mdc-button--raised filled-button--success">
-                      Success
-                    </button>
-                    <button class="mdc-button mdc-button--raised filled-button--info">
-                      Info
-                    </button>
-                    <button class="mdc-button mdc-button--raised filled-button--warning">
-                      Warning
-                    </button>
-                    <button class="mdc-button mdc-button--raised filled-button--light">
-                      Light
-                    </button>
-                    <button class="mdc-button mdc-button--raised filled-button--dark">
-                      Dark
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-12-tablet">
-                <div class="mdc-card">
-                  <section class="mdc-card__primary">
-                    <h6 class="card-title">Unelevated Button</h6>
-                  </section>
-                  <section class="mdc-card__supporting-text">
-                    <div class="template-demo">
-                      <button class="mdc-button mdc-button--unelevated">
-                        Baseline
-                      </button>
-                      <button class="mdc-button mdc-button--unelevated mdc-button--dense">
-                        Dense
-                      </button>
-                      <button class="mdc-button mdc-button--unelevated">
-                        <i class="material-icons mdc-button__icon">favorite</i>
-                        Icon
-                      </button>
-                      <a class="mdc-button mdc-button--unelevated">
-                        Link
-                      </a>
-                      <button class="mdc-button mdc-button--unelevated filled-button--secondary">
-                        Secondary
-                      </button>
-                      <button class="mdc-button mdc-button--unelevated filled-button--success">
-                        Success
-                      </button>
-                      <button class="mdc-button mdc-button--unelevated filled-button--info">
-                        Info
-                      </button>
-                      <button class="mdc-button mdc-button--unelevated filled-button--warning">
-                        Warning
-                      </button>
-                      <button class="mdc-button mdc-button--unelevated filled-button--light">
-                        Light
-                      </button>
-                      <button class="mdc-button mdc-button--unelevated filled-button--dark">
-                        Dark
-                      </button>
-                    </div>
-                  </section>
-                </div>
-              </div>
-              <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-12-tablet">
-                <div class="mdc-card">
-                  <section class="mdc-card__primary">
-                    <h6 class="card-title">Outlined Button</h6>
-                  </section>
-                  <section class="mdc-card__supporting-text">
-                    <div class="template-demo">
-                      <button class="mdc-button mdc-button--outlined">
-                        Baseline
-                      </button>
-                      <button class="mdc-button mdc-button--outlined mdc-button--dense">
-                        Dense
-                      </button>
-                      <button class="mdc-button mdc-button--outlined">
-                        <i class="material-icons mdc-button__icon">favorite</i>
-                        Icon
-                      </button>
-                      <a href="javascript:;" class="mdc-button mdc-button--outlined">
-                        Link
-                      </a>
-                      <button class="mdc-button mdc-button--outlined outlined-button--secondary">
-                        Secondary
-                      </button>
-                      <button class="mdc-button mdc-button--outlined outlined-button--success">
-                        Success
-                      </button>
-                      <button class="mdc-button mdc-button--outlined outlined-button--info">
-                        Info
-                      </button>
-                      <button class="mdc-button mdc-button--outlined outlined-button--warning">
-                        Warning
-                      </button>
-                      <button class="mdc-button mdc-button--outlined outlined-button--light">
-                        Light
-                      </button>
-                      <button class="mdc-button mdc-button--outlined outlined-button--dark">
-                        Dark
-                      </button>
-                    </div>
-                  </section>
-                </div>
-              </div>
-              <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-12-tablet">
-                <div class="mdc-card">
-                  <section class="mdc-card__primary">
-                    <h6 class="card-title">Icon Button</h6>
-                  </section>
-                  <section class="mdc-card__supporting-text">
-                    <div class="template-demo">
-                      <button class="mdc-button mdc-button--raised icon-button">
-                        <i class="material-icons mdc-button__icon">favorite</i>
-                      </button>
-                      <button class="mdc-button mdc-button--raised icon-button filled-button--secondary">
-                        <i class="material-icons mdc-button__icon">delete</i>
-                      </button>
-                      <button class="mdc-button mdc-button--raised icon-button filled-button--success">
-                        <i class="material-icons mdc-button__icon">colorize</i>
-                      </button>
-                      <button class="mdc-button mdc-button--raised icon-button filled-button--info">
-                        <i class="material-icons mdc-button__icon">lock</i>
-                      </button>
-                      <button class="mdc-button mdc-button--raised icon-button filled-button--warning">
-                        <i class="material-icons mdc-button__icon">add</i>
-                      </button>
-                      <button class="mdc-button mdc-button--raised icon-button filled-button--light">
-                        <i class="material-icons mdc-button__icon">event_available</i>
-                      </button>
-                      <button class="mdc-button mdc-button--raised icon-button filled-button--dark">
-                        <i class="material-icons mdc-button__icon">notifications_none</i>
-                      </button>
-                      <a href="javascript:;" class="mdc-button mdc-button--raised icon-button">
-                        <i class="material-icons mdc-button__icon">get_app</i>
-                      </a>
-                    </div>
-                  </section>
-                </div>
-              </div>
-              <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-12-tablet">
-                <div class="mdc-card">
-                  <h6 class="card-title mb-4">Dropdown Menu</h6>
-                  <div class="mdc-layout-grid__inner">
-                    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
-                      <div class="template-demo">
-                        <h6 class="card-sub-title">Default Menu</h6>
-                        <div class="menu-button-container">
-                          <button class="mdc-button mdc-menu-button mdc-button--raised">
-                            Toggle Dropdown
-                          </button>
-                          <div class="mdc-menu mdc-menu-surface" tabindex="-1" id="demo-menu">
-                            <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                              <li class="mdc-list-item" role="menuitem">
-                                <h6 class="item-subject font-weight-normal">Back</h6>
-                              </li>
-                              <li class="mdc-list-item" role="menuitem">
-                                <h6 class="item-subject font-weight-normal">Forward</h6>
-                              </li>
-                              <li class="mdc-list-item" role="menuitem">
-                                <h6 class="item-subject font-weight-normal">Reload</h6>
-                              </li>
-                              <li class="mdc-list-divider"></li>
-                              <li class="mdc-list-item" role="menuitem">
-                                <h6 class="item-subject font-weight-normal">Save As..</h6>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
-                      <div class="template-demo">
-                        <h6 class="card-sub-title">Icon Menu</h6>
-                        <div class="menu-button-container">
-                          <button class="mdc-button mdc-menu-button mdc-button--raised icon-button shaped-button secondary-filled-button">
-                            <i class="material-icons mdc-button__icon">add</i>
-                          </button>
-                          <div class="mdc-menu mdc-menu-surface" tabindex="-1" id="demo-menu">
-                            <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                              <li class="mdc-list-item" role="menuitem">
-                                <h6 class="item-subject font-weight-normal">Back</h6>
-                              </li>
-                              <li class="mdc-list-item" role="menuitem">
-                                <h6 class="item-subject font-weight-normal">Forward</h6>
-                              </li>
-                              <li class="mdc-list-item" role="menuitem">
-                                <h6 class="item-subject font-weight-normal">Reload</h6>
-                              </li>
-                              <li class="mdc-list-divider"></li>
-                              <li class="mdc-list-item" role="menuitem">
-                                <h6 class="item-subject font-weight-normal">Save As..</h6>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      
+
+    <div class="testbox">
+        <div class="banner">
+        </div>
+        <br/>
+        <fieldset>
+         @foreach ($id as $pcr1 )
+         
+          @endforeach
+        </fieldset>
+
+        <br/>
+        <form action="{{ url('/pcrtestavailP') }}" method="post">
+          {{ csrf_field() }}
+
+          <fieldset>
+            <legend>Appointment Information</legend>
+            <div class="item">
+              <label for="instructions">Hospital ID: </label>
+              <textarea id="hospital_id" name="hospital_id" rows="2">1</textarea>
+            </div>
+          <div class="item">
+            <label for="instructions">Patient ID: </label>
+            <textarea id="patient_id" name="patient_id" rows="2">1</textarea>
+          </div>
+        
+          <div class="item">
+            <label for="instructions">Approved Date: </label>
+            <textarea id="date" name="date" rows="2">{{ $pcr1->date }}</textarea>
+          </div>
+
+          <div class="item">
+            <label for="instructions">Time: </label>
+            <textarea id="time" name="time" rows="2">{{ $pcr1->time }}</textarea>
+          </div>
+
+          <div class="item">
+            <label for="instructions">Approved Status: </label>
+            <select name="status_pat">
+          
+                <option selected value="" disabled selected></option>
+                <option value="accept" >Accept</option>
+                <option value="reject" >Reject</option>
+
+
+            </select>          
+          </div>
+
+          </fieldset>
+          <div class="btn-block">
+          <button type="submit" href="{{ '/index1' }}">Conform</button>
+          </div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
               <!-- Ripple Enabled Buttons Ends -->
             </div>
           </div>
@@ -596,10 +592,8 @@
           <div class="mdc-layout-grid">
             <div class="mdc-layout-grid__inner">
               <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
-                <span class="text-center text-sm-left d-block d-sm-inline-block tx-14">Copyright © <a href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com </a>2020</span>
               </div>
               <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop d-flex justify-content-end">
-                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center tx-14">Free <a href="https://www.bootstrapdash.com/material-design-dashboard/" target="_blank"> material admin </a> dashboards from Bootstrapdash.com</span>
               </div>
             </div>
           </div>

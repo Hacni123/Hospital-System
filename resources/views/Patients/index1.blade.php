@@ -44,7 +44,7 @@
             <div class="mdc-list-item mdc-drawer-item">
               <a class="mdc-drawer-link" href="pages/forms/basic-forms.html">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">track_changes</i>
-                Forms
+                My Appointments
               </a>
             </div>
              <div class="mdc-list-item mdc-drawer-item">
@@ -65,11 +65,7 @@
                      Ambulance Services
                     </a>
                   </div>
-                  <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link" href="{{url('pcrtestavail')}}">
-                      PCR Test
-                    </a>
-                  </div>
+                 
                  </nav>
               </div>
             </div>
@@ -96,6 +92,11 @@
                      PCR Test
                     </a>
                   </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link"  href="{{url('pcrtestavailP')}}">
+                     PCR Test Details
+                    </a>
+                  </div>
                 </nav>
               </div>
             </div>
@@ -106,7 +107,7 @@
               </a>
             </div>          
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="https://www.bootstrapdash.com/demo/material-admin-free/jquery/documentation/documentation.html" target="_blank">
+              <a class="mdc-drawer-link" href="{{ url('contact') }}">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">description</i>
                Contact Us
               </a>
@@ -379,75 +380,33 @@
               <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
                 <div class="mdc-card">
                   <div class="d-flex justify-content-between">
-                    <h4 class="card-title mb-0">Active Cases by location</h4>
+                    <h4 class="card-title mb-0"><b>Covid Actions and Preventions</b></h4>
                     <div>
                         <i class="material-icons refresh-icon">refresh</i>
                         <i class="material-icons options-icon ml-2">more_vert</i>
                     </div>
                   </div>
                   <div class="d-block d-sm-flex justify-content-between align-items-center">
-                      <h5 class="card-sub-title mb-2 mb-sm-0">Sales performance revenue based by country</h5>
-                      <div class="menu-button-container">
-                        <button class="mdc-button mdc-menu-button mdc-button--raised button-box-shadow tx-12 text-dark bg-white font-weight-light">
-                            Last 7 days
-                          <i class="material-icons">arrow_drop_down</i>
-                        </button>
-                        <div class="mdc-menu mdc-menu-surface" tabindex="-1">
-                          <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                            <li class="mdc-list-item" role="menuitem">
-                              <h6 class="item-subject font-weight-normal">Back</h6>
-                            </li>
-                            <li class="mdc-list-item" role="menuitem">
-                              <h6 class="item-subject font-weight-normal">Forward</h6>
-                            </li>
-                            <li class="mdc-list-item" role="menuitem">
-                              <h6 class="item-subject font-weight-normal">Reload</h6>
-                            </li>
-                            <li class="mdc-list-divider"></li>
-                            <li class="mdc-list-item" role="menuitem">
-                              <h6 class="item-subject font-weight-normal">Save As..</h6>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
+                      
                   </div>
                   <div class="mdc-layout-grid__inner mt-2">
                     <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-8-tablet">
                         <div class="table-responsive">
                           <table class="table dashboard-table">
                             <tbody>
+                             
                               <tr>
-                                <td>
-                                  <span class="flag-icon-container"><i class="flag-icon flag-icon-us mr-2"></i></span>United States</td>
-                                <td>$1,671.10</td>
-                                <td class=" font-weight-medium"> 39% </td>
+                                <td> <span class="flag-icon-container"></span><img src="../assets/images/symptom.jpg" width="500" height="500" alt="logo">
+                                </td>
+                               
                               </tr>
-                              <tr>
-                                <td> <span class="flag-icon-container"><i class="flag-icon flag-icon-ph mr-2"></i></span>Philippines	</td>
-                                <td>$1,064.75</td>
-                                <td class=" font-weight-medium"> 30% </td>
-                              </tr>
-                              <tr>
-                                <td> <span class="flag-icon-container"><i class="flag-icon flag-icon-gb mr-2"></i></span>United Kingdom</td>
-                                <td>$1,055.98</td>
-                                <td class=" font-weight-medium"> 45% </td>
-                              </tr>
-                              <tr>
-                                <td> <span class="flag-icon-container"><i class="flag-icon flag-icon-ca mr-2"></i></span>Canada</td>
-                                <td>$1,045.49</td>
-                                <td class=" font-weight-medium"> 80% </td>
-                              </tr>
-                              <tr>
-                                <td> <span class="flag-icon-container"><i class="flag-icon flag-icon-fr mr-2"></i></span>France</td>
-                                <td>$2,050.93</td>
-                                <td class=" font-weight-medium"> 10% </td>
-                              </tr>
+
                             </tbody>
                           </table>
                         </div>
                     </div>
                     <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-8-tablet"> 
-                      <div id="revenue-map" class="revenue-world-map"></div>
+                      <img src="../assets/images/poster1.jpg" width="500" height="600" alt="logo">
                     </div>
                   </div>
                 </div> 

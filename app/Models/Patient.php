@@ -9,7 +9,6 @@ use App\Models\Ambulancerequest;
 use App\Models\Pcrtest;
 use App\Models\Login;
 use App\Models\Hospital;
-use App\Models\SendCode;
 use Input;
 
 
@@ -25,8 +24,6 @@ class Patient extends Model
         'pat_address',
         'pat_id',
         'pat_mobile',
-        'code',
-        'active',
         'login_id',
         'hospital_id'
     ];
@@ -55,5 +52,14 @@ class Patient extends Model
     {
         return $this->belongsTo(Hospital::class);
     }
- 
+
+    public function hospitalsamb()
+    {
+        return $this->belongsTo(Hospital::class);
+    }
+
+    public function hospitalspcr()
+    {
+        return $this->belongsTo(Hospital::class);
+    }
 }

@@ -161,7 +161,7 @@ span.psw {
         <div class="mdc-list-group">
           <nav class="mdc-list mdc-drawer-menu">
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="{{URL::to('/home')}}">
+            <a class="mdc-drawer-link" href="{{url('')}}">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i>
                 Dashboard
               </a>
@@ -172,13 +172,8 @@ span.psw {
                 My Appointments
               </a>
             </div>
+           
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="pages/forms/basic-forms.html">
-                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">track_changes</i>
-                Forms
-              </a>
-            </div>
-             <div class="mdc-list-item mdc-drawer-item">
               <a class="mdc-expansion-panel-link" href="#" data-toggle="expansionPanel" data-target="sample-page-submenu">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">pages</i>
                 Checking_Availability
@@ -196,11 +191,7 @@ span.psw {
                      Ambulance Services
                     </a>
                   </div>
-                  <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link" href="{{url('pcrtestavail')}}">
-                      PCR Test
-                    </a>
-                  </div>
+                 
                  </nav>
               </div>
             </div>
@@ -213,18 +204,23 @@ span.psw {
               <div class="mdc-expansion-panel" id="ui-sub-menu">
                 <nav class="mdc-list mdc-drawer-submenu">
                   <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link"  href="{{url('icubeds')}}">
+                    <a class="mdc-drawer-link"  href="{{url('icubedsP')}}">
                      ICU Beds
                     </a>
                   </div>
                   <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link"  href="{{url('ambulance')}}">
+                    <a class="mdc-drawer-link"  href="{{url('ambulanceP')}}">
                      Ambulance Services
                     </a>
                   </div>
                   <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link"  href="{{url('pcrtest')}}">
+                    <a class="mdc-drawer-link"  href="{{url('pcrtestP')}}">
                      PCR Test
+                    </a>
+                  </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link"  href="{{url('pcrtestavailP')}}">
+                     PCR Test Details
                     </a>
                   </div>
                 </nav>
@@ -237,7 +233,7 @@ span.psw {
               </a>
             </div>          
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="https://www.bootstrapdash.com/demo/material-admin-free/jquery/documentation/documentation.html" target="_blank">
+              <a class="mdc-drawer-link" href="{{ url('contact') }}">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">description</i>
                Contact Us
               </a>
@@ -247,7 +243,7 @@ span.psw {
         <div class="profile-actions">
           <a href="javascript:;">Settings</a>
           <span class="divider"></span>
-          <a href="{{ url('logout') }}">Logout</a>
+          <a href="javascript:;">Logout</a>
         </div>
         <div class="mdc-card premium-card">
           <div class="d-flex align-items-center">
