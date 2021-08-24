@@ -100,9 +100,10 @@ Route::get('/atest','AdminController@test');
 Route::get('/atestres','AdminController@testresults');
 
 //hospital registration
-Route::get('/hosreg','AdminController@addhospital');
-Route::post('/hosreg','AdminController@savehospital');
-Route::post('/hosreg','AdminController@hospitalregister');
+
+Route::get('/hosregadd', [AdminController::class, 'addhospital']);
+Route::post('/hospitalreg', [AdminController::class, 'savehospital'])->name('addnewhospital.store');
+//Route::post('/hospitalregemail','AdminController@hospitalregister');
 
 // check
 

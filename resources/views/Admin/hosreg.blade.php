@@ -18,7 +18,7 @@
                                             <h3 class="text-center title-2"><b>Hospital Registration</b></h3>
                                         </div>
                                         <hr>
-                                        <form action="{{ url('hosreg') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                        <form action="{{ route('addnewhospital.store') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                                         @csrf
                                             <div class="form-group has-success">
                                                 <label for="cc-name" class="control-label mb-1">Hospital Name</label>

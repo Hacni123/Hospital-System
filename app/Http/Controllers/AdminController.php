@@ -115,61 +115,7 @@ class AdminController extends Controller
        return view('Admin.hosreg');
     }
 
-    public function savehospital(Request $request)
-    {
-        
     
-        $request->validate([
-            
-            'hos_name' => 'required',
-            'hos_email' => 'required|email',
-            'hos_address' => 'required',
-            'hos_mobile' => 'required',
-            'login_username' => 'required',
-            'login_password' => 'required'
-        ]);
-        
-        try { 
-            $user = Login::firstOrCreate([
-                'login_username'=>$request->input('login_username'),
-                'login_password'=>Hash::make($request->input('login_password')),
-              ]);
-
-              Hospital::create([
-                'login_id' => $user->id,
-                'hos_name'=>$request->input('hos_name'),
-                'hos_email'=>$request->input('hos_email'),
-                'hos_address'=>$request->input('hos_address'),
-                'hos_mobile'=>$request->input('hos_mobile')
-               
-                /*,'password'*/
-            ]);
-            
-            return view("Admin.adminindex")->withSuccess('Great! You have Successfully loggedin');
-          } 
-          catch(\Illuminate\Database\QueryException $ex)
-          { 
-            return back()->with('fail','User name is taken before.');
-          }
-        
-    }
-
-    
-
-    public function hospitalregister()
-    {
-        
-
-        //return view('Admin.hosreg');
-        $data = request(['hos_email','login_username','login_password']);
-        //return $data;
-        //\Illuminame\Support\Facades\
-        Mail::to('hasaraismini@gmail.com')
-            ->send(new \App\Mail\hosreg($data));
-
-        return redirect('hosreg')->with('flash'.'Massege sent successfully...');
-        
-    }
     
 
     public function hosregmail()
@@ -280,4 +226,121 @@ class AdminController extends Controller
     {
         return view('Admin.check');
     } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public function savehospital(Request $request)
+    {
+        
+    
+        $request->validate([
+            
+            'hos_name' => 'required',
+            'hos_email' => 'required|email',
+            'hos_address' => 'required',
+            'hos_mobile' => 'required',
+            'login_username' => 'required',
+            'login_password' => 'required'
+        ]);
+        
+        try { 
+            $user = Login::firstOrCreate([
+                'login_username'=>$request->input('login_username'),
+                'login_password'=>Hash::make($request->input('login_password')),
+              ]);
+
+              Hospital::create([
+                'login_id' => $user->id,
+                'hos_name'=>$request->input('hos_name'),
+                'hos_email'=>$request->input('hos_email'),
+                'hos_address'=>$request->input('hos_address'),
+                'hos_mobile'=>$request->input('hos_mobile')
+               
+                /*,'password'*/
+            ]);
+
+             //return view('Admin.hosreg');
+            $data = request(['hos_email','login_username','login_password']);
+             //return $data;
+               //\Illuminame\Support\Facades\
+             Mail::to('hasini.baddegama@gmail.com')
+            ->send(new \App\Mail\hosreg($data));
+            return view("Admin.adminindex")->withSuccess('Great! You have Successfully loggedin');
+            
+          } 
+          catch(\Illuminate\Database\QueryException $ex)
+          { 
+            return back()->with('fail','User name is taken before.');
+          }
+        
+    }
 }
