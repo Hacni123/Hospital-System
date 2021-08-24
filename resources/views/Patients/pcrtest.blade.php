@@ -232,10 +232,10 @@
                 </a>
               </div>
               <div class="mdc-list-item mdc-drawer-item">
-                <a class="mdc-drawer-link" href="../../pages/forms/basic-forms.html">
-                  <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">track_changes</i>
-                  My Appointments
-                </a>
+              <a class="mdc-drawer-link" href="{{url('myappointment')}}">
+                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i>
+                My Appointments
+              </a>
               </div>
               <div class="mdc-list-item mdc-drawer-item">
                 <a class="mdc-expansion-panel-link" href="#" data-toggle="expansionPanel" data-target="sample-page-submenu">
@@ -551,7 +551,7 @@
             <legend>Appointment Information</legend>
             <div class="item">
               <label for="instructions">Hospital ID: </label>
-              <textarea id="hospital_id" name="hospital_id" rows="2">{{ $pcr1->id }}</textarea>
+              <textarea id="hospital_id" name="hospital_id" rows="2">{{ $pcr1->hospital_id }}</textarea>
             </div>
           <div class="item">
             <label for="instructions">Patient ID: </label>

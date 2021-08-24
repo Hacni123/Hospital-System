@@ -223,10 +223,7 @@
           </a>
         </div>
         <div class="mdc-drawer__content">
-          <div class="user-info">
-            <p class="name" style="font-size: 22px">Life Care</p>
-            <p class="email">info@Lifecare.com</p>
-          </div>
+        
           <div class="mdc-list-group">
             <nav class="mdc-list mdc-drawer-menu">
               <div class="mdc-list-item mdc-drawer-item">
@@ -236,10 +233,10 @@
                 </a>
               </div>
               <div class="mdc-list-item mdc-drawer-item">
-                <a class="mdc-drawer-link" href="../../pages/forms/basic-forms.html">
-                  <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">track_changes</i>
-                  My Appointments
-                </a>
+              <a class="mdc-drawer-link" href="{{url('myappointment')}}">
+                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i>
+                My Appointments
+              </a>
               </div>
               <div class="mdc-list-item mdc-drawer-item">
                 <a class="mdc-expansion-panel-link" href="#" data-toggle="expansionPanel" data-target="sample-page-submenu">

@@ -267,7 +267,7 @@ class PatientController extends Controller
         }
         $input =$request->all();
         Icubrequest::create($input);
-        return redirect()->route('/.index')->with('success','Request send Successfully.');
+        return redirect()->route('/.index1')->with('success','Request send Successfully.');
     }
 
     public function bookingambulance()
@@ -296,7 +296,7 @@ class PatientController extends Controller
         }
         $input =$request->all();
         Ambulancerequest::create($input);
-        return redirect()->route('/.index')->with('success','Request send Successfully.');
+        return redirect()->route('/.index1')->with('success','Request send Successfully.');
     }
     public function bookingpcrtest()
     {
@@ -324,7 +324,7 @@ class PatientController extends Controller
         }
         $input =$request->all();
         Pcrtest::create($input);
-        return redirect()->route('/.index')->with('success','Request send Successfully.');
+        return redirect()->route('/.index1')->with('success','Request send Successfully.');
     }
     public function bookingpcrtestcon()
     {
@@ -352,7 +352,7 @@ class PatientController extends Controller
         }
         $input =$request->all();
         Pcrtest::create($input);
-        return redirect()->route('/.index')->with('success','Request send Successfully.');
+        return redirect()->route('/.index1')->with('success','Request send Successfully.');
     }
     public function availicubeds()
     {

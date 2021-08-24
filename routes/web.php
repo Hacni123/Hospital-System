@@ -177,7 +177,7 @@ Route::post('/verify','verifyController@postVerify')->name('verify');
 Route::get('/myappointment', [PatientController::class, 'myappointment']);
 
 
-//Route::get('/',[PatientController::class, 'index1'])->name('/.index1');
+Route::get('/index1',[PatientController::class, 'index1'])->name('/.index1');
 Route::get('/icubedsP',[PatientController::class, 'bookingicubeds'])->name('icubedsP.bookingicubeds');
 Route::post('/icubedsP',[PatientController::class, 'bookingicu'])->name('icubedsP.bookingicu');
 Route::get('/ambulanceP',[PatientController::class, 'bookingambulance'])->name('ambulanceP.bookingambulance');
