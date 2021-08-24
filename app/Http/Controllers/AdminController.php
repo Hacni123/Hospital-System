@@ -25,6 +25,7 @@ class AdminController extends Controller
     public function index()
     {
     
+      /*
         if(session()->has('LoggedUser')){
             $user = Login::where('id','=', session('LoggedUser'))->first();
             $row = DB::table('adminall')
@@ -37,7 +38,10 @@ class AdminController extends Controller
          else{
                     return view('Admin.login');
 
-         }    
+         }
+         */
+
+        return view('Admin.adminindex');
                   
 
     }

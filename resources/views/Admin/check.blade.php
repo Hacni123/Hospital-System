@@ -1,6 +1,7 @@
 @extends('Hospitals.layout')
 
 @section('content')
+<!--
 <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -50,7 +51,7 @@
 
                 </div>
             </div>
-            <!--/.col-->
+           
 
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white bg-flat-color-2">
@@ -71,7 +72,7 @@
                     </div>
                 </div>
             </div>
-            <!--/.col-->
+       
 
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white bg-flat-color-3">
@@ -92,7 +93,7 @@
                     </div>
                 </div>
             </div>
-            <!--/.col-->
+           
 
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white bg-flat-color-4">
@@ -112,7 +113,7 @@
                     </div>
                 </div>
             </div>
-            <!--/.col-->
+            
 
             <div class="col-lg-3 col-md-6">
             <div class="card text-white bg-flat-color-4">
@@ -132,8 +133,7 @@
                     </div>
                 </div>
             </div>
-            <!--/.col-->
-
+           
 
             <div class="col-lg-3 col-md-6">
             <div class="card text-white bg-flat-color-3">
@@ -153,9 +153,9 @@
                         <canvas id="widgetChart3"></canvas>
                     </div>
                 </div>
-                <!--/social-box-->
+                
             </div>
-            <!--/.col-->
+
 
 
             <div class="col-lg-3 col-md-6">
@@ -176,9 +176,9 @@
 
                     </div>
                 </div>
-                <!--/social-box-->
+               
             </div>
-            <!--/.col-->
+            
 
 
             <div class="col-lg-3 col-md-6">
@@ -198,9 +198,9 @@
                     </div>
 
                 </div>
-                <!--/social-box-->
+             
             </div>
-            <!--/.col-->
+-->
 
             <div class="col-xl-12">
                 <div class="content mt-12">
