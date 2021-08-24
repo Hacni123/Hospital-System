@@ -33,4 +33,21 @@
     <!-- Main CSS-->
     <link href="assets/admin/css/theme.css" rel="stylesheet" media="all">
 
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="{{asset('assetshos/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
+    
+    <link rel="stylesheet" href="{{asset('assetshos/vendors/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assetshos/vendors/themify-icons/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{asset('assetshos/vendors/flag-icon-css/css/flag-icon.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assetshos/vendors/selectFX/css/cs-skin-elastic.css')}}">
+    <link rel="stylesheet" href="{{asset('assetshos/vendors/jqvmap/dist/jqvmap.min.css')}}">
+
+
+    <link rel="stylesheet" href="{{asset('assetshos/assets/css/style.css')}}">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+
+
 </head>

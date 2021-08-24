@@ -105,7 +105,7 @@ Route::post('/hosreg','AdminController@hospitalregister');
 
 // check
 Route::get('/acheck','AdminController@check');
-Route::get('/acheck','AdminController@new');
+
 
 // Admin login registration
 Route::get('/alogin', [AdminController::class, 'aindex'])->name('login');
