@@ -1355,6 +1355,7 @@ return array(
     'Illuminate\\Contracts\\Support\\MessageProvider' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Support/MessageProvider.php',
     'Illuminate\\Contracts\\Support\\Renderable' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Support/Renderable.php',
     'Illuminate\\Contracts\\Support\\Responsable' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Support/Responsable.php',
+    'Illuminate\\Contracts\\Support\\ValidatedData' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Support/ValidatedData.php',
     'Illuminate\\Contracts\\Translation\\HasLocalePreference' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Translation/HasLocalePreference.php',
     'Illuminate\\Contracts\\Translation\\Loader' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Translation/Loader.php',
     'Illuminate\\Contracts\\Translation\\Translator' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Translation/Translator.php',
@@ -2012,6 +2013,7 @@ return array(
     'Illuminate\\Support\\Traits\\Macroable' => $vendorDir . '/laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php',
     'Illuminate\\Support\\Traits\\ReflectsClosures' => $vendorDir . '/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php',
     'Illuminate\\Support\\Traits\\Tappable' => $vendorDir . '/laravel/framework/src/Illuminate/Support/Traits/Tappable.php',
+    'Illuminate\\Support\\ValidatedInput' => $vendorDir . '/laravel/framework/src/Illuminate/Support/ValidatedInput.php',
     'Illuminate\\Support\\ViewErrorBag' => $vendorDir . '/laravel/framework/src/Illuminate/Support/ViewErrorBag.php',
     'Illuminate\\Testing\\Assert' => $vendorDir . '/laravel/framework/src/Illuminate/Testing/Assert.php',
     'Illuminate\\Testing\\AssertableJsonString' => $vendorDir . '/laravel/framework/src/Illuminate/Testing/AssertableJsonString.php',
@@ -2044,6 +2046,7 @@ return array(
     'Illuminate\\Validation\\Concerns\\FormatsMessages' => $vendorDir . '/laravel/framework/src/Illuminate/Validation/Concerns/FormatsMessages.php',
     'Illuminate\\Validation\\Concerns\\ReplacesAttributes' => $vendorDir . '/laravel/framework/src/Illuminate/Validation/Concerns/ReplacesAttributes.php',
     'Illuminate\\Validation\\Concerns\\ValidatesAttributes' => $vendorDir . '/laravel/framework/src/Illuminate/Validation/Concerns/ValidatesAttributes.php',
+    'Illuminate\\Validation\\ConditionalRules' => $vendorDir . '/laravel/framework/src/Illuminate/Validation/ConditionalRules.php',
     'Illuminate\\Validation\\DatabasePresenceVerifier' => $vendorDir . '/laravel/framework/src/Illuminate/Validation/DatabasePresenceVerifier.php',
     'Illuminate\\Validation\\DatabasePresenceVerifierInterface' => $vendorDir . '/laravel/framework/src/Illuminate/Validation/DatabasePresenceVerifierInterface.php',
     'Illuminate\\Validation\\Factory' => $vendorDir . '/laravel/framework/src/Illuminate/Validation/Factory.php',
@@ -2460,10 +2463,7 @@ return array(
     'League\\CommonMark\\Parser\\Block\\BlockStartParserInterface' => $vendorDir . '/league/commonmark/src/Parser/Block/BlockStartParserInterface.php',
     'League\\CommonMark\\Parser\\Block\\DocumentBlockParser' => $vendorDir . '/league/commonmark/src/Parser/Block/DocumentBlockParser.php',
     'League\\CommonMark\\Parser\\Block\\ParagraphParser' => $vendorDir . '/league/commonmark/src/Parser/Block/ParagraphParser.php',
-<<<<<<< Updated upstream
-=======
     'League\\CommonMark\\Parser\\Block\\SkipLinesStartingWithLettersParser' => $vendorDir . '/league/commonmark/src/Parser/Block/SkipLinesStartingWithLettersParser.php',
->>>>>>> Stashed changes
     'League\\CommonMark\\Parser\\Cursor' => $vendorDir . '/league/commonmark/src/Parser/Cursor.php',
     'League\\CommonMark\\Parser\\CursorState' => $vendorDir . '/league/commonmark/src/Parser/CursorState.php',
     'League\\CommonMark\\Parser\\InlineParserContext' => $vendorDir . '/league/commonmark/src/Parser/InlineParserContext.php',

@@ -142,6 +142,9 @@ Route::get('/alogout', [AdminController::class, 'logout'])->name('logout');
 Route::get('/', function () {
    return view('Patients.home'); 
 });
+Route::get('/index',function(){
+   return view('Patients.index');
+});
 
 Route::get('/login', function () {
    return view('Patients.login');
@@ -149,14 +152,26 @@ Route::get('/login', function () {
 //Route::get('/register', function () {
  //  return view('Patients.register');
 //});
-Route::get('/otp', function () {
-   return view('Patients.otp');
+//Route::get('/myappointment', function () {
+  // return view('Patients.myappointment');
+//});
+Route::get('/otpafter', function () {
+   return view('Patients.index');
 });
 
 //Route::post('/register_action','PatientController@store');
 Route::get('/pregister', [PatientController::class, 'registration']);
 Route::post('post-registration', [PatientController::class, 'postRegistration'])->name('register.post'); 
+Route::get('/verify','VerifyController@getVerify')->name('getverify');
+Route::post('/verify','VerifyController@postVerify')->name('verify');
 Route::post('check','PatientController@check')->name('login.post');
+
 Route::get('profile','PatientController@profile');
 Route::get('/hprofile', [PatientController::class, 'profilehospital']);
 Route::get('logout', 'PatientController@logout');
+Route::get('/verify','verifyController@getVerify')->name('getverify');
+Route::post('/verify','verifyController@postVerify')->name('verify');
+Route::get('/myappointment', [PatientController::class, 'myappointment']);
+
+
+

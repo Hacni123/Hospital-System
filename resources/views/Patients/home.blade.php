@@ -165,21 +165,10 @@ span.psw {
       <header>
          <div class="header-top wow fadeIn">
             <div class="container">
-               <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="image"></a>
+               <a class="navbar-brand"><h1>Welcome To Our Hospital ! ! !</h1></a>
                <div class="right-header">
                   <div class="header-info">
-                     <div class="info-inner">
-                        <span class="icontop"><img src="assets/images/phone-icon.png" alt="#"></span>
-                        <span class="iconcont"><a href="tel:800 123 456">800 123 456</a></span>	
-                     </div>
-                     <div class="info-inner">
-                        <span class="icontop"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                        <span class="iconcont"><a data-scroll href="mailto:info@yoursite.com">info@Lifecare.com</a></span>	
-                     </div>
-                     <div class="info-inner">
-                        <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                        <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
-                     </div>
+                  <img  href="index.html" src="assets/images/logo.png" alt="image" height=50% width=70%>
                   </div>
                </div>
             </div>
@@ -218,6 +207,7 @@ span.psw {
             </div>
          </div>
       </header>
+      <hr>
       <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
          <div class="container">
             <div class="row">
@@ -244,7 +234,7 @@ span.psw {
                   <div class="service-time one" style="background:#2895f1;">
                      <span class="info-icon"><i class="fa fa-ambulance" aria-hidden="true"></i></span>
                      <h3>Emergency Case</h3>
-                     <p>Dignissimos ducimus qui blanditii sentium volta tum deleniti atque cori as quos dolores et quas mole.</p>
+                     <p><ul><li>ICU bed booking</li> <li>Ambulance services</li><li>Take PCR test</li></ul></p>
                   </div>
                </div>
             </div>
