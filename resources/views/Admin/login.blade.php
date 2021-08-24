@@ -12,13 +12,12 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="{{ route('login.post') }}" method="post">
-
-                            {{ csrf_field() }}
+                            <form action="{{ route('adminlogin.post') }}" method="post">
+                            @csrf
 
                                 <div class="form-group">
                                     <label> User Name </label>
-                                    <input class="au-input au-input--full" type="text" name="login_username" placeholder="login_username">
+                                    <input class="au-input au-input--full" type="text" name="login_username" placeholder="username">
 
                                     @if ($errors->has('login_username'))
                                     <span class="text-danger">{{ $errors->first('login_username') }}</span>
@@ -27,7 +26,7 @@
 
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input class="au-input au-input--full" type="password" name="login_password" placeholder="login_password">
+                                    <input class="au-input au-input--full" type="password" name="login_password" placeholder="password">
 
                                     @if ($errors->has('login_password'))
                                     <span class="error">{{ $errors->first('login_password') }}</span>
@@ -44,10 +43,7 @@
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
                                 <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
-                                        <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
-                                    </div>
+                                    
                                 </div>
                             </form>
                             <div class="register-link">

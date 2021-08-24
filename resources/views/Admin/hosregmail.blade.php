@@ -135,11 +135,7 @@
       <h3>Welcome !!!</h3>
       <form action="/">
         <hr>
-        <div class="account-type">
-          
-        </div>
-        <hr>
-        
+      
     <p> 
         <label id="icon" for="name"><i class="fas fa-user"></i>  Your User Name</label>
         <br>

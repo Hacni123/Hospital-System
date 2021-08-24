@@ -1,6 +1,7 @@
 @extends('Hospitals.layout')
 
 @section('content')
+<!--
 <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -37,7 +38,7 @@
                     <div class="card-body pb-0" >
                         
                         <h4 class="mb-0">
-                            <span class="count">{{$data}}</span>
+                            <span class="count"></span>
                         </h4>
                         
                         <p class="text-light">New ICU Bed Requests</p>
@@ -50,7 +51,7 @@
 
                 </div>
             </div>
-            <!--/.col-->
+           
 
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white bg-flat-color-2">
@@ -60,7 +61,7 @@
                            
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">{{$data1}}</span>
+                            <span class="count"></span>
                         </h4>
                         <p class="text-light">New PCR Requests</p>
 
@@ -71,7 +72,7 @@
                     </div>
                 </div>
             </div>
-            <!--/.col-->
+       
 
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white bg-flat-color-3">
@@ -81,7 +82,7 @@
                             
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">{{$data2}}</span>
+                            <span class="count"></span>
                         </h4>
                         <p class="text-light">New Ambulances Requests</p>
 
@@ -92,7 +93,7 @@
                     </div>
                 </div>
             </div>
-            <!--/.col-->
+           
 
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white bg-flat-color-4">
@@ -101,7 +102,7 @@
                             
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">{{$data3}}</span>
+                            <span class="count"></span>
                         </h4>
                         <p class="text-light">All Patients</p>
 
@@ -112,7 +113,7 @@
                     </div>
                 </div>
             </div>
-            <!--/.col-->
+            
 
             <div class="col-lg-3 col-md-6">
             <div class="card text-white bg-flat-color-4">
@@ -121,7 +122,7 @@
                             
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">{{$data4}}</span>
+                            <span class="count"></span>
                         </h4>
                         <p class="text-light">No of Positive Reports</p>
 
@@ -132,8 +133,7 @@
                     </div>
                 </div>
             </div>
-            <!--/.col-->
-
+           
 
             <div class="col-lg-3 col-md-6">
             <div class="card text-white bg-flat-color-3">
@@ -143,7 +143,7 @@
                             
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">{{$data5}}</span>
+                            <span class="count"></span>
                         </h4>
                         <p class="text-light">No of Negative Reports</p>
 
@@ -153,9 +153,9 @@
                         <canvas id="widgetChart3"></canvas>
                     </div>
                 </div>
-                <!--/social-box-->
+                
             </div>
-            <!--/.col-->
+
 
 
             <div class="col-lg-3 col-md-6">
@@ -166,7 +166,7 @@
                            
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">{{$data6}}</span>
+                            <span class="count"></span>
                         </h4>
                         <p class="text-light">Available ICU Beds</p>
 
@@ -176,9 +176,9 @@
 
                     </div>
                 </div>
-                <!--/social-box-->
+               
             </div>
-            <!--/.col-->
+            
 
 
             <div class="col-lg-3 col-md-6">
@@ -186,7 +186,7 @@
                     <div class="card-body pb-0" >
                         
                         <h4 class="mb-0">
-                            <span class="count">{{$data7}}</span>
+                            <span class="count"></span>
                         </h4>
                         
                         <p class="text-light">Available Ambulances</p>
@@ -198,9 +198,9 @@
                     </div>
 
                 </div>
-                <!--/social-box-->
+             
             </div>
-            <!--/.col-->
+-->
 
             <div class="col-xl-12">
                 <div class="content mt-12">
@@ -221,20 +221,20 @@
                                 <div class="card-body">
                                 <table class="table table-striped">
                                 <tbody>
-                                   @foreach($icubeds->chunk(3) as $icu_beds)
+                                  
                                 <tr>
-                                   @foreach( $icu_beds as $bed )
+                                   
                                 <td>
-                                @if($bed->status=="Availabe")
-                                            <th> <button type="submit" class="btn btn-success btn-lg" style="width:200px; height:50;">Ward: {{$bed->ward_no}}, Bed No: {{$bed->id}}</button></th>
+                            
+                                            <th> <button type="submit" class="btn btn-success btn-lg" style="width:200px; height:50;"></button></th>
                                             
-                                            @else
-                                            <th><button type="button" class="btn btn-danger btn-lg" style="width:200px; height:50;">Ward: {{$bed->ward_no}}, Bed No: {{$bed->id}}</button></th>
-                                            @endif
+                                          
+                                            <th><button type="button" class="btn btn-danger btn-lg" style="width:200px; height:50;"></button></th>
+                                          
                                 </td>
-                                  @endforeach
+                                 
                                   </tr>
-                                  @endforeach
+                                
                                     
                                 </table>
                             </div>
@@ -269,20 +269,20 @@
                                 <div class="card-body">
                                 <table class="table table-striped">
                                 <tbody>
-                                   @foreach($ambulances->chunk(3) as $ambulance)
+                               
                                 <tr>
-                                   @foreach( $ambulance as $amb )
+                                
                                 <td>
-                                @if($amb->status=="Availabe")
-                                            <th> <button type="submit" class="btn btn-success btn-lg" style="width:200px; height:50;">Ambulance No: {{$amb->id}}</button></th>
+                                
+                                            <th> <button type="submit" class="btn btn-success btn-lg" style="width:200px; height:50;"></button></th>
                                             
-                                            @else
-                                            <th><button type="button" class="btn btn-danger btn-lg" style="width:200px; height:50;">Ambulance No: {{$amb->id}}</button></th>
-                                            @endif
+                                           
+                                            <th><button type="button" class="btn btn-danger btn-lg" style="width:200px; height:50;"></button></th>
+                                           
                                 </td>
-                                  @endforeach
+                              
                                   </tr>
-                                  @endforeach
+                                  
                                     
                                 </table>
                             </div>

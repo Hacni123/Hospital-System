@@ -8,8 +8,10 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="title-5 m-b-35">data table</h3>
-                            <div class="table-data__tool">
+                            <hr>
+                            <br>
+                            <h3 class="title-5 m-b-35" style="text-align:center"> Ambulances </h3>
+                            <!--<div class="table-data__tool">
                                 <div class="table-data__tool-left">
                                     <div class="rs-select2--light rs-select2--md">
                                         <select class="js-select2" name="property">
@@ -42,7 +44,7 @@
                                         <div class="dropDownSelect2"></div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="table-responsive table-responsive-data2">
                             <form action="aicubeds" method="POST">
                                 @csrf
@@ -100,4 +102,125 @@
                 </div>
             </section>
             <!-- END DATA TABLE-->
+
+
+            <div class="col-xl-12">
+                <div class="content mt-12">
+            <div class="animated fadeIn">
+               
+
+                    <div class="buttons">
+
+                        <!-- Left Block -->
+                       
+                                <div class="card">
+                                <div class="card-header">
+                                    <strong>ICU Beds</strong>
+                                    
+                                </div>
+                                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                @csrf
+                                <div class="card-body">
+                                <table class="table table-striped">
+                                <tbody>
+                                  
+                                <tr>
+                                   
+                                <td>
+                            
+                                            <th> <button type="submit" class="btn btn-success btn-lg" style="width:200px; height:50;"></button></th>
+                                            
+                                          
+                                            <th><button type="button" class="btn btn-danger btn-lg" style="width:200px; height:50;"></button></th>
+                                          
+                                </td>
+                                 
+                                  </tr>
+                                
+                                    
+                                </table>
+                            </div>
+                            </form>
+                                </div><!-- /# card --> 
+                                
+                            </div> <!-- .buttons -->
+
+                        
+                    </div><!-- .animated -->
+                </div><!-- .content -->
+
+
+            </div><!-- /#right-panel -->
+
+            <div class="col-xl-12">
+                <div class="content mt-12">
+            <div class="animated fadeIn">
+               
+
+                    <div class="buttons">
+
+                        <!-- Left Block -->
+                       
+                        <div class="card">
+                                <div class="card-header">
+                                    <strong>Ambulances</strong>
+                                    
+                                </div>
+                                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                @csrf
+                                <div class="card-body">
+                                <table class="table table-striped">
+                                <tbody>
+                               
+                                <tr>
+                                
+                                <td>
+                                
+                                            <th> <button type="submit" class="btn btn-success btn-lg" style="width:200px; height:50;"></button></th>
+                                            
+                                           
+                                            <th><button type="button" class="btn btn-danger btn-lg" style="width:200px; height:50;"></button></th>
+                                           
+                                </td>
+                              
+                                  </tr>
+                                  
+                                    
+                                </table>
+                            </div>
+                            </form>
+                                </div><!-- /# card --> 
+                                
+                            </div> <!-- .buttons -->
+
+                        
+                    </div><!-- .animated -->
+                </div><!-- .content -->
+
+
+            </div><!-- /#right-panel -->
+                    </div>
+                   
+                </div>
+            </div>
+
+            
+                    
+                    
+                </section>
+            </div>
+
+
+        
+
+
+           
+
+            
+
+            
+
+
+        </div> <!-- .content -->
+    </div><!-- /#right-panel -->
             @endsection

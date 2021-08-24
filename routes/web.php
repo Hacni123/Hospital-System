@@ -87,7 +87,8 @@ Route::get('/counticubedr', [HospitalController::class, 'counticubedreq']);
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //admin
-Route::get('/aindex','AdminController@index');
+
+Route::get('/aindex', [AdminController::class, 'index'])->name('admindashboard.index');
 Route::get('/apatientList','AdminController@show');
 Route::get('/aicubeds','AdminController@allicubeds');
 Route::get('/apatientList/{patientid}','AdminController@show');
@@ -99,21 +100,23 @@ Route::get('/atest','AdminController@test');
 Route::get('/atestres','AdminController@testresults');
 
 //hospital registration
-Route::get('/hosreg','AdminController@addhospital');
-Route::post('/hosreg','AdminController@savehospital');
-Route::post('/hosreg','AdminController@hospitalregister');
+
+Route::get('/hosregadd', [AdminController::class, 'addhospital']);
+Route::post('/hospitalreg', [AdminController::class, 'savehospital'])->name('addnewhospital.store');
+//Route::post('/hospitalregemail','AdminController@hospitalregister');
 
 // check
-Route::get('/acheck','AdminController@check');
-Route::get('/acheck','AdminController@new');
+
+
 
 // Admin login registration
-Route::get('/alogin', [AdminController::class, 'aindex'])->name('login');
-Route::post('/apost-login', [AdminController::class, 'postLogin'])->name('login.post'); 
+
+Route::get('/adminlogin', [AdminController::class, 'adminlogin'])->name('admin.login');
+Route::post('/apostlogin', [AdminController::class, 'postLogin'])->name('adminlogin.post'); 
 Route::get('/aregistration', [AdminController::class, 'registration'])->name('register');
 Route::post('/apost-registration', [AdminController::class, 'postRegistration'])->name('register.postadmin'); 
 Route::get('/adashboard', [AdminController::class, 'dashboard']); 
-Route::get('/alogout', [AdminController::class, 'logout'])->name('logout');
+Route::get('/alogout', [AdminController::class, 'logout']);
 
 
 
