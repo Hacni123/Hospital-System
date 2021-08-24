@@ -344,11 +344,6 @@ span.psw {
 
 
 
-<h2>Modal Appointments Details</h2>
-
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">ICU Beds</button>
-<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Ambulance Service</button>
-<button onclick="document.getElementById('id03').style.display='block'" style="width:auto;">PCR Tests</button>
 
 
 <div id="id01" class="modal">

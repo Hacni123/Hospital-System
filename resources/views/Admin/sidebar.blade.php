@@ -33,7 +33,7 @@
                                 <i class="fas fa-copy"></i>Hospitals</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                <a href="{{url('hosreg')}}">Add New Hospital</a>
+                                <a href="{{url('hosregadd')}}">Add New Hospital</a>
                                 </li>
                                 <li>
                                 <a href="{{url('ahospitals')}}">Hospital List</a>

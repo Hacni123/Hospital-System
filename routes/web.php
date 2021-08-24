@@ -100,9 +100,10 @@ Route::get('/atest','AdminController@test');
 Route::get('/atestres','AdminController@testresults');
 
 //hospital registration
-Route::get('/hosreg','AdminController@addhospital');
-Route::post('/hosreg','AdminController@savehospital');
-Route::post('/hosreg','AdminController@hospitalregister');
+
+Route::get('/hosregadd', [AdminController::class, 'addhospital']);
+Route::post('/hospitalreg', [AdminController::class, 'savehospital'])->name('addnewhospital.store');
+//Route::post('/hospitalregemail','AdminController@hospitalregister');
 
 // check
 Route::get('/ahospitals/{id}','AdminController@all');
@@ -176,4 +177,16 @@ Route::post('/verify','verifyController@postVerify')->name('verify');
 Route::get('/myappointment', [PatientController::class, 'myappointment']);
 
 
-
+Route::get('/index1',[PatientController::class, 'index1'])->name('/.index1');
+Route::get('/icubedsP',[PatientController::class, 'bookingicubeds'])->name('icubedsP.bookingicubeds');
+Route::post('/icubedsP',[PatientController::class, 'bookingicu'])->name('icubedsP.bookingicu');
+Route::get('/ambulanceP',[PatientController::class, 'bookingambulance'])->name('ambulanceP.bookingambulance');
+Route::post('/ambulanceP',[PatientController::class, 'bookingamb'])->name('ambulanceP.bookingamb');
+Route::get('/pcrtestP',[PatientController::class, 'bookingpcrtest'])->name('pcrtestP.bookingpcrtest');
+Route::post('/pcrtestP',[PatientController::class, 'bookingpcr'])->name('pcrtestP.bookingpcr');
+Route::get('/pcrtestavailP',[PatientController::class, 'bookingpcrtestcon'])->name('pcrtestavailP.bookingpcrtestcon');
+Route::post('/pcrtestavailP',[PatientController::class, 'bookingpcrcon'])->name('pcrtestavailP.bookingpcrcon');
+Route::get('/icubedsavail',[PatientController::class, 'availicubeds']);
+Route::get('/ambulanceavail',[PatientController::class, 'availambulance']);
+Route::get('/doctorsdetails',[PatientController::class, 'doctorsdetails']);
+Route::get('/contact',[PatientController::class, 'contact']);

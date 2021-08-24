@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material Dash</title>
@@ -15,204 +15,76 @@
     <link rel="stylesheet" href="../../../assets/css/demo/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="../../../assets/images/favicon.png" />
-
-
-
-
-
     <title>Family Medicine Practice</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <style>
-      html, body {
-      min-height: 100%;
-      }
-      body, div, form, input, select, textarea, label, p { 
-      padding: 0;
-      margin: 0;
-      outline: none;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 14px;
-      color: #666;
-      line-height: 22px;
-      }
-      h1 {
-      position: absolute;
-      margin: 0;
-      font-size: 38px;
-      color: #fff;
-      z-index: 2;
-      line-height: 83px;
-      }
-      textarea {
-      width: calc(100% - 12px);
-      padding: 5px;
-      }
-      .testbox {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: inherit;
-      padding: 20px;
-      }
-      form {
-      width: 100%;
-      padding: 20px;
-      border-radius: 6px;
-      background: #fff;
-      box-shadow: 0 0 8px  #669999; 
-      }
-      .banner {
-      position: relative;
-      height: 300px;
-      background-image: url("/uploads/media/default/0001/02/174b2e72df50743dfaa0a3bf9d2e59d8b42c91e1.jpeg");  
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      }
-      .banner::after {
-      content: "";
-      background-color: rgba(0, 0, 0, 0.2); 
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      }
-      input, select, textarea {
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      }
-      input {
-      width: calc(100% - 10px);
-      padding: 5px;
-      }
-      input[type="date"] {
-      padding: 4px 5px;
-      }
-      textarea {
-      width: calc(100% - 12px);
-      padding: 5px;
-      }
-      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
-      color:  #669999;
-      }
-      .item input:hover, .item select:hover, .item textarea:hover {
-      border: 1px solid transparent;
-      box-shadow: 0 0 3px 0  #669999;
-      color: #669999;
-      }
-      .item {
-      position: relative;
-      margin: 10px 0;
-      }
-      .item span {
-      color: red;
-      }
-      input[type="date"]::-webkit-inner-spin-button {
-      display: none;
-      }
-      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
-      position: absolute;
-      font-size: 20px;
-      color:  #a3c2c2;
-      }
-      .item i {
-      right: 1%;
-      top: 30px;
-      z-index: 1;
-      }
-      [type="date"]::-webkit-calendar-picker-indicator {
-      right: 1%;
-      z-index: 2;
-      opacity: 0;
-      cursor: pointer;
-      }
-      input[type=radio], input[type=checkbox]  {
-      display: none;
-      }
-      label.radio {
-      position: relative;
-      display: inline-block;
-      margin: 5px 20px 15px 0;
-      cursor: pointer;
-      }
-      .question span {
-      margin-left: 30px;
-      }
-      .question-answer label {
-      display: block;
-      }
-      label.radio:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 17px;
-      height: 17px;
-      border-radius: 50%;
-      border: 2px solid #ccc;
-      }
-      input[type=radio]:checked + label:before, label.radio:hover:before {
-      border: 2px solid  #669999;
-      }
-      label.radio:after {
-      content: "";
-      position: absolute;
-      top: 6px;
-      left: 5px;
-      width: 8px;
-      height: 4px;
-      border: 3px solid  #669999;
-      border-top: none;
-      border-right: none;
-      transform: rotate(-45deg);
-      opacity: 0;
-      }
-      input[type=radio]:checked + label:after {
-      opacity: 1;
-      }
-      .flax {
-      display:flex;
-      justify-content:space-around;
-      }
-      .btn-block {
-      margin-top: 10px;
-      text-align: center;
-      }
-      button {
-      width: 150px;
-      padding: 10px;
-      border: none;
-      border-radius: 5px; 
-      background:  #669999;
-      font-size: 16px;
-      color: #fff;
-      cursor: pointer;
-      }
-      button:hover {
-      background:  #a3c2c2;
-      }
-      @media (min-width: 568px) {
-      .name-item, .city-item {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      }
-      .name-item input, .name-item div {
-      width: calc(50% - 20px);
-      }
-      .name-item div input {
-      width:97%;}
-      .name-item div label {
-      display:block;
-      padding-bottom:5px;
-      }
-      }
-    </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  </head>
-  <body>
+<style>
+
+body{
+		background-color: #25274d;
+	}
+	.contact{
+		padding: 4%;
+		height: 400px;
+	}
+	.col-md-3{
+		background: #76a2f3;
+		padding: 4%;
+		border-top-left-radius: 0.5rem;
+		border-bottom-left-radius: 0.5rem;
+	}
+	.contact-info{
+		margin-top:10%;
+	}
+	.contact-info img{
+		margin-bottom: 15%;
+	}
+	.contact-info h2{
+		margin-bottom: 10%;
+	}
+	.col-md-9{
+		background: #fff;
+		padding: 3%;
+		border-top-right-radius: 0.5rem;
+		border-bottom-right-radius: 0.5rem;
+	}
+	.contact-form label{
+		font-weight:600;
+	}
+	.contact-form button{
+		background: #25274d;
+		color: #fff;
+		font-weight: 600;
+		width: 25%;
+	}
+	.contact-form button:focus{
+		box-shadow:none;
+	}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Life Care</title>
+<!-- plugins:css -->
+<link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
+<!-- endinject -->
+<!-- Plugin css for this page -->
+<link rel="stylesheet" href="../assets/vendors/flag-icon-css/css/flag-icon.min.css">
+<link rel="stylesheet" href="../assets/vendors/jvectormap/jquery-jvectormap.css">
+<!-- End plugin css for this page -->
+<!-- Layout styles -->
+<link rel="stylesheet" href="../assets/css/demo/style.css">
+<!-- End layout styles -->
+<link rel="shortcut icon" href="../assets/images/favicon.png" />
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<!------ Include the above in your HEAD tag ---------->
+<body>
+	
     <script src="../assets/js/preloader.js"></script>
     <div class="body-wrapper">
       <!-- partial:../../partials/_sidebar.html -->
@@ -223,7 +95,10 @@
           </a>
         </div>
         <div class="mdc-drawer__content">
-        
+          <div class="user-info">
+            <p class="name" style="font-size: 22px">Life Care</p>
+            <p class="email">info@Lifecare.com</p>
+          </div>
           <div class="mdc-list-group">
             <nav class="mdc-list mdc-drawer-menu">
               <div class="mdc-list-item mdc-drawer-item">
@@ -233,10 +108,10 @@
                 </a>
               </div>
               <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="{{url('myappointment')}}">
-                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i>
-                My Appointments
-              </a>
+                <a class="mdc-drawer-link" href="../../pages/forms/basic-forms.html">
+                  <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">track_changes</i>
+                  My Appointments
+                </a>
               </div>
               <div class="mdc-list-item mdc-drawer-item">
                 <a class="mdc-expansion-panel-link" href="#" data-toggle="expansionPanel" data-target="sample-page-submenu">
@@ -527,80 +402,58 @@
 
 
 
-    <div class="testbox">
-       
-        <br/>
-        <fieldset>
-         @foreach ($ambs as $amb )
-        
-
-          @endforeach
-        </fieldset>
-        <br/>
-        <form action="{{ url('/ambulanceP') }}" method="post">
-          {{ csrf_field() }}
-
-          <fieldset>
-            <legend>Appointment Information</legend>
-           
-          <div class="item">
-            <label for="instructions">Please describe the reason for this visit </label>
-            <textarea id="reason" name="reason" rows="3"></textarea>
-          </div>
-
-
-          <div class="item">
-            <label for="instructions">Action</label>
-            <textarea id="action" name="action"  rows="3">Pending</textarea>
-          </div>
-          <div class="item">
-            <label for="instructions">Patient ID: </label>
-            <textarea id="patient_id" name="patient_id" rows="2">{{ $amb->id }}</textarea>
-          </div>
-
-          <div class="item">
-            <p>Ambulance ID</p>
-           
-            <select name="ambulance_id">
-              @foreach ( $ambid as $amb)
-              <option selected value="" disabled selected></option>
-              <option value="{{ $amb->id }}" >{{ $amb->id }}</option>
-              @endforeach
-            </select>
-          
-          </div>
-        
-          <div class="item">
-            <label for="date">Date<span>*</span></label>
-            <input id="date" type="date" name="date" required/>
-            <i class="fas fa-calendar-alt"></i>
-          </div>
-
-
-          <div class="item">
-            <p>Time</p>
-            <select>
-              <option selected value="" disabled selected></option>
-              <option value="m" >Morning</option>
-              <option value="a">Afternoon</option>
-              <option value="e">Evening</option>
-            </select>
-          </div>
 
 
 
-          
-        
-        </fieldset>
-        <div class="btn-block">
-          <button type="submit" href="{{ '/index1' }}">Submit</button>
-        </div>
-      </form>
-    </div>
+
+
+<div class="container contact">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="contact-info">
+				<img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
+				<h4></h4>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div class="contact-form">
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="fname">First Name:</label>
+				  <div class="col-sm-10">          
+					<input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname">
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="lname">Last Name:</label>
+				  <div class="col-sm-10">          
+					<input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname">
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="email">Email:</label>
+				  <div class="col-sm-10">
+					<input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="comment">Comment:</label>
+				  <div class="col-sm-10">
+					<textarea class="form-control" rows="5" id="comment"></textarea>
+				  </div>
+				</div>
+				<div class="form-group">        
+				  <div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default">Submit</button>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 
-  </div>
+</div>
 </div>
 </main>
 <!-- partial:../../partials/_footer.html -->
@@ -635,7 +488,6 @@
 
 
 
+</body>
 
-
-  </body>
 </html>
