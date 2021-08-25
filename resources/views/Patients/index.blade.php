@@ -227,40 +227,16 @@ span.psw {
               </div>
             </div>
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="{{url('doctorsdetails')}}">
+              <a class="mdc-drawer-link" href="{{ url('logout') }}">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">grid_on</i>
-                Doctor_Details
+                Logout
               </a>
             </div>          
-            <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="{{ url('contact') }}">
-                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">description</i>
-               Contact Us
-              </a>
-            </div>
+            
           </nav>
         </div>
-        <div class="profile-actions">
-          <a href="javascript:;">Settings</a>
-          <span class="divider"></span>
-          <a href="javascript:;">Logout</a>
-        </div>
-        <div class="mdc-card premium-card">
-          <div class="d-flex align-items-center">
-            <div class="mdc-card icon-card box-shadow-0">
-              <i class="mdi mdi-shield-outline"></i>
-            </div>
-            <div>
-              <p class="mt-0 mb-1 ml-2 font-weight-bold tx-12">Material Dash</p>
-              <p class="mt-0 mb-0 ml-2 tx-10">Pro available</p>
-            </div>
-          </div>
-          <p class="tx-8 mt-3 mb-1">More elements. More Pages.</p>
-          <p class="tx-8 mb-3">Starting from $25.</p>
-          <a href="https://www.bootstrapdash.com/product/material-design-admin-template/" target="_blank">
-						<span class="mdc-button mdc-button--raised mdc-button--white">Upgrade to Pro</span>
-					</a>
-        </div>
+        
+        
       </div>
     </aside>
     <!-- partial -->
@@ -408,42 +384,9 @@ window.onclick = function(event) {
         <main class="content-wrapper">
           <div class="mdc-layout-grid">
             <div class="mdc-layout-grid__inner">
-              <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet">
-                <div class="mdc-card info-card info-card--success">
-                  <div class="card-inner">
-                    <h5 class="card-title">Total Cases</h5>
-                    <h5 class="font-weight-light pb-2 mb-1 border-bottom">366K</h5>
-                    
-                    <div class="card-icon-wrapper">
-                      <i class="material-icons">dvr</i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet">
-                <div class="mdc-card info-card info-card--danger">
-                  <div class="card-inner">
-                    <h5 class="card-title">Recovered</h5>
-                    <h5 class="font-weight-light pb-2 mb-1 border-bottom">120</h5>
-                    
-                    <div class="card-icon-wrapper">
-                    <i class="material-icons">dvr</i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet">
-                <div class="mdc-card info-card info-card--primary">
-                  <div class="card-inner">
-                    <h5 class="card-title">Death</h5>
-                    <h5 class="font-weight-light pb-2 mb-1 border-bottom">6434</h5>
-                   
-                    <div class="card-icon-wrapper">
-                    <i class="material-icons">dvr</i>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
+             
+              
               
               <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
                 <div class="mdc-card">
