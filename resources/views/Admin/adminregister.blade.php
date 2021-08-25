@@ -97,12 +97,12 @@
                                    </div>
                             
 
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">register</button>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Register</button>
                             </form>
                             <div class="register-link">
                                 <p>
                                     Already have account?
-                                    <a href="{{URL::to('/alogin')}}">Sign In</a>
+                                    <a href="{{url('/adminlogin')}}">Sign In</a>
                                 </p>
                             </div>
                         </div>

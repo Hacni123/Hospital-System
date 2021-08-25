@@ -69,7 +69,6 @@ Route::post('/notapprovepcrrequest', [HospitalController::class, 'rejectpcrreque
 Route::get('/viewapprovedpcrrequest', [HospitalController::class, 'viewconfirmedpcrrequest']);
 Route::get('/viewpendingpcrrequest', [HospitalController::class, 'viewpendingpcrrequest']);
 Route::get('/viewrejectedpcrrequest', [HospitalController::class, 'viewrejectedpcrrequest']);
-
 //pcr results
 Route::get('/pcrresult', [HospitalController::class, 'viewpcrreport'])->name('pcrresult.allpcrreports');
 Route::get('/editpcrresult/{id}', [HospitalController::class, 'editpcrresult']);
@@ -89,52 +88,49 @@ Route::get('/counticubedr', [HospitalController::class, 'counticubedreq']);
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //admin
 
-// Admin login registration
-Route::get('/adminlogin', [AdminController::class, 'adminlogin'])->name('admin.login');
-Route::post('/apostlogin', [AdminController::class, 'postLogin'])->name('adminlogin.post'); 
-Route::get('/aregistration', [AdminController::class, 'registration'])->name('register');
-Route::post('/apost-registration', [AdminController::class, 'postRegistration'])->name('register.postadmin'); 
-Route::get('/adashboard', [AdminController::class, 'dashboard']); 
-Route::get('/alogout', [AdminController::class, 'logout']);
-
-// Others
 Route::get('/aindex', [AdminController::class, 'index'])->name('admindashboard.index');
 Route::get('/apatientList','AdminController@show');
 Route::get('/aicubeds','AdminController@allicubeds');
 Route::get('/apatientList/{patientid}','AdminController@show');
 Route::get('/ahospitals','AdminController@allhospitals');
 Route::get('/avaamb','AdminController@avaambulance');
+Route::post('/hosambulances','AdminController@gethosambulances')->name('hosambulances.show');
+Route::post('/hosicubeds','AdminController@gethosicubeds')->name('hosicubeds.show');
+
 Route::get('/abkbeds','AdminController@bookbeds');
 Route::get('/abkamb','AdminController@bookambulance');
 Route::get('/atest','AdminController@test');
+Route::post('/positibepcr','AdminController@getpositivepcr')->name('positibepcr.show');
 Route::get('/atestres','AdminController@testresults');
 
 //hospital registration
+
 Route::get('/hosregadd', [AdminController::class, 'addhospital']);
 Route::post('/hospitalreg', [AdminController::class, 'savehospital'])->name('addnewhospital.store');
+//Route::post('/hospitalregemail','AdminController@hospitalregister');
 
-
-Route::get('/ahospitals/{id}','AdminController@all');
-
-//check
-Route::get('/check','AdminController@check');
+// check
 
 
 
+// Admin login registration
 
+Route::get('/adminlogin', [AdminController::class, 'adminlogin'])->name('adminlogin.get'); 
+Route::post('/apostlogin', [AdminController::class, 'postLogin'])->name('adminlogin.post'); 
+Route::get('/aregistration', [AdminController::class, 'registration']);
 
+Route::post('/apost-registration', [AdminController::class, 'postRegistration'])->name('register.postadmin'); 
+Route::get('/adashboard', [AdminController::class, 'dashboard']); 
+Route::get('/alogout', [AdminController::class, 'logout']);
 
+//change password
+Route::get('/adminchangepw', [AdminController::class, 'adminchangePassword']);
+Route::post('/adminupdatepass', [AdminController::class, 'adminupdatePassword'])->name('adminupdatepass.update');
 
+Route::get('/adminpatients','AdminController@getpatients');
+Route::get('/others','AdminController@alladmins');
 
-
-
-
-
-
-
-
-
-
+Route::get('/adminprofile','AdminController@profile');
 
 
 

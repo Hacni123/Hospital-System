@@ -6,16 +6,16 @@
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
-                                <button class="au-btn--submit" type="submit">
-                                    <i class="zmdi zmdi-search"></i>
+                                <!-- <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                                <button class="au-btn--submit" type="submit"> 
+                                    <i class="zmdi zmdi-search"></i> -->
                                 </button>
                             </form>
                             <div class="header-button">
                                 <div class="noti-wrap">
                                     <div class="noti__item js-item-menu">
                                         <i class="zmdi zmdi-comment-more"></i>
-                                        <span class="quantity">1</span>
+                                        <!-- <span class="quantity">1</span>-->
                                         <div class="mess-dropdown js-dropdown">
                                             <div class="mess__title">
                                                 <p>You have 2 news message</p>
@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="noti__item js-item-menu">
                                         <i class="zmdi zmdi-email"></i>
-                                        <span class="quantity">1</span>
+                                        <!-- <span class="quantity">1</span>-->
                                         <div class="email-dropdown js-dropdown">
                                             <div class="email__title">
                                                 <p>You have 3 New Emails</p>
@@ -86,7 +86,7 @@
                                     </div>
                                     <div class="noti__item js-item-menu">
                                         <i class="zmdi zmdi-notifications"></i>
-                                        <span class="quantity">3</span>
+                                         <!--  <span class="quantity"></span>  -->
                                         <div class="notifi-dropdown js-dropdown">
                                             <div class="notifi__title">
                                                 <p>You have 3 Notifications</p>
@@ -129,30 +129,32 @@
                                         <div class="image">
                                             <img src="assets/admin/images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
-                                        <div class="content">
+                                        <!-- <div class="content">
                                             <a class="js-acc-btn" href="#">Admin Profile</a>
-                                        </div>
+                                        </div>  -->
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">john doe</a>
+                                                        <a href="{{ url('/adminprofile') }}"></a>
                                                     </h5>
-                                                    <span class="email">johndoe@example.com</span>
+                                                    <span class="email"></span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
+                                                    <a href="{{ url('/adminprofile') }}">
                                                         <i class="zmdi zmdi-account"></i>Account</a>
                                                 </div>
                                                
                                             </div>
-                                            <div class="account-dropdown__footer">
+                                            <!-- 
+                                                <div class="account-dropdown__footer">
                                                 <a href="{{ url('alogout') }}">
                                                     <i class="zmdi zmdi-power" ></i>Logout</a>
                                             </div>
+                                              -->
                                         </div>
                                     </div>
                                 </div>
