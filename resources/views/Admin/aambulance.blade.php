@@ -1,6 +1,7 @@
-@extends('Admin.adminlayout');
+@extends('Admin.alayout');
 
-@section('content')
+
+@section('mainContent')
 
  <!-- DATA TABLE-->
  <section class="p-t-20">
@@ -9,79 +10,47 @@
                         <div class="col-md-12">
                             <hr>
                             <br>
+                           
                             
-                            <div class="table-responsive table-responsive-data2">
                             
-                                
+                            <div class="col-lg-10" >
+                                <h2 class="title-1 m-b-25"> Ambulances </h2>
+                                <div class="table-responsive table--no-card m-b-40">
+                                <form action="aicubeds" method="POST">
+                                @csrf
+                                    <table class="table table-borderless table-striped table-earning">
+                                        <thead>
+                                            <tr>
+                                            <th>No</th>
+                                            <th>Status</th>
+                                            <th>Hospital Id</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <td>{{ $amb->id }}</td>
+                                            <td>{{ $amb->status }}</td>
+                                            <td>{{ $amb->hospital_id }}</td>
+                                            </tr>
+                                            
+                                       
+                                        </tbody>
+                                       
+                                   
+                                    </table>
+                                </div>
                             </div>
+                      
+                                   
+                                   
+                                
+                           
                         </div>
                     </div>
                 </div>
             </section>
             <!-- END DATA TABLE-->
 
-
-            <div class="col-xl-12">
-                <div class="content mt-12">
-            <div class="animated fadeIn">
-               
-
-                    <div class="buttons">
-
-                        <!-- Left Block -->
-                       
-                                <div class="card">
-                                <div class="card-header">
-                                    <strong>All Hospitals</strong>
-                                    
-                                </div>
-                               
-                                
-                                <div class="card-body">
-                                <table class="table table-striped">
-                                <tbody>
-                                   @foreach($hospitals->chunk(3) as $hospital)
-                                <tr>
-                                   @foreach( $hospital as $hos )
-                                <td>
-                                      
-                                <th>    
-                                            <form action="{{ route('hosambulances.show') }}"  method="POST">
-                                               
-                                                @csrf
-                                                <input type="hidden" name="bid" value="{{$hos->id}}">
-                                                <button type="submit" class="btn btn-success btn-lg" style="width:200px; height:50;">{{$hos->hos_name}}</button>
-                                           </form>
-                                </td>
-                                  @endforeach
-                                  </tr>
-                                  @endforeach
-                                    
-                                </table>
-                            </div>
-                            
-                                </div><!-- /# card --> 
-                                
-                            </div> <!-- .buttons -->
-
-                        
-                    </div><!-- .animated -->
-                </div><!-- .content -->
-
-
-            </div><!-- /#right-panel -->
-
            
-
-            
-                    
-                    
-                </section>
-            </div>
-
-
-        
-
-        </div> <!-- .content -->
-    </div><!-- /#right-panel -->
-            @endsection
+                            
+                            @endsection

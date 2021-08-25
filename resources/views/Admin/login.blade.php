@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,121 +5,102 @@
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="au theme template">
-    <meta name="author" content="Hau Nguyen">
-    <meta name="keywords" content="au theme template">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Login</title>
+    <title> Medi Care - Admin</title>
 
-    <!-- Fontfaces CSS-->
-    <link href="assets/admin/css/font-face.css" rel="stylesheet" media="all">
-    <link href="assets/admin/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="assets/admin/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="assets/admin/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-
-    <!-- Bootstrap CSS-->
-    <link href="assets/admin/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <!-- Icons font CSS-->
+    <link href="assets/admin/registration/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="assets/admin/registration/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
     <!-- Vendor CSS-->
-    <link href="assets/admin/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="assets/admin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="assets/admin/vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="assets/admin/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="assets/admin/vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="assets/admin/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="assets/admin/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link href="assets/admin/registration/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="assets/admin/registration/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="assets/admin/css/theme.css" rel="stylesheet" media="all">
-
+    <link href="assets/admin/registration/css/main.css" rel="stylesheet" media="all">
 </head>
 
-<body class="animsition">
-    <div class="page-wrapper">
-        <div class="page-content--bge5">
-            <div class="container">
-                <div class="login-wrap">
-                    <div class="login-content">
-                        <div class="login-logo">
-                        <h1>Admin Login</h1>
-                        </div>
-                        <div class="login-form">
-                            <form action="{{ route('adminlogin.post') }}" method="post">
-                            @csrf
 
-                                <div class="form-group">
-                                    <label> User Name </label>
-                                    <input class="au-input au-input--full" type="text" name="login_username" placeholder="username">
+<!-- Registration Body -->
 
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+
+           
+
+                <div class="card-heading">
+                    <h2 class="title"> Admin Login </h2>
+                </div>
+                <div class="card-body">
+                <form action="{{ route('adminlogin.post') }}" method="post">
+                @csrf
+
+                    
+
+                        <div class="form-row">
+                            <div class="name">User Name</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="login_username">
                                     @if ($errors->has('login_username'))
                                     <span class="text-danger">{{ $errors->first('login_username') }}</span>
                                     @endif
+
                                 </div>
+                            </div>
+                        </div>
 
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input class="au-input au-input--full" type="password" name="login_password" placeholder="password">
-
+                        <div class="form-row">
+                            <div class="name">Password</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="password" name="login_password">
                                     @if ($errors->has('login_password'))
                                     <span class="error">{{ $errors->first('login_password') }}</span>
                                     @endif 
                                 </div>
-                                
-                                <div class="login-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember">Remember Me
-                                    </label>
-                                    <label>
-                                        <a href="#">Forgotten Password?</a>
-                                    </label>
-                                </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
-                                <div class="social-login-content">
-                                    
-                                </div>
-                            </form>
-                            <div class="register-link">
-                                <p>
+                            </div>
+                        </div>
+
+
+                        
+                        <div class="form-row p-t-20">
+                            <!--<label class="label label--block">Are you an existing customer?</label>-->
+                            <div class="p-t-15">
+                               <p>
                                     Don't you have account?
                                     <a href="{{URL::to('/aregistration')}}">Sign Up Here</a>
                                 </p>
                             </div>
                         </div>
-                    </div>
+                        <div>
+                            <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-
     </div>
 
-
-
     <!-- Jquery JS-->
-    <script src="assets/admin/vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="assets/admin/vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="assets/admin/vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="assets/admin/vendor/slick/slick.min.js">
-    </script>
-    <script src="assets/admin/vendor/wow/wow.min.js"></script>
-    <script src="assets/admin/vendor/animsition/animsition.min.js"></script>
-    <script src="assets/admin/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="assets/admin/vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="assets/admin/vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="assets/admin/vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="assets/admin/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="assets/admin/vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="assets/admin/vendor/select2/select2.min.js">
-    </script>
+    <script src="assets/admin/registration/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="assets/admin/registration/vendor/select2/select2.min.js"></script>
+    <script src="assets/admin/registration/vendor/datepicker/moment.min.js"></script>
+    <script src="assets/admin/registration/vendor/datepicker/daterangepicker.js"></script>
 
     <!-- Main JS-->
-    <script src="assets/admin/js/main.js"></script>
+    <script src="assets/admin/registration/js/global.js"></script>
 
-</body>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
 <!-- end document-->

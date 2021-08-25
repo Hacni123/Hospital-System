@@ -1,4 +1,4 @@
-<aside class="menu-sidebar d-none d-lg-block" style="color:white">
+<aside class="menu-sidebar d-none d-lg-block" style="background-color:black;">
            
             <!--
             <div class="logo">
@@ -21,7 +21,7 @@
                    <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
                             <a class="js-arrow" href="{{url('aindex')}}">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                              <i class="fas fa-copy"></i>Dashboard</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                
                             </ul>
@@ -69,7 +69,7 @@
                         
                         <li class="has-sub">
                             <a class="js-arrow" href="{{url('apatientList')}}">
-                                <i class="fas fa-desktop"></i>Patient Details</a>
+                             <i class="fas fa-copy"></i>Patient Details</a>
                 
                         </li>
 
@@ -97,10 +97,10 @@
                                 <i class="fas fa-copy"></i>Admin Details</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                <a href="{{url('hosreg')}}">PCR Tests</a>
+                                <a href="{{url('hosreg')}}">Edit Bio</a>
                                 </li>
                                 <li>
-                                <a href="{{url('hosreg')}}">PCR Test Results</a>
+                                <a href="{{url('hosreg')}}">Change Password</a>
                                 </li>
                                 
                             </ul>
