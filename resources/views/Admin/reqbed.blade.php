@@ -1,7 +1,6 @@
-@extends('Admin.alayout');
+@extends('Admin.adminlayout');
 
-
-@section('mainContent')
+@section('content')
 
  <!-- DATA TABLE-->
  <section class="p-t-20">
