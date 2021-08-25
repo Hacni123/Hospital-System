@@ -22,191 +22,10 @@ use Session;
 
 class AdminController extends Controller
 {
-    public function index()
-    {
-    
-      /*
-        if(session()->has('LoggedUser')){
-            $user = Login::where('id','=', session('LoggedUser'))->first();
-            $row = DB::table('adminall')
-                ->where('login_id','=',$user->id)
-                ->first();
-
-                  return view('Admin.adminindex');
-        }
-
-         else{
-                    return view('Admin.login');
-
-         }
-         */
-
-        return view('Admin.adminindex');
-                  
-
-    }
-
-    public function show()
-    { 
-        
-       // $showpatients = Admin::all();
-       // return view('Admin.apatientlist',compact('showpatients'));
-
-       //$showpatients = DB::select('select * from patients');
-       $showpatients = DB::table('patients')->get();
-       return view('Admin.apatientlist',compact('showpatients'));
-       //return view('Admin.apatientlist',['showpatients'=>$showpatients]);
-    }
-    
-    public function allicubeds()
-    {
-        $showbeds = DB::table('icubeds')->get();
-        return view('Admin.aicubeds',compact('showbeds'));
-    }
-
-    public function allhospitals()
-    {
-        $hospitals = DB::table('hospitals')->get();
-        return view('Admin.ahospitals',compact('hospitals'));
-    }
-    
-    public function avaambulance()
-    {
-        $ambulances = DB::table('ambulances')->get();
-        return view('Admin.aambulance',compact('ambulances'));
-
-        /*
-        $icubeds = Hospital::join('icubeds', 'icubeds.hospital_id', '=', 'hospitals.id')
-        ->where('hospitals.id','=',->"2")
-        ->get();
-
-    $ambulances = Hospital::join('ambulances', 'ambulances.hospital_id', '=', 'hospitals.id')
-        ->where('hospitals.id','=',->"2")
-        ->get();
-
-        */
-    }
-
-    public function bookbeds()
-    {
-        $bookbeds = DB::table('icubrequests')->get();
-        return view('Admin.reqbed',compact('bookbeds'));
-    }
-
-    public function bookambulance()
-    {
-        $bookamb = DB::table('ambulancerequests')->get();
-        return view('Admin.reqamb',compact('bookamb'));
-    }
-    
-    public function test()
-    {
-        $test = DB::table('pcrresults')->get();
-        return view('Admin.atest',compact('test'));
-    }
-
-    public function testresults()
-    {
-        //$testres = DB::table('pcrtests')->get();
-        //return view('Admin.ares',compact('testres'));
-        return view('Admin.aresults');
-    }
-
-    /* 
-
-    public function hospitalregisterview()
-    {
-        return view('Admin.hosreg');
-    }
-
-    */
-
-    public function addhospital()
-    {
-       return view('Admin.hosreg');
-    }
-
-    public function savehospital(Request $request)
-    {
-        
-    
-        $request->validate([
-            
-            'hos_name' => 'required',
-            'hos_email' => 'required|email',
-            'hos_address' => 'required',
-            'hos_mobile' => 'required',
-            'login_username' => 'required',
-            'login_password' => 'required'
-        ]);
-        
-        try { 
-            $user = Login::firstOrCreate([
-                'login_username'=>$request->input('login_username'),
-                'login_password'=>Hash::make($request->input('login_password')),
-              ]);
-
-              Hospital::create([
-                'login_id' => $user->id,
-                'hos_name'=>$request->input('hos_name'),
-                'hos_email'=>$request->input('hos_email'),
-                'hos_address'=>$request->input('hos_address'),
-                'hos_mobile'=>$request->input('hos_mobile')
-               
-                /*,'password'*/
-            ]);
-            
-            return view("Admin.adminindex")->withSuccess('Great! You have Successfully loggedin');
-          } 
-          catch(\Illuminate\Database\QueryException $ex)
-          { 
-            return back()->with('fail','User name is taken before.');
-          }
-        
-    }
-
-    
-
-    public function hospitalregister()
-    {
-        
-
-        //return view('Admin.hosreg');
-        $data = request(['hos_email','login_username','login_password']);
-        //return $data;
-        //\Illuminame\Support\Facades\
-        Mail::to('hasaraismini@gmail.com')
-            ->send(new \App\Mail\hosreg($data));
-
-        return redirect('hosreg')->with('flash'.'Massege sent successfully...');
-        
-    }
-    
-
-    public function hosregmail()
-    {
-        return view('Admin.hosregmail');
-    }
-
-    public function all($id)
-    {
-        $data = Hospital::find($id);
-        //return view('Admin.check',compact('data','id'));
-
-        $icubeds = Hospital::join('icubeds', 'icubeds.hospital_id', '=', 'hospitals.id')
-       // ->where('hospitals.id','=',$id->2)
-        ->get();
-
-        $ambulances = Hospital::join('ambulances', 'ambulances.hospital_id', '=', 'hospitals.id')
-        //->where('hospitals.id','=',$id->2)
-        ->get();
-
-        return view('Admin.alldetailsinhos',compact('data','icubeds','ambulances'));
-        
-    }
 
 
-/* ----- */
+/*  Admin login registration  */
+
     public function registration()
     {
         return view('Admin.register');
@@ -241,8 +60,7 @@ class AdminController extends Controller
                 'admin_name'=>$request->input('admin_name'),
                 'admin_mobile'=>$request->input('admin_mobile'),
                 'admin_email'=>$request->input('admin_email'),
-                'admin_address'=>$request->input('admin_address')
-               
+                'admin_address'=>$request->input('admin_address') 
                 
             ]);
             
@@ -269,9 +87,8 @@ class AdminController extends Controller
                $request->session()->put('LoggedUser',$user->id);
 
                return view('Admin.adminindex');
-
-
-           }else{
+           }
+           else{
                return back()->with('fail','Invalid password');
            }
 
@@ -285,6 +102,189 @@ class AdminController extends Controller
         Auth::logout();
   
         return redirect()->route('admin.login')->with('success','logout Successfully.');
+    }
+
+
+
+
+    public function index()
+    {
+        if(session()->has('LoggedUser')){
+            $user = Login::where('id','=', session('LoggedUser'))->first();
+            $row = DB::table('adminall')
+                ->where('login_id','=',$user->id)
+                ->first();
+
+                return view('Admin.adminindex');
+        }
+
+        else
+         {
+              return view('Admin.login');
+         }
+    }
+
+    public function show()
+    {
+        if(session()->has('LoggedUser')){
+            $user = Login::where('id','=', session('LoggedUser'))->first();
+            $row = DB::table('adminall')
+                ->where('login_id','=',$user->id)
+                ->first();
+
+       $showpatients = DB::table('patients')->get();
+       return view('Admin.apatientlist',compact('showpatients'));
+        }
+
+        else
+         {
+              return view('Admin.login');
+         }
+
+    }
+    
+    public function allicubeds()
+    {
+        if(session()->has('LoggedUser')){
+            $user = Login::where('id','=', session('LoggedUser'))->first();
+            $row = DB::table('adminall')
+                ->where('login_id','=',$user->id)
+                ->first();
+
+        $showbeds = DB::table('icubeds')->get();
+        return view('Admin.aicubeds',compact('showbeds'));
+        }
+
+        else
+         {
+              return view('Admin.login');
+         }
+    }
+
+    public function allhospitals()
+    {
+        if(session()->has('LoggedUser')){
+            $user = Login::where('id','=', session('LoggedUser'))->first();
+            $row = DB::table('adminall')
+                ->where('login_id','=',$user->id)
+                ->first();
+
+        $hospitals = DB::table('hospitals')->get();
+        return view('Admin.ahospitals',compact('hospitals'));
+        }
+
+        else
+         {
+              return view('Admin.login');
+         }
+
+    }
+    
+    public function avaambulance()
+    {
+        $ambulances = DB::table('ambulances')->get();
+        return view('Admin.aambulance',compact('ambulances'));
+    }
+
+    public function bookbeds()
+    {
+        $bookbeds = DB::table('icubrequests')->get();
+        return view('Admin.reqbed',compact('bookbeds'));
+    }
+
+    public function bookambulance()
+    {
+        $bookamb = DB::table('ambulancerequests')->get();
+        return view('Admin.reqamb',compact('bookamb'));
+    }
+    
+    public function test()
+    {
+        $test = DB::table('pcrresults')->get();
+        return view('Admin.atest',compact('test'));
+    }
+
+    public function testresults()
+    {
+        return view('Admin.aresults');
+    }
+
+    public function addhospital()
+    {
+       return view('Admin.hosreg');
+    }
+
+   
+    public function hosregmail()
+    {
+        return view('Admin.hosregmail');
+    }
+
+    public function all($id)
+    {
+        $data = Hospital::find($id);
+
+        $icubeds = Hospital::join('icubeds', 'icubeds.hospital_id', '=', 'hospitals.id')
+        ->get();
+
+        $ambulances = Hospital::join('ambulances', 'ambulances.hospital_id', '=', 'hospitals.id')
+        ->get();
+
+        return view('Admin.alldetailsinhos',compact('data','icubeds','ambulances'));
+        
+    }
+
+/* Hospital Registration */
+
+    public function savehospital(Request $request)
+    {
+        
+    
+        $request->validate([
+            
+            'hos_name' => 'required',
+            'hos_email' => 'required|email',
+            'hos_address' => 'required',
+            'hos_mobile' => 'required',
+            'login_username' => 'required',
+            'login_password' => 'required'
+        ]);
+        
+        try { 
+            $user = Login::firstOrCreate([
+                'login_username'=>$request->input('login_username'),
+                'login_password'=>Hash::make($request->input('login_password')),
+              ]);
+
+              Hospital::create([
+                'login_id' => $user->id,
+                'hos_name'=>$request->input('hos_name'),
+                'hos_email'=>$request->input('hos_email'),
+                'hos_address'=>$request->input('hos_address'),
+                'hos_mobile'=>$request->input('hos_mobile')
+               
+            ]);
+
+            $data = request(['hos_email','login_username','login_password']);
+            
+            Mail::to('hasaraismini@gmail.com')
+            ->send(new \App\Mail\hosreg($data));
+            return view("Admin.adminindex")->withSuccess('Great! You have Successfully loggedin');
+            
+          } 
+          catch(\Illuminate\Database\QueryException $ex)
+          { 
+            return back()->with('fail','User name is taken before.');
+          }
+        
+    }
+
+
+    //check
+
+    public function check()
+    {
+        return view('Admin.check');
     }
   
 }

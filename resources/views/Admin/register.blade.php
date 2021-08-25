@@ -1,88 +1,154 @@
-@extends('Admin.main')
+<!DOCTYPE html>
+<html lang="en">
 
-<body class="animsition">
-    <div class="page-wrapper">
-        <div class="page-content--bge5">
-            <div class="container">
-                <div class="login-wrap">
-                    <div class="login-content">
-                       
-                        <div class="login-form">
-                            <form action="{{ route('register.postadmin') }}" method="post">
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
 
-                            @csrf
+    <!-- Title Page-->
+    <title> Medi Care - Admin</title>
 
-                                <div class="form-group">
-                                    <label>Your Name</label>
-                                    <input class="au-input au-input--full" type="text" name="admin_name" placeholder="admin_name">
+    <!-- Icons font CSS-->
+    <link href="assets/admin/registration/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="assets/admin/registration/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
+    <!-- Vendor CSS-->
+    <link href="assets/admin/registration/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="assets/admin/registration/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="assets/admin/registration/css/main.css" rel="stylesheet" media="all">
+</head>
+
+
+<!-- Registration Body -->
+
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+
+           
+
+                <div class="card-heading">
+                    <h2 class="title"> Admin Registration </h2>
+                </div>
+                <div class="card-body">
+                    <form action="{{ route('register.postadmin') }}" method="post"> 
+                    @csrf
+
+                        <div class="form-row m-b-55">
+                            <div class="name">Your Name</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="admin_name">
                                     @if ($errors->has('admin_name'))
                                     <span class="error">{{ $errors->first('admin_name') }}</span>
                                     @endif
                                 </div>
+                            </div>
+                        </div>
 
-                                <div class="form-group">
-                                    <label>Mobile Number</label>
-                                    <input class="au-input au-input--full" type="text" name="admin_mobile" placeholder="admin_mobile">
+
+                        <div class="form-row">
+                            <div class="name">Mobile Number</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="admin_mobile">
                                     @if ($errors->has('admin_mobile'))
                                     <span class="error">{{ $errors->first('admin_mobile') }}</span>
                                     @endif
                                 </div>
+                            </div>
+                        </div>
 
-                                <div class="form-group">
-                                    <label>Email Address</label>
-                                    <input class="au-input au-input--full" type="email" name="admin_email" placeholder="admin_email">
 
+                        <div class="form-row">
+                            <div class="name">Email Address</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="email" name="admin_email">
                                     @if ($errors->has('admin_email'))
                                     <span class="error">{{ $errors->first('admin_email') }}</span>
                                     @endif
                                 </div>
+                            </div>
+                        </div>
 
-                                <div class="form-group">
-                                    <label>Address</label>
-                                    <input class="au-input au-input--full" type="text" name="admin_address" placeholder="admin_address">
 
+                        <div class="form-row">
+                            <div class="name">Address</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="admin_address">
                                     @if ($errors->has('admin_address'))
                                     <span class="error">{{ $errors->first('admin_address') }}</span>
                                     @endif
                                 </div>
+                            </div>
+                        </div>
 
-                                <div class="form-group">
-                                    <label>User Name</label>
-                                    <input class="au-input au-input--full" type="text" name="login_username" placeholder="login_username">
-
+                        <div class="form-row">
+                            <div class="name">User Name</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="login_username">
                                     @if ($errors->has('login_username'))
                                     <span class="error">{{ $errors->first('login_username') }}</span>
                                     @endif
                                 </div>
+                            </div>
+                        </div>
 
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input class="au-input au-input--full" type="password" name="login_password" placeholder="login_password">
+                        <div class="form-row">
+                            <div class="name">Password</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="password" name="login_password">
+                                    @if ($errors->has('login_password'))
+                                    <span class="error">{{ $errors->first('login_password') }}</span>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
 
-                                   @if ($errors->has('login_password'))
-                                   <span class="error">{{ $errors->first('login_password') }}</span>
-                                   @endif 
-                                   </div>
-                            
 
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">register</button>
-                                
-                            </form>
-                            <div class="register-link">
+                        
+                        <div class="form-row p-t-20">
+                            <label class="label label--block">Are you an existing customer?</label>
+                            <div class="p-t-15">
                                 <p>
-                                    Already have account?
-                                    <a href="{{URL::to('/alogin')}}">Sign In</a>
+                                <button type="button" class="btn btn-outline-secondary"><a href="{{url('/adminlogin')}}">Sign In</a></button>
+                                  
                                 </p>
                             </div>
                         </div>
-                    </div>
+                        <div>
+                            <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-
     </div>
 
-</body>
+    <!-- Jquery JS-->
+    <script src="assets/admin/registration/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="assets/admin/registration/vendor/select2/select2.min.js"></script>
+    <script src="assets/admin/registration/vendor/datepicker/moment.min.js"></script>
+    <script src="assets/admin/registration/vendor/datepicker/daterangepicker.js"></script>
 
-@yield('mainContent')
+    <!-- Main JS-->
+    <script src="assets/admin/registration/js/global.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->
