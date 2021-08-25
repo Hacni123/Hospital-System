@@ -1,7 +1,7 @@
-@extends('Admin.alayout');
+@extends('Admin.adminlayout');
 
+@section('content')
 
-@section('mainContent')
   <!-- MAIN CONTENT-->
   <div class="main-content">
                 <div class="section__content section__content--p30">
@@ -26,7 +26,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>{{ $hos->id }}</td>
-                                                <td>{{ $hos->hos_name }}</td>
+                                                <td><button type="button" class="btn btn-warning"><a href="ahospitals/{{ $hos->id}}">{{ $hos->hos_name }}</button></td>
                                                 <td>{{ $hos->hos_email }}</td>
                                                 <td>{{ $hos->hos_address }}</td>
                                                 <td>{{ $hos->hos_mobile }}</td>

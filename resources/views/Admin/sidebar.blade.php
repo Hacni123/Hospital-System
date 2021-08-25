@@ -1,4 +1,4 @@
-<aside class="menu-sidebar d-none d-lg-block" style="color:white">
+<aside class="menu-sidebar d-none d-lg-block" style="background-color:black;">
            
             <!--
             <div class="logo">
@@ -21,7 +21,7 @@
                    <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
                             <a class="js-arrow" href="{{url('aindex')}}">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                              <i class="fas fa-copy"></i>Dashboard</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                
                             </ul>
@@ -47,10 +47,7 @@
                                 <i class="fas fa-copy"></i>Ambulances</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                <a href="{{url('avaamb')}}">Ambulance List</a>
-                                </li>
-                                <li>
-                                <a href="{{url('abkamb')}}">Ambulance Requests</a>
+                                <a href="{{url('avaamb')}}">View</a>
                                 </li>
                                 
                             </ul>
@@ -61,11 +58,9 @@
                                 <i class="fas fa-copy"></i>ICU Beds</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                <a href="{{url('aicubeds')}}">ICU Beds List</a>
+                                <a href="{{url('aicubeds')}}">View</a>
                                 </li>
-                                <li>
-                                <a href="{{url('abkbeds')}}">ICU beds Requests</a>
-                                </li>
+                                
                                 
                             </ul>
                         </li>
@@ -74,7 +69,7 @@
                         
                         <li class="has-sub">
                             <a class="js-arrow" href="{{url('apatientList')}}">
-                                <i class="fas fa-desktop"></i>Patient Details</a>
+                             <i class="fas fa-copy"></i>Patient Details</a>
                 
                         </li>
 
@@ -83,10 +78,7 @@
                                 <i class="fas fa-copy"></i>PCR Tests</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                <a href="{{url('atest')}}">PCR Tests</a>
-                                </li>
-                                <li>
-                                <a href="{{url('atestres')}}">PCR Test Results</a>
+                                <a href="{{url('atest')}}">Positive Reports.</a>
                                 </li>
                                 
                             </ul>
@@ -105,10 +97,10 @@
                                 <i class="fas fa-copy"></i>Admin Details</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                <a href="{{url('hosreg')}}">PCR Tests</a>
+                                <a href="{{url('hosreg')}}">Edit Bio</a>
                                 </li>
                                 <li>
-                                <a href="{{url('hosreg')}}">PCR Test Results</a>
+                                <a href="{{url('hosreg')}}">Change Password</a>
                                 </li>
                                 
                             </ul>
