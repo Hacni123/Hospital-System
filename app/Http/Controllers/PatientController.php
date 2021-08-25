@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Input;
 use Validator;
 use Redirect;
@@ -79,13 +80,10 @@ class PatientController extends Controller
                 'active'=>0,
                 'hospital_id'=>$request->input('hospital_id')
             ]);
-            if($usern){
-                $usern->code=SendCode::sendCode($usern->pat_mobile);
-                $usern->save();
-            }
-            
-
-            return view("Patients.verify")->withSuccess('Great! You have Successfully loggedin');
+            $data=request(['pat_email','login_username','login_password']);
+            Mail::to('sivagnanambawanie@gmail.com')
+            ->send(new \App\Mail\ContectMe($data));
+            return view("Patients.login")->withSuccess('Great! You have Successfully loggedin');
           } 
           catch(\Illuminate\Database\QueryException $ex)
           { 
@@ -114,6 +112,7 @@ class PatientController extends Controller
 
        
     }
+    
     function check(Request $request)
     {
         $request->validate([
@@ -144,7 +143,7 @@ class PatientController extends Controller
                if($user->login_username=='csthmb' || $user->login_username=='ranna' )
                {
                
-                return \Redirect::route('dashboard.index');
+                return Redirect::route('dashboard.index');
                 
                }
                else

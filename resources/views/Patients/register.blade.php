@@ -37,6 +37,9 @@
                     
                     <div class="col-lg-12">
                         <div class="p-5">
+                                   @if(session('flash'))
+                                       <p> {{session('flash')}} </p>
+                                    @endif
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                                 <span class="center"><span class="icon"><img src="assets/images/icon-logo.png" alt="#" /></span></span>
