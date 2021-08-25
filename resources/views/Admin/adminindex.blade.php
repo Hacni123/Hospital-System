@@ -1,7 +1,6 @@
-@extends('Admin.alayout');
+@extends('Admin.adminlayout');
 
-
-@section('mainContent')
+@section('content')
 
 
 

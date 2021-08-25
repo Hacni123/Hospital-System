@@ -94,9 +94,13 @@ Route::get('/aicubeds','AdminController@allicubeds');
 Route::get('/apatientList/{patientid}','AdminController@show');
 Route::get('/ahospitals','AdminController@allhospitals');
 Route::get('/avaamb','AdminController@avaambulance');
+Route::post('/hosambulances','AdminController@gethosambulances')->name('hosambulances.show');
+Route::post('/hosicubeds','AdminController@gethosicubeds')->name('hosicubeds.show');
+
 Route::get('/abkbeds','AdminController@bookbeds');
 Route::get('/abkamb','AdminController@bookambulance');
 Route::get('/atest','AdminController@test');
+Route::post('/positibepcr','AdminController@getpositivepcr')->name('positibepcr.show');
 Route::get('/atestres','AdminController@testresults');
 
 //hospital registration
@@ -111,9 +115,10 @@ Route::post('/hospitalreg', [AdminController::class, 'savehospital'])->name('add
 
 // Admin login registration
 
-Route::get('/adminlogin', [AdminController::class, 'adminlogin'])->name('admin.login');
+Route::get('/adminlogin', [AdminController::class, 'adminlogin'])->name('adminlogin.get'); 
 Route::post('/apostlogin', [AdminController::class, 'postLogin'])->name('adminlogin.post'); 
-Route::get('/aregistration', [AdminController::class, 'registration'])->name('register');
+Route::get('/aregistration', [AdminController::class, 'registration']);
+
 Route::post('/apost-registration', [AdminController::class, 'postRegistration'])->name('register.postadmin'); 
 Route::get('/adashboard', [AdminController::class, 'dashboard']); 
 Route::get('/alogout', [AdminController::class, 'logout']);

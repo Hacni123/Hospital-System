@@ -60,7 +60,7 @@ class AdminController extends Controller
     
     public function allicubeds()
     {
-        $showbeds = DB::table('icubeds')->get();
+        $showbeds=Hospital::all();
         return view('Admin.aicubeds',compact('showbeds'));
     }
 
@@ -72,8 +72,9 @@ class AdminController extends Controller
     
     public function avaambulance()
     {
-        $ambulances = DB::table('ambulances')->get();
-        return view('Admin.aambulance',compact('ambulances'));
+        $hospitals=Hospital::all();
+        return view('Admin.aambulance',compact('hospitals'));
+        
     }
 
     public function bookbeds()
@@ -90,8 +91,8 @@ class AdminController extends Controller
     
     public function test()
     {
-        $test = DB::table('pcrresults')->get();
-        return view('Admin.atest',compact('test'));
+        $hospitals=Hospital::all();
+        return view('Admin.atest',compact('hospitals'));
     }
 
     public function testresults()
@@ -136,7 +137,7 @@ class AdminController extends Controller
     
     public function registration()
     {
-        return view('Admin.register');
+        return view('Admin.adminregister');
     }
 
     public function adminlogin()
@@ -215,7 +216,7 @@ class AdminController extends Controller
         Session::flush();
         Auth::logout();
   
-        return redirect()->route('admin.login')->with('success','logout Successfully.');
+        return redirect()->route('adminlogin.get')->with('success','logout Successfully.');
     }
 
 
@@ -343,4 +344,35 @@ class AdminController extends Controller
           }
         
     }
+
+    public function gethosambulances(Request $request)
+    {
+        
+        $ambulances = DB::table('ambulances')
+                ->where('hospital_id', $request->input('bid'))
+                ->get();
+        return view('Admin.adminshowambulance',compact('ambulances'));
+    } 
+
+    public function gethosicubeds(Request $request)
+    {
+        
+        $icubeds = DB::table('icubeds')
+                ->where('hospital_id', $request->input('bid'))
+                ->get();
+        return view('Admin.adminshowicubeds',compact('icubeds'));
+    } 
+
+    public function getpositivepcr(Request $request)
+    {
+        
+        
+
+        $pcr = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
+                ->where('hospitals.id','=', $request->input('bid'))
+                ->where('result', 'Positive')
+                  ->join('pcrtests', 'pcrtests.patient_id', '=', 'patients.id')
+                  ->get(['pcrtests.id', 'patients.pat_name', 'pcrtests.result','patients.pat_address','patients.pat_mobile','patients.pat_id','pcrtests.date']);
+        return view('Admin.adminshowpcr',compact('pcr'));
+    } 
 }

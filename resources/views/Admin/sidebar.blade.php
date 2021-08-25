@@ -47,10 +47,7 @@
                                 <i class="fas fa-copy"></i>Ambulances</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                <a href="{{url('avaamb')}}">Ambulance List</a>
-                                </li>
-                                <li>
-                                <a href="{{url('abkamb')}}">Ambulance Requests</a>
+                                <a href="{{url('avaamb')}}">View</a>
                                 </li>
                                 
                             </ul>
@@ -61,11 +58,9 @@
                                 <i class="fas fa-copy"></i>ICU Beds</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                <a href="{{url('aicubeds')}}">ICU Beds List</a>
+                                <a href="{{url('aicubeds')}}">View</a>
                                 </li>
-                                <li>
-                                <a href="{{url('abkbeds')}}">ICU beds Requests</a>
-                                </li>
+                                
                                 
                             </ul>
                         </li>
@@ -83,10 +78,7 @@
                                 <i class="fas fa-copy"></i>PCR Tests</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                <a href="{{url('atest')}}">PCR Tests</a>
-                                </li>
-                                <li>
-                                <a href="{{url('atestres')}}">PCR Test Results</a>
+                                <a href="{{url('atest')}}">Positive Reports.</a>
                                 </li>
                                 
                             </ul>

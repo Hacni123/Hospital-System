@@ -1,4 +1,4 @@
-@extends('Admin.main')
+
 
 <body class="animsition">
     <div class="page-wrapper">
@@ -85,4 +85,3 @@
 
 </body>
 
-@yield('mainContent')
