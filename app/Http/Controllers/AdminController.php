@@ -329,7 +329,8 @@ class AdminController extends Controller
            if(Hash::check($request->login_password,$user->login_password)){
                $request->session()->put('LoggedUser',$user->id);
 
-               return view('Admin.adminindex');
+               
+               return Redirect::route('admindashboard.index');
 
 
            }else{
@@ -583,7 +584,7 @@ public function getpatients(Request $request)
 
         }
 
-            return view('Admin.profile',$data);
+            return view('Admin.profile',compact('data'));
     }
 >>>>>>> f7eb1e29d073430267f45b4b73d394691cf25064
 }
