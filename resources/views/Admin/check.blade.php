@@ -1,7 +1,6 @@
-@extends('Admin.adminlayout');
+@extends('Hospitals.layout')
 
 @section('content')
-
 <!--
 <div class="breadcrumbs">
             <div class="col-sm-4">

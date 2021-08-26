@@ -161,7 +161,7 @@ span.psw {
         <div class="mdc-list-group">
           <nav class="mdc-list mdc-drawer-menu">
             <div class="mdc-list-item mdc-drawer-item">
-            <a class="mdc-drawer-link" href="{{url('')}}">
+            <a class="mdc-drawer-link" href="{{url('index1')}}">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i>
                 Dashboard
               </a>
@@ -249,12 +249,10 @@ span.psw {
 
             <span class="mdc-top-app-bar__title">Greetings {{ $Info->pat_name }} </span>
             <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon search-text-field d-none d-md-flex">
-              <i class="material-icons mdc-text-field__icon">search</i>
               <input class="mdc-text-field__input" id="text-field-hero-input">
               <div class="mdc-notched-outline">
                 <div class="mdc-notched-outline__leading"></div>
                 <div class="mdc-notched-outline__notch">
-                  <label for="text-field-hero-input" class="mdc-floating-label">Search..</label>
                 </div>
                 <div class="mdc-notched-outline__trailing"></div>
               </div>
@@ -266,7 +264,7 @@ span.psw {
               <button class="mdc-button mdc-menu-button">
                 <span class="d-flex align-items-center">
                   <span class="figure">
-                    <img src="../assets/images/faces/face1.jpg" alt="user" class="user">
+                    <img src="../assets/images/faces/face2.jpg" alt="user" class="user">
                   </span>
                   <span class="user-name">{{ $Info->pat_name }}</span>
                 </span>

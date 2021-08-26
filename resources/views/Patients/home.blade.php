@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
    <!-- Basic -->
@@ -35,7 +34,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
-
 /* Full-width input fields */
 input[type=text], input[type=password] {
   width: 100%;
@@ -45,7 +43,6 @@ input[type=text], input[type=password] {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-
 /* Set a style for all buttons */
 button {
   background-color: #04AA6D;
@@ -56,39 +53,32 @@ button {
   cursor: pointer;
   width: 100%;
 }
-
 button:hover {
   opacity: 0.8;
 }
-
 /* Extra styles for the cancel button */
 .cancelbtn {
   width: auto;
   padding: 10px 18px;
   background-color: #f44336;
 }
-
 /* Center the image and position the close button */
 .imgcontainer {
   text-align: center;
   margin: 24px 0 12px 0;
   position: relative;
 }
-
 img.avatar {
   width: 40%;
   border-radius: 50%;
 }
-
 .container {
   padding: 16px;
 }
-
 span.psw {
   float: right;
   padding-top: 16px;
 }
-
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -103,7 +93,6 @@ span.psw {
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   padding-top: 60px;
 }
-
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
@@ -111,7 +100,6 @@ span.psw {
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
-
 /* The Close Button (x) */
 .close {
   position: absolute;
@@ -121,19 +109,16 @@ span.psw {
   font-size: 35px;
   font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
   color: red;
   cursor: pointer;
 }
-
 /* Add Zoom Animation */
 .animate {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
 }
-
 @-webkit-keyframes animatezoom {
   from {-webkit-transform: scale(0)} 
   to {-webkit-transform: scale(1)}
@@ -143,7 +128,6 @@ span.psw {
   from {transform: scale(0)} 
   to {transform: scale(1)}
 }
-
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
@@ -270,8 +254,9 @@ span.psw {
                   <div class="message-box">
                      <h4>What We Do</h4>
                      <h2>Clinic Service</h2>
-                     <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>
-                     <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  </p>
+                     <p class="lead" style="align-content: 'justify">The Healthcare Information and Management Systems Society  is a SriLankan advisor, thought leader and member association committed to transforming the health ecosystem. As a mission-driven non-profit, HIMSS offers a unique depth and breadth of expertise in health innovation, public policy, workforce development, research and analytics to advise leaders, stakeholders and influencers from across the ecosystem on best practices. With a community-centric approach, our innovation engine delivers key insights, education and engaging events to healthcare providers, payers, governments, startups, life sciences and other health services organizations, ensuring they have the right information at the point of decision.
+
+                     </p>
                      <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Learn More</a>
                   </div>
                   <!-- end messagebox -->

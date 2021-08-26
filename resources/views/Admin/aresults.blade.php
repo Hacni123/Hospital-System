@@ -1,7 +1,7 @@
-@extends('Admin.adminlayout');
+@extends('Admin.alayout')
 
-@section('content')
 
+@section('mainContent')
 <br>
 <br>
 <div class="container">

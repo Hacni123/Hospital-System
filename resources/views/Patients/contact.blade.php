@@ -102,7 +102,7 @@ body{
           <div class="mdc-list-group">
             <nav class="mdc-list mdc-drawer-menu">
               <div class="mdc-list-item mdc-drawer-item">
-                <a class="mdc-drawer-link" href="{{url('')}}">
+                <a class="mdc-drawer-link" href="{{url('index1')}}">
                   <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i>
                   Dashboard
                 </a>
