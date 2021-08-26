@@ -53,7 +53,14 @@
                                 </p>
                             </div>
                         </div>
+<<<<<<< HEAD
                     </div>
+=======
+                        <div>
+                            <button class="btn btn--radius-2 btn--red" type="submit">Sign In</button>
+                        </div>
+                    </form>
+>>>>>>> f7eb1e29d073430267f45b4b73d394691cf25064
                 </div>
             </div>
         </div>

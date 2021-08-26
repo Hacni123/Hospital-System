@@ -140,7 +140,8 @@ class PatientController extends Controller
            if(Hash::check($request->login_password,$user->login_password)){
                $request->session()->put('LoggedUser',$user->id);
 
-               if($user->login_username=='csthmb' || $user->login_username=='ranna' )
+               if($user->login_username=='jaffna' || $user->login_username=='ranna' || $user->login_username=='ambilipitiya'
+               || $user->login_username=='galle12' || $user->login_username=='hamban' || $user->login_username=='matara'|| $user->login_username=='badulla' || $user->login_username=='tissa')
                {
                
                 return Redirect::route('dashboard.index');

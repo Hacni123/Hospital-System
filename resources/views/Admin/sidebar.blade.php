@@ -20,8 +20,13 @@
                 <nav class="navbar-sidebar" style="color:white">
                    <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
+<<<<<<< HEAD
                             <a class="js-arrow" href="{{url('aindex')}}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+=======
+                            <a class="js-arrow" href="{{url('/aindex')}}">
+                            <i class="fas fa-copy"></i>Dashboard</a>
+>>>>>>> f7eb1e29d073430267f45b4b73d394691cf25064
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                
                             </ul>
@@ -73,8 +78,19 @@
                         
                         
                         <li class="has-sub">
+<<<<<<< HEAD
                             <a class="js-arrow" href="{{url('apatientList')}}">
                                 <i class="fas fa-desktop"></i>Patient Details</a>
+=======
+                            <a class="js-arrow" href="#">
+                            <i class="fas fa-copy"></i>Patients</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                <a href="{{url('adminpatients')}}">View</a>
+                                </li>
+                                
+                            </ul>
+>>>>>>> f7eb1e29d073430267f45b4b73d394691cf25064
                 
                         </li>
 
@@ -92,24 +108,26 @@
                             </ul>
                         </li>
 
-
-                        <li class="has-sub">
-                            <a class="js-arrow" href="{{url('hosreg')}}">
-                                <i class="fas fa-copy"></i>Users</a>
-                        </li>
-
-                       
-
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Admin Details</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
+<<<<<<< HEAD
                                 <a href="{{url('hosreg')}}">PCR Tests</a>
+=======
+                                <a href="{{url('/adminchangepw')}}">Reset Password</a>
+>>>>>>> f7eb1e29d073430267f45b4b73d394691cf25064
                                 </li>
+
                                 <li>
+<<<<<<< HEAD
                                 <a href="{{url('hosreg')}}">PCR Test Results</a>
+=======
+                                <a href="{{url('others')}}">Admins</a>
+>>>>>>> f7eb1e29d073430267f45b4b73d394691cf25064
                                 </li>
+                                
                                 
                             </ul>
                         </li>

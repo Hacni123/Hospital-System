@@ -1,7 +1,6 @@
-@extends('Admin.alayout');
+@extends('Admin.adminlayout');
 
-
-@section('mainContent')
+@section('content')
 
  <!-- DATA TABLE-->
  <section class="p-t-20">
@@ -10,6 +9,7 @@
                         <div class="col-md-12">
                             <hr>
                             <br>
+<<<<<<< HEAD
                             <h3 class="title-5 m-b-35" style="text-align:center"> Ambulances </h3>
                             <!--<div class="table-data__tool">
                                 <div class="table-data__tool-left">
@@ -96,6 +96,12 @@
                                     @endforeach
                                 </table>
                                 </form>
+=======
+                            
+                            <div class="table-responsive table-responsive-data2">
+                            
+                                
+>>>>>>> f7eb1e29d073430267f45b4b73d394691cf25064
                             </div>
                         </div>
                     </div>
@@ -115,6 +121,7 @@
                        
                                 <div class="card">
                                 <div class="card-header">
+<<<<<<< HEAD
                                     <strong>ICU Beds</strong>
                                     
                                 </div>
@@ -141,6 +148,36 @@
                                 </table>
                             </div>
                             </form>
+=======
+                                    <strong>All Hospitals</strong>
+                                    
+                                </div>
+                               
+                                
+                                <div class="card-body">
+                                <table class="table table-striped">
+                                <tbody>
+                                   @foreach($hospitals->chunk(3) as $hospital)
+                                <tr>
+                                   @foreach( $hospital as $hos )
+                                <td>
+                                      
+                                <th>    
+                                            <form action="{{ route('hosambulances.show') }}"  method="POST">
+                                               
+                                                @csrf
+                                                <input type="hidden" name="bid" value="{{$hos->id}}">
+                                                <button type="submit" class="btn btn-success btn-lg" style="width:200px; height:50;">{{$hos->hos_name}}</button>
+                                           </form>
+                                </td>
+                                  @endforeach
+                                  </tr>
+                                  @endforeach
+                                    
+                                </table>
+                            </div>
+                            
+>>>>>>> f7eb1e29d073430267f45b4b73d394691cf25064
                                 </div><!-- /# card --> 
                                 
                             </div> <!-- .buttons -->
@@ -152,6 +189,7 @@
 
             </div><!-- /#right-panel -->
 
+<<<<<<< HEAD
             <div class="col-xl-12">
                 <div class="content mt-12">
             <div class="animated fadeIn">
@@ -203,6 +241,9 @@
                    
                 </div>
             </div>
+=======
+           
+>>>>>>> f7eb1e29d073430267f45b4b73d394691cf25064
 
             
                     
@@ -213,6 +254,7 @@
 
         
 
+<<<<<<< HEAD
 
            
 
@@ -221,6 +263,8 @@
             
 
 
+=======
+>>>>>>> f7eb1e29d073430267f45b4b73d394691cf25064
         </div> <!-- .content -->
     </div><!-- /#right-panel -->
             @endsection
