@@ -86,7 +86,7 @@
                                             </div>
                                             <div class="text">
                                                 <h2><span class="count">{{$data3}}</span></h2>
-                                                <span>PCR Tests</span>
+                                                <span>Ambulance Requests</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -112,7 +112,8 @@
                                             </div>
                                             <div class="text">
                                                 <h2><span class="count">{{$data4}}</span></h2>
-                                                <span>Patients</span>
+                                                <span>Bed Requests
+                                                </span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -130,7 +131,7 @@
                                             </div>
                                             <div class="text">
                                                 <h2><span class="count">{{$data5}}</span></h2>
-                                                <span>Total Ambulances</span>
+                                                <span>Patients</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -148,7 +149,7 @@
                                             </div>
                                             <div class="text">
                                                 <h2><span class="count">{{$data6}}</span></h2>
-                                                <span>Total Icu Beds</span>
+                                                <span>PCR Tests</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -166,7 +167,7 @@
                                             </div>
                                             <div class="text">
                                                 <h2><span class="count">{{$data7}}</span></h2>
-                                                <span>TOtal Ambulances</span>
+                                                <span>Admins</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">

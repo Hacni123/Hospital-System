@@ -133,15 +133,7 @@
                                             <a class="js-acc-btn" href="#">Admin Profile</a>
                                         </div>  -->
                                         <div class="account-dropdown js-dropdown">
-                                            <div class="info clearfix">
-                                               
-                                                <div class="content">
-                                                    <h5 class="name">
-                                                        <a href="{{ url('/adminprofile') }}"></a>
-                                                    </h5>
-                                                    <span class="email"></span>
-                                                </div>
-                                            </div>
+                                          
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
                                                     <a href="{{ url('/adminprofile') }}">
@@ -149,12 +141,12 @@
                                                 </div>
                                                
                                             </div>
-                                            <!-- 
+                                            
                                                 <div class="account-dropdown__footer">
                                                 <a href="{{ url('alogout') }}">
                                                     <i class="zmdi zmdi-power" ></i>Logout</a>
                                             </div>
-                                              -->
+                                            
                                         </div>
                                     </div>
                                 </div>

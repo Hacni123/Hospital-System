@@ -17,6 +17,11 @@ use App\Models\Patient;
 use App\Models\Admin;
 use App\Models\Hospital;
 use App\Models\Login;
+use App\Models\Ambulance;
+use App\Models\Ambulancerequest;
+use App\Models\Icubed;
+use App\Models\Icubrequest;
+use App\Models\Pcrtest;
 use Session;
 
 
@@ -24,66 +29,31 @@ class AdminController extends Controller
 {
     public function index()
     {
-    
         if(session()->has('LoggedUser')){
             $user = Login::where('id','=', session('LoggedUser'))->first();
             $row = DB::table('adminall')
                 ->where('login_id','=',$user->id)
                 ->first();
 
-            $data = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
-                ->where('hospitals.id','=', $row->id)
-                ->join('icubrequests', 'icubrequests.patient_id', '=', 'patients.id')
-                ->select(Hospital::raw('count(*) as count'))
-                ->count();
+            $data = Hospital::get()->count();
 
-            $data1 = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
-                ->where('hospitals.id','=', $row->id)
-              	->join('pcrtests', 'pcrtests.patient_id', '=', 'patients.id')
-              	->select(Hospital::raw('count(*) as count'))
-                ->count();
+            $data1 = Ambulance::get()->count();
                
-            $data2 = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
-                ->where('hospitals.id','=', $row->id)
-                ->join('ambulancerequests', 'ambulancerequests.patient_id', '=', 'patients.id')
-                ->select(Hospital::raw('count(*) as count'))
-                ->count();
+            $data2 = Icubed::get()->count();
 
-            $data3 = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
-                ->where('hospitals.id','=', $row->id)
-                ->select(Hospital::raw('count(*) as count'))
-                ->count();
+            $data3 = Ambulancerequest::get()->count();
 
-            $data4 = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
-                ->where('hospitals.id','=', $row->id)
-                ->where('result', 'Positive')
-                ->join('pcrtests', 'pcrtests.patient_id', '=', 'patients.id')
-                ->select(Hospital::raw('count(*) as count'))
-                ->count();
+            $data4 = Icubrequest::get()->count();
 
-            $data5 = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
-                ->where('hospitals.id','=', $row->id)
-                ->where('result', 'Negative')
-                ->join('pcrtests', 'pcrtests.patient_id', '=', 'patients.id')
-                ->select(Hospital::raw('count(*) as count'))
-                ->count();
+            $data5 = Patient::get()->count();
 
-            $data6 = Hospital::join('icubeds', 'icubeds.hospital_id', '=', 'hospitals.id')
-                ->where('hospitals.id','=',$row->id)
-                ->where('status', 'Availabe')
-                ->select(Hospital::raw('count(*) as count'))
-                ->count();
+            $data6 = Pcrtest::get()->count();
 
-            $data7 = Hospital::join('ambulances', 'ambulances.hospital_id', '=', 'hospitals.id')
-                ->where('hospitals.id','=',$row->id)
-                ->where('status', 'Availabe')
-                ->select(Hospital::raw('count(*) as count'))
-                ->count();
+            $data7 = Admin::get()->count();
+
 
                 return view('Admin.adminindex', compact('data','data1','data2','data3','data4','data5','data6','data7'));
-            }  
-        
-
+                 }  
         else
          {
               return view('Admin.login');
@@ -200,7 +170,7 @@ class AdminController extends Controller
                 
             ]);
             
-            return view("Admin.adminindex")->withSuccess('Great! You have Successfully loggedin');
+            return view("Admin.login")->withSuccess('Great! You have Successfully loggedin');
           } 
           catch(\Illuminate\Database\QueryException $ex)
           { 
@@ -222,7 +192,7 @@ class AdminController extends Controller
            if(Hash::check($request->login_password,$user->login_password)){
                $request->session()->put('LoggedUser',$user->id);
 
-               return view('Admin.adminindex');
+               return Redirect::route('admindashboard.index');
 
 
            }else{
@@ -234,10 +204,6 @@ class AdminController extends Controller
        }
     }
 
-    
-    
-   
-   
     public function logout() {
         Session::flush();
         Auth::logout();
@@ -245,18 +211,10 @@ class AdminController extends Controller
         return redirect()->route('adminlogin.get')->with('success','logout Successfully.');
     }
 
-
-
-
-
     public function check()
     {
         return view('Admin.check');
     } 
-
-
-
-
 
     public function savehospital(Request $request)
     {
@@ -285,16 +243,13 @@ class AdminController extends Controller
                 'hos_address'=>$request->input('hos_address'),
                 'hos_mobile'=>$request->input('hos_mobile')
                
-                /*,'password'*/
             ]);
 
-             //return view('Admin.hosreg');
             $data = request(['hos_email','login_username','login_password']);
-             //return $data;
-               //\Illuminame\Support\Facades\
-             Mail::to('hasini.baddegama@gmail.com')
+        
+            Mail::to('hasaraismini@gmail.com')
             ->send(new \App\Mail\hosreg($data));
-            return view("Admin.adminindex")->withSuccess('Great! You have Successfully loggedin');
+            return view("Admin.hosreg")->withSuccess('Great! You have Successfully loggedin');
             
           } 
           catch(\Illuminate\Database\QueryException $ex)
@@ -324,9 +279,6 @@ class AdminController extends Controller
 
     public function getpositivepcr(Request $request)
     {
-        
-        
-
         $pcr = Hospital::join('patients', 'patients.hospital_id', '=', 'hospitals.id')
                 ->where('hospitals.id','=', $request->input('bid'))
                 ->where('result', 'Positive')
