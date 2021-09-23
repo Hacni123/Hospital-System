@@ -29,18 +29,21 @@
         </a>
       </div>
       <div class="mdc-drawer__content">
-        
+        <div class="user-info">
+          <p class="name" style="font-size: 22px">Life Care</p>
+          <p class="email">info@Lifecare.com</p>
+        </div>
         <div class="mdc-list-group">
           <nav class="mdc-list mdc-drawer-menu">
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="{{url('')}}">
+              <a class="mdc-drawer-link" href="{{url('index1')}}">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i>
                 Dashboard
               </a>
             </div>
             <div class="mdc-list-item mdc-drawer-item">
-            <a class="mdc-drawer-link" href="{{url('myappointment')}}">
-                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i>
+              <a class="mdc-drawer-link" href="{{ url('myappointment') }}">
+                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">track_changes</i>
                 My Appointments
               </a>
             </div>
@@ -98,85 +101,150 @@
               </div>
             </div>
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="{{url('doctorsdetails')}}">
+              <a class="mdc-drawer-link" href="{{ url('logout') }}">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">grid_on</i>
-                Doctor_Details
+                Logout
               </a>
-            </div>          
-            <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="{{ url('contact') }}">
-                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">description</i>
-               Contact Us
-              </a>
-            </div>
+            </div> 
           </nav>
         </div>
-        <div class="profile-actions">
-          <a href="javascript:;">Settings</a>
-          <span class="divider"></span>
-          <a href="javascript:;">Logout</a>
-        </div>
-        <div class="mdc-card premium-card">
-          <div class="d-flex align-items-center">
-            <div class="mdc-card icon-card box-shadow-0">
-              <i class="mdi mdi-shield-outline"></i>
-            </div>
-            <div>
-              <p class="mt-0 mb-1 ml-2 font-weight-bold tx-12">Material Dash</p>
-              <p class="mt-0 mb-0 ml-2 tx-10">Pro available</p>
-            </div>
-          </div>
-          <p class="tx-8 mt-3 mb-1">More elements. More Pages.</p>
-          <p class="tx-8 mb-3">Starting from $25.</p>
-          <a href="https://www.bootstrapdash.com/product/material-design-admin-template/" target="_blank">
-						<span class="mdc-button mdc-button--raised mdc-button--white">Upgrade to Pro</span>
-					</a>
-        </div>
+        
+        
       </div>
     </aside>
+
+
+
+
+
+
+
+    
     <!-- partial -->
     <div class="main-wrapper mdc-drawer-app-content">
       <!-- partial:partials/_navbar.html -->
+      <header class="mdc-top-app-bar">
+        <div class="mdc-top-app-bar__row">
+          <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button sidebar-toggler">menu</button>
+            <span class="mdc-top-app-bar__title">Greetings Arani!</span>
+            <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon search-text-field d-none d-md-flex">
+              <input class="mdc-text-field__input" id="text-field-hero-input">
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                
+                <div class="mdc-notched-outline__trailing"></div>
+              </div>
+            </div>
+          </div>
+          <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end mdc-top-app-bar__section-right">
+            <div class="menu-button-container menu-profile d-none d-md-block">
+              <button class="mdc-button mdc-menu-button">
+                <span class="d-flex align-items-center">
+                  <span class="figure">
+                    <img src="../assets/images/faces/face2.jpg" alt="user" class="user">
+                  </span>
+                  <span class="user-name">Arani</span>
+                </span>
+              </button>
+              <div class="mdc-menu mdc-menu-surface" tabindex="-1">
+                <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                    <div class="item-thumbnail item-thumbnail-icon-only">
+                    </div>
+                    <div class="item-content d-flex align-items-start flex-column justify-content-center">
+                    </div>
+                    <div class="item-thumbnail item-thumbnail-icon-only">
+                    </div>
+                    <div class="item-content d-flex align-items-start flex-column justify-content-center">
+                    </div>
+                </ul>
+              </div>
+            </div>
+            <div class="divider d-none d-md-block"></div>
+            <div class="menu-button-container d-none d-md-block">
+              <button class="mdc-button mdc-menu-button">
+              </button>
+              <div class="mdc-menu mdc-menu-surface" tabindex="-1">
+                <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                    <div class="item-thumbnail item-thumbnail-icon-only">
+                    </div>
+                    <div class="item-content d-flex align-items-start flex-column justify-content-center">
+                    </div>
+                  </li>
+                    <div class="item-thumbnail item-thumbnail-icon-only">
+                    </div>
+                    <div class="item-content d-flex align-items-start flex-column justify-content-center">
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="menu-button-container">
+              <button class="mdc-button mdc-menu-button">
+              </button>
+              <div class="mdc-menu mdc-menu-surface" tabindex="-1">
+                <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                    
+                    <div class="item-content d-flex align-items-start flex-column justify-content-center">
+                    </div>
+                  </li>
+                    
+                    <div class="item-content d-flex align-items-start flex-column justify-content-center">
+                    </div>
+                  </li>
+                    <div class="item-thumbnail item-thumbnail-icon">
+                    </div>
+                    <div class="item-content d-flex align-items-start flex-column justify-content-center">
+                    </div>
+                  </li> 
+                  <li class="mdc-list-item" role="menuitem">
+                    <div class="item-thumbnail item-thumbnail-icon">
+                    </div>
+                    <div class="item-content d-flex align-items-start flex-column justify-content-center">
+                    </div>
+                  </li> 
+                </ul>
+              </div>
+            </div>
+            <div class="menu-button-container">
+             
+              <div class="mdc-menu mdc-menu-surface" tabindex="-1">
+                <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                  
+                  
+                                 
+                </ul>
+              </div>
+            </div>
+            <div class="menu-button-container d-none d-md-block">
+              <button class="mdc-button mdc-menu-button">
+              </button>
+              <div class="mdc-menu mdc-menu-surface" tabindex="-1">
+                <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                    <div class="item-thumbnail item-thumbnail-icon-only">
+                    </div>
+                    <div class="item-content d-flex align-items-start flex-column justify-content-center">
+                    </div>
+                  </li>
+                    <div class="item-thumbnail item-thumbnail-icon-only">
+                    </div>
+                    <div class="item-content d-flex align-items-start flex-column justify-content-center">
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- partial -->
       <div class="page-wrapper mdc-toolbar-fixed-adjust">
         <main class="content-wrapper">
           <div class="mdc-layout-grid">
             <div class="mdc-layout-grid__inner">
-              <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet">
-                <div class="mdc-card info-card info-card--success">
-                  <div class="card-inner">
-                    <h5 class="card-title">Total Cases</h5>
-                    <h5 class="font-weight-light pb-2 mb-1 border-bottom">366K</h5>
-                    
-                    <div class="card-icon-wrapper">
-                      <i class="material-icons">dvr</i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet">
-                <div class="mdc-card info-card info-card--danger">
-                  <div class="card-inner">
-                    <h5 class="card-title">Recovered</h5>
-                    <h5 class="font-weight-light pb-2 mb-1 border-bottom">120</h5>
-                    
-                    <div class="card-icon-wrapper">
-                    <i class="material-icons">dvr</i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet">
-                <div class="mdc-card info-card info-card--primary">
-                  <div class="card-inner">
-                    <h5 class="card-title">Death</h5>
-                    <h5 class="font-weight-light pb-2 mb-1 border-bottom">6434</h5>
-                   
-                    <div class="card-icon-wrapper">
-                    <i class="material-icons">dvr</i>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
+             
+              
               
               <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
                 <div class="mdc-card">

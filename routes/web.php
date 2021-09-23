@@ -110,6 +110,21 @@ Route::post('/hospitalreg', [AdminController::class, 'savehospital'])->name('add
 //Route::post('/hospitalregemail','AdminController@hospitalregister');
 
 // check
+<<<<<<< HEAD
+
+
+
+// Admin login registration
+
+Route::get('/adminlogin', [AdminController::class, 'adminlogin'])->name('admin.login');
+Route::post('/apostlogin', [AdminController::class, 'postLogin'])->name('adminlogin.post'); 
+Route::get('/aregistration', [AdminController::class, 'registration'])->name('register');
+Route::post('/apost-registration', [AdminController::class, 'postRegistration'])->name('register.postadmin'); 
+Route::get('/adashboard', [AdminController::class, 'dashboard']); 
+Route::get('/alogout', [AdminController::class, 'logout']);
+
+=======
+>>>>>>> f7eb1e29d073430267f45b4b73d394691cf25064
 
 
 
@@ -138,10 +153,11 @@ Route::get('/adminprofile','AdminController@profile');
 
 
 //-------------------------------------------------------------------------------------------------------------------------- //
+Route::get('/',[PatientController::class, 'index']);
 
-Route::get('/', function () {
-   return view('Patients.home'); 
-});
+//Route::get('/', function () {
+  // return view('Patients.home'); 
+//});
 Route::get('/index',function(){
    return view('Patients.index');
 });
@@ -150,7 +166,7 @@ Route::get('/login', function () {
    return view('Patients.login');
 });
 //Route::get('/register', function () {
- //  return view('Patients.register');
+ // return view('Patients.register');
 //});
 //Route::get('/myappointment', function () {
   // return view('Patients.myappointment');
@@ -165,13 +181,12 @@ Route::post('post-registration', [PatientController::class, 'postRegistration'])
 Route::get('/verify','VerifyController@getVerify')->name('getverify');
 Route::post('/verify','VerifyController@postVerify')->name('verify');
 Route::post('check','PatientController@check')->name('login.post');
-
 Route::get('profile','PatientController@profile');
 Route::get('/hprofile', [PatientController::class, 'profilehospital']);
 Route::get('logout', 'PatientController@logout');
 Route::get('/verify','verifyController@getVerify')->name('getverify');
 Route::post('/verify','verifyController@postVerify')->name('verify');
-Route::get('/myappointment', [PatientController::class, 'myappointment']);
+Route::get('myappointment', [PatientController::class, 'myappointment']);
 
 
 Route::get('/index1',[PatientController::class, 'index1'])->name('/.index1');

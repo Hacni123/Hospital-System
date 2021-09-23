@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -168,13 +171,13 @@ span.psw {
         <div class="mdc-list-group">
           <nav class="mdc-list mdc-drawer-menu">
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="{{URL::to('/index')}}">
+              <a class="mdc-drawer-link" href="{{url('index1')}}">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i>
                 Dashboard
               </a>
             </div>
             <div class="mdc-list-item mdc-drawer-item">
-            <a class="mdc-drawer-link" href="{{url('myappointment')}}">
+              <a class="mdc-drawer-link" href="{{url('myappointment')}}">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i>
                 My Appointments
               </a>
@@ -232,37 +235,32 @@ span.psw {
                 </nav>
               </div>
             </div>
+
+
+
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="{{url('doctorsdetails')}}">
+              <a class="mdc-drawer-link" href="{{ url('logout') }}">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">grid_on</i>
-                Doctor_Details
+                Logout
               </a>
-            </div>          
-            <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="{{ url('contact') }}">
-                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">description</i>
-               Contact Us
-              </a>
-            </div>
+            </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+           
           </nav>
         </div>
         
-        <div class="mdc-card premium-card">
-          <div class="d-flex align-items-center">
-            <div class="mdc-card icon-card box-shadow-0">
-              <i class="mdi mdi-shield-outline"></i>
-            </div>
-            <div>
-              <p class="mt-0 mb-1 ml-2 font-weight-bold tx-12">Material Dash</p>
-              <p class="mt-0 mb-0 ml-2 tx-10">Pro available</p>
-            </div>
-          </div>
-          <p class="tx-8 mt-3 mb-1">More elements. More Pages.</p>
-          <p class="tx-8 mb-3">Starting from $25.</p>
-          <a href="https://www.bootstrapdash.com/product/material-design-admin-template/" target="_blank">
-						<span class="mdc-button mdc-button--raised mdc-button--white">Upgrade to Pro</span>
-					</a>
-        </div>
+        
       </div>
     </aside>
     <div class="main-wrapper mdc-drawer-app-content">
@@ -273,12 +271,10 @@ span.psw {
             <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button sidebar-toggler">menu</button>
             <span class="mdc-top-app-bar__title">Appointments Details </span>
             <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon search-text-field d-none d-md-flex">
-              <i class="material-icons mdc-text-field__icon">search</i>
               <input class="mdc-text-field__input" id="text-field-hero-input">
               <div class="mdc-notched-outline">
                 <div class="mdc-notched-outline__leading"></div>
                 <div class="mdc-notched-outline__notch">
-                  <label for="text-field-hero-input" class="mdc-floating-label">Search..</label>
                 </div>
                 <div class="mdc-notched-outline__trailing"></div>
               </div>

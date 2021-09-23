@@ -20,8 +20,18 @@
                 <nav class="navbar-sidebar" style="color:white">
                    <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+                            <a class="js-arrow" href="{{url('aindex')}}">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+=======
                             <a class="js-arrow" href="{{url('/aindex')}}">
                             <i class="fas fa-copy"></i>Dashboard</a>
+>>>>>>> f7eb1e29d073430267f45b4b73d394691cf25064
+=======
+                            
+                            <a href="{{url('aindex')}}">Dashboard</a>
+>>>>>>> Stashed changes
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                
                             </ul>
@@ -47,7 +57,10 @@
                                 <i class="fas fa-copy"></i>Ambulances</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                <a href="{{url('avaamb')}}">View</a>
+                                <a href="{{url('avaamb')}}">Ambulance List</a>
+                                </li>
+                                <li>
+                                <a href="{{url('abkamb')}}">Ambulance Requests</a>
                                 </li>
                                 
                             </ul>
@@ -58,9 +71,11 @@
                                 <i class="fas fa-copy"></i>ICU Beds</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                <a href="{{url('aicubeds')}}">View</a>
+                                <a href="{{url('aicubeds')}}">ICU Beds List</a>
                                 </li>
-                                
+                                <li>
+                                <a href="{{url('abkbeds')}}">ICU beds Requests</a>
+                                </li>
                                 
                             </ul>
                         </li>
@@ -68,6 +83,10 @@
                         
                         
                         <li class="has-sub">
+<<<<<<< HEAD
+                            <a class="js-arrow" href="{{url('apatientList')}}">
+                                <i class="fas fa-desktop"></i>Patient Details</a>
+=======
                             <a class="js-arrow" href="#">
                             <i class="fas fa-copy"></i>Patients</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -76,6 +95,7 @@
                                 </li>
                                 
                             </ul>
+>>>>>>> f7eb1e29d073430267f45b4b73d394691cf25064
                 
                         </li>
 
@@ -84,7 +104,10 @@
                                 <i class="fas fa-copy"></i>PCR Tests</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                <a href="{{url('atest')}}">Positive Reports.</a>
+                                <a href="{{url('atest')}}">PCR Tests</a>
+                                </li>
+                                <li>
+                                <a href="{{url('atestres')}}">PCR Test Results</a>
                                 </li>
                                 
                             </ul>
@@ -95,11 +118,19 @@
                                 <i class="fas fa-copy"></i>Admin Details</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
+<<<<<<< HEAD
+                                <a href="{{url('hosreg')}}">PCR Tests</a>
+=======
                                 <a href="{{url('/adminchangepw')}}">Reset Password</a>
+>>>>>>> f7eb1e29d073430267f45b4b73d394691cf25064
                                 </li>
 
                                 <li>
+<<<<<<< HEAD
+                                <a href="{{url('hosreg')}}">PCR Test Results</a>
+=======
                                 <a href="{{url('others')}}">Admins</a>
+>>>>>>> f7eb1e29d073430267f45b4b73d394691cf25064
                                 </li>
                                 
                                 
